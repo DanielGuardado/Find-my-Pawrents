@@ -1,54 +1,50 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const User = require('../../models/User');
+const Shelter = require('../../models/Shelter');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
 
-const validateSignupInput = require('../../validation/signup');
-const validateLoginInput = require('../../validation/login');
+const validateShelterSignupInput = require('../../validation/signup_shelter');
+const validateLoginInput = require('../../validation/login_shelter');
 
-
-router.get('/test', (req, res) => {
-  res.json({
-    msg: "This is the user route"
-  })
-})
 
 router.post('/signup', (req, res) => {
   const {
     errors,
     isValid
-  } = validateSignupInput(req.body);
+  } = validateShelterSignupInput(req.body);
   if (!isValid) {
     return res.status(400).json(errors);
   }
-  User.findOne({
+  Shelter.findOne({
       email: req.body.email
     })
-    .then(user => {
-      if (user) {
+    .then(shelter => {
+      if (shelter) {
         return res.status(400).json({
           email: "That email address is already taken"
         })
       } else {
-        const newUser = new User({
+        const newShelter = new Shelter({
           email: req.body.email,
           password: req.body.password,
-          first_name: req.body.first_name,
-          last_name: req.body.last_name
+          shelter_name: req.body.shelter_name,
+          address: req.body.address
         })
 
         bcrypt.genSalt(10, (err, salt) => {
-          bcrypt.hash(newUser.password, salt, (err, hash) => {
+          bcrypt.hash(newShelter.password, salt, (err, hash) => {
             if (err) throw err;
-            newUser.password = hash;
-            newUser.save()
-              .then((user) => {
+            newShelter.password = hash;
+            newShelter.save()
+              .then((shelter) => {
                 const payload = {
-                  id: user.id,
-                  email: user.email
+                  id: shelter.id,
+                  email: shelter.email,
+                  shelter_name: shelter.shelter_name,
+                  address: shelter.address
                 }
                 jwt.sign(
                   payload,
@@ -81,19 +77,20 @@ router.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
-  User.findOne({
+  Shelter.findOne({
     email
-  }).then((user) => {
-    if (!user) {
-      errors.handle = "This user does not exist";
+  }).then((shelter) => {
+    if (!shelter) {
+      errors.handle = "This sheshelter does not exist";
       return res.status(400).json(errors);
     }
 
-    bcrypt.compare(password, user.password).then((isMatch) => {
+    bcrypt.compare(password, shelter.password).then((isMatch) => {
       if (isMatch) {
         const payload = {
-          id: user.id,
-          email: user.email
+          id: shelter.id,
+          email: shelter.email,
+          shelter_name: shelter.shelter_name
         };
         jwt.sign(
           payload,
@@ -124,6 +121,7 @@ router.get(
     res.json({
       id: req.user.id,
       email: req.user.email,
+      shelter_name: req.user.shelter_name
     });
   }
 );
