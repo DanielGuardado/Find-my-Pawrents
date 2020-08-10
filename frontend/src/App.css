@@ -36,3 +36,179 @@
     transform: rotate(360deg);
   }
 }
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-form-container {
+    padding: 18px;
+}
+
+/* .signin-form-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    height: 475px;
+    width: 375px;
+    border-radius: 3px;
+
+} */
+
+.login-input-container {
+    padding: 5px;
+    width: 365px;
+    height: 500px;
+}
+
+.login-form-top-level {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    margin-top: 20px;
+
+}
+
+h2.login-header {
+    /* font-size: 15px; */
+    margin-left: 15px;
+    margin-bottom: 0px;
+}
+
+
+.modal-signup-btn {
+    border: 1px solid rgb(73, 167, 227);
+    border-radius: 20px;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 10px;
+    background-color: white;
+}
+
+.modal-signup-btn:hover {
+    background-color: rgb(73, 167, 227);
+    color: white;
+}
+
+
+
+
+/* .demo-button {
+    border: 1px solid rgb(73, 167, 227);
+    border-radius: 20px;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 10px;
+}
+
+.demo-button:hover {
+    background-color: rgb(73, 167, 227);
+    color: white;
+} */
+
+.input-titles {
+  color: rgb(73, 167, 227);
+}
+
+.input-boxes {
+  background-color: rgb(243, 241, 241);
+    height: 47px;
+    width: 322px;
+    border-radius: 3px;
+    border: 1px solid white;
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+.info-input-form:hover {
+    border-color: rgb(73, 167, 227);
+}
+
+
+.login-submit {
+    border: 1px solid rgb(73, 167, 227);
+    border-radius: 20px;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 10px;
+    background-color: white;
+}
+
+.login-submit:hover {
+    background-color: rgb(73, 167, 227);
+    color: white;
+}
+
+.render-errors {
+  color: rgb(73, 167, 227);
+}
+
+.signup-form-container {
+    padding: 18px;
+}
+
+.signup-input-container {
+    padding: 5px;
+    width: 365px;
+    height: 500px;
+}
+
+.signup-form-top-level {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+h1.signup-header {
+    /* font-size: 15px; */
+    margin-left: 15px;
+    margin-bottom: 0px;
+}
+
+/* .asterisk {
+    color: rgb(213, 93, 39)
+} */
+
+.modal-login-btn {
+    border: 1px solid rgb(73, 167, 227);
+    border-radius: 20px;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 10px;
+    background-color: white;
+}
+
+.modal-login-btn:hover {
+    background-color: rgb(73, 167, 227);
+    color: white;
+
+}
+
+
+.signup-submit {
+    border: 1px solid rgb(73, 167, 227);
+    border-radius: 20px;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 10px;
+    background-color: white;
+}
+
+.signup-submit:hover {
+    background-color: rgb(73, 167, 227);
+    color: white;
+}

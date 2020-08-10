@@ -5,6 +5,7 @@ import Root from "./components/root";
 import jwt_decode from "jwt-decode";
 import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
+import axios from 'axios';
 import "./index.css";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
+  window.axios = axios;
 });
 
 //npm run start
