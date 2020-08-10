@@ -9,7 +9,7 @@ module.exports = function validateShelterSignupInput(data) {
   data.address = validText(data.address) ? data.address : "";
 
   if (Validator.isEmpty(data.email)) {
-    errors.email = "email cant be empty";
+    errors.email = "email can't be empty";
   }
 
   if (Validator.isEmpty(data.shelter_name)) {
