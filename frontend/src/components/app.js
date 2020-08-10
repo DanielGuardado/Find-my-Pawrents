@@ -1,8 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "../logo.svg";
+import "../App.css";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
+import { Switch } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +23,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;
