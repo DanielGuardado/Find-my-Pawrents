@@ -45,7 +45,7 @@ export const login = (shelter) => (dispatch) =>
       dispatch(receiveShelterErrors(err.response.data));
     });
 
-export const logout = () => (dispatch) => {
+export const shelterLogout = () => (dispatch) => {
   localStorage.removeItem("jwtToken");
   ShelterSessionAPIUtil.setAuthToken(false);
   dispatch(logoutShelter());
