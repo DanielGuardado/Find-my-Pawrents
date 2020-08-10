@@ -1,0 +1,26 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+.Dog {
+  width: 800px;
+  height: 500px;
+}
+// .featured {
+//   width: 100%;
+// }
+// // .slick-slide {
+// .slick-slider {
+//   width: 200px;
+//   // for absorbing width from @Ken Wheeler answer
+//   //   box-sizing: border-box;
+// }
+//   width: 200px;
+// }
+.slick-slider {
+  margin: auto;
+  width: 800px;
+}
+.slick-track {
+  display: flex;
+  align-items: center;
+  width: 400px;
+}

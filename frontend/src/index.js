@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const currentTime = Date.now() / 1000;
 
+
     if (decodedUser.exp < currentTime) {
       store.dispatch(logout());
       window.location.href = "/login";
@@ -31,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore({});
   }
 
+  window.getState = store.getState;
+
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
   window.axios = axios;
@@ -38,3 +41,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //npm run start
 //../ npm run server
+
+
