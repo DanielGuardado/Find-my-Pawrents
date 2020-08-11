@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { signup } from "../../actions/session_actions";
+import { signup, receiveErrors, login } from "../../actions/session_actions";
 import SignupForm from "./signup_form";
 import { openModal, closeModal } from "../../actions/modal_actions";
 
@@ -24,6 +24,8 @@ const mapDispatchToProps = (dispatch) => {
       </button>
     ),
     closeModal: () => dispatch(closeModal()),
+    receiveErrors: errors => dispatch(receiveErrors(errors)),
+     login: user => dispatch(login(user))
   };
 };
 

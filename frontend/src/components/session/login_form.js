@@ -45,7 +45,7 @@ class LoginForm extends React.Component {
       .catch((err) => {
         this.props.receiveErrors(err.response.data)
       });
-      debugger
+     
   }
 
   renderErrors() {

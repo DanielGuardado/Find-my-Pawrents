@@ -27,9 +27,8 @@ export const logoutUser = () => ({
 //thunk
 
 export const signup = (user) => (dispatch) =>
-  SessionAPIUtil.signup(user).then(
-    () => dispatch(login(user)),
-    (err) => dispatch(receiveErrors(err.response.data))
+  SessionAPIUtil.signup(user).then(() => dispatch(login(user)),
+    // (err) => dispatch(receiveErrors(err.response.data))
   );
 
 export const login = (user) => (dispatch) =>
