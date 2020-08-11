@@ -1,0 +1,77 @@
+.noUserNavBar-container{
+    display: flex;
+    justify-content: space-between;
+
+    .noUserNavBar-left-side-of-navbar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        #logo{
+            height: 70px;
+        }
+        p{
+            padding-top: 14px;
+            margin: 0 30px;
+            font-size: 21px;
+            font-weight: 500;
+        }
+    }
+
+
+    .noUserNavBar-right-side-of-navbar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .noUserNavBar-nav-login-button{
+            background-color: #0022ff;
+            border-radius: 20px;
+            border: 1px solid #0022ff;
+            text-align: center;
+            width: 78px;
+            height: 36px;
+            color: white;
+            margin-right: 15px;
+            margin-top: 15px;
+            font-weight: 500;
+            font-size: 21px;
+
+        }
+
+        .noUserNavBar-nav-signup-button{
+            background-color: #0022ff;
+            border-radius: 20px;
+            border: 1px solid #0022ff;
+            text-align: center;
+            width: 100px;
+            height: 36px;
+            color: white;
+            margin-right: 15px;
+            margin-top: 15px;
+            font-weight: 500;
+            font-size: 21px;
+        }
+    }
+}
+
+.currentUserNavBar-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    .currentUserNavBar-nav-logout-button{
+        background-color: #0022ff;
+        border-radius: 20px;
+        border: 1px solid #0022ff;
+        text-align: center;
+        width: 100px;
+        height: 36px;
+        color: white;
+        margin-right: 15px;
+        margin-top: 15px;
+        font-weight: 500;
+        font-size: 21px;
+    }
+}

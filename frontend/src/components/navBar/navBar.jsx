@@ -1,30 +1,41 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from './dogLogo2.png'
+import './navBar.scss'
 
-const NavBar = ({ currentUser, logout, openModal }) => {
-  const noUserNavBar = () => (
-    <div>
-      <div>
-        <p>About</p>
-        <p>Contact</p>
-        <button className="nav-login-button" onClick={() => openModal("login")}>
-          Login
-        </button>
-        <button
-          className="nav-signup-button"
-          onClick={() => openModal("signup")}
-        >
-          Sign Up
-        </button>
-      </div>
-    </div>
-  );
+// ({ currentUser, logout, openModal })
 
-  const currentUserNavBar = () => (
-    <div>
-      <h1> USER </h1>
-    </div>
-  );
+class NavBar extends React.Component{
+    noUserNavBar() {
+        return(
+            <div>
+                <div className='noUserNavBar-container'>
+                    <div className='noUserNavBar-left-side-of-navbar'>
+                        <img id='logo' src={logo}/>
+                        <p>About</p>
+                        <p>Contact</p>
+                    </div>
+                    <div className='noUserNavBar-right-side-of-navbar'>
+                        <button className="noUserNavBar-nav-login-button" onClick={() => this.props.openModal("login")}>
+                            Login
+                        </button>
+                        <button className="noUserNavBar-nav-signup-button" onClick={() => this.props.openModal("signup")}>
+                            Sign Up
+                        </button>
+                    </div>
+                </div>
+            </div>
+        )};
+
+   currentUserNavBar() {
+       return(
+            <div>
+               <div className='currentUserNavBar-container'>
+                    <h1> USER </h1>
+                   <button className="currentUserNavBar-nav-logout-button" onClick={()=> this.props.logout()}>logout</button>
+               </div>
+            </div>
+        )};
 
   // const shelterUserNavBar = () => (
   //   <div>
@@ -32,13 +43,17 @@ const NavBar = ({ currentUser, logout, openModal }) => {
   //   </div>
   // );
 
-  if (currentUser.user.id) {
-    return currentUserNavBar();
-  // } else if (shelterUser.shelter.id) {
-  //   return shelterUserNavBar();
-  } else {
-    return noUserNavBar();
-  }
-};
+        render(){
+
+            if (this.props.loggedIn) {
+              return this.currentUserNavBar();
+            // } else if (shelterUser.shelter.id) {
+            //   return shelterUserNavBar();
+            } else {
+              return this.noUserNavBar();
+            }
+          };
+
+        }
 
 export default NavBar;

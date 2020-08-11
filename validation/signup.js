@@ -24,12 +24,6 @@ module.exports = function validateSignupInput(data) {
 
   // if(Validator.isEmpty(data.shelter_status)) {
   //   errors.shelter_status = "Shelter status can't be empty";
-  // }
-
-  if (!Validator.isEmail(data.email)) {
-    errors.email = "email is invalid";
-  }
-
   if (!Validator.isLength(data.password, { min: 6, max: 20 })) {
     errors.password = "Password must be 6 to 20 characters long";
   }
