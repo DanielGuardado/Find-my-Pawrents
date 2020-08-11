@@ -14,8 +14,14 @@ class NavBar extends React.Component {
             <a href="/">
               <img id="logo" src={logo} />
             </a>
-            <div className="nav-about">About</div>
-            <div className="nav-contact">Contact</div>
+            <div className="nav-about">
+              About
+              <Link to="/about" />
+            </div>
+            <div className="nav-contact">
+              Contact
+              <Link to="/contact" />
+            </div>
           </div>
           <div className="noUserNavBar-right-side-of-navbar">
             <button
