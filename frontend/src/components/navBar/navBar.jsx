@@ -11,9 +11,11 @@ class NavBar extends React.Component {
       <div>
         <div className="noUserNavBar-container">
           <div className="noUserNavBar-left-side-of-navbar">
-            <img id="logo" src={logo} />
-            <p>About</p>
-            <p>Contact</p>
+            <a href="/">
+              <img id="logo" src={logo} />
+            </a>
+            <div className="nav-about">About</div>
+            <div className="nav-contact">Contact</div>
           </div>
           <div className="noUserNavBar-right-side-of-navbar">
             <button
