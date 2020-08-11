@@ -10,12 +10,21 @@
         #logo{
             height: 70px;
         }
-        p{
+        .nav-about{
             padding-top: 14px;
             margin: 0 30px;
             font-size: 21px;
             font-weight: 500;
+            font-family: Marker Felt, fantasy;
         }
+        .nav-contact{
+            padding-top: 14px;
+            margin: 0 30px;
+            font-size: 21px;
+            font-weight: 500;
+            font-family: Marker Felt, fantasy;
+        }
+
     }
 
 
@@ -36,6 +45,8 @@
             margin-top: 15px;
             font-weight: 500;
             font-size: 21px;
+            cursor:pointer;
+            font-family: Marker Felt, fantasy;
 
         }
 
@@ -51,6 +62,8 @@
             margin-top: 15px;
             font-weight: 500;
             font-size: 21px;
+            cursor:pointer;
+            font-family: Marker Felt, fantasy;
         }
     }
 }
