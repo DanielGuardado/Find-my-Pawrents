@@ -54,7 +54,7 @@ router.post('/:id/update',
     }
 
 
-Dog.findOneAndUpdate(req.params.id, {
+Dog.findByIdAndUpdate(req.params.id, {
           shelter_id: req.user.id,
           adoption_status: req.body.adoption_status,
           name: req.body.name,
@@ -63,6 +63,9 @@ Dog.findOneAndUpdate(req.params.id, {
           age: req.body.age,
           description: req.body.description,
           strengths: req.body.strengths}, 
+          {
+            new: true
+          },
  function (err, dog) {
         if (!err) {
           (res.json(dog))
@@ -70,6 +73,12 @@ Dog.findOneAndUpdate(req.params.id, {
           res.status(400).json(err)
         }
         });
+
+  // Dog
+  //   .findById(req.params.id)
+  //   .then(dog => res.json(dog))
+  //   .catch(err => res.status(400).json(err))
+  // })
 
 
 
@@ -86,8 +95,9 @@ Dog.findOneAndUpdate(req.params.id, {
     //     description: req.body.description,
     //     strengths: req.body.strengths,
     //   })
-      // .then(dog => res.json(dog))
-      // .catch(err => res.status(400).json(err))
+    //   oldDog.save()
+    //   .then(dog => res.json(dog))
+    //   .catch(err => res.status(400).json(err))
 
 
 // Place.findOneAndUpdate({req.params.id}, req.body, function (err, place) {
