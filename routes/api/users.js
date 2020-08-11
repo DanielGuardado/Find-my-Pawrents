@@ -39,8 +39,9 @@ router.post('/signup', (req, res) => {
           shelter_status: req.body.shelter_status,
           first_name: req.body.first_name,
           last_name: req.body.last_name,
-          address: req.body.address,
-          shelter_name: req.body.shelter_name
+          shelter_name: req.body.shelter_name,
+          address: req.body.address
+
         })
 
         bcrypt.genSalt(10, (err, salt) => {

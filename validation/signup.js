@@ -7,9 +7,8 @@ module.exports = function validateSignupInput(data) {
   data.password = validText(data.password) ? data.password : "";
   data.first_name = validText(data.first_name) ? data.first_name : "";
   data.last_name = validText(data.last_name) ? data.last_name : "";
-  data.shelter_status = validText(data.shelter_status)
-    ? data.shelter_status
-    : "";
+  data.shelter_status = validText(data.shelter_status) ? data.shelter_status : "";
+  data.shelter_name = validText(data.shelter_name) ? data.shelter_name : "";
 
   if (Validator.isEmpty(data.email)) {
     errors.email = "email cant be empty";
@@ -23,11 +22,7 @@ module.exports = function validateSignupInput(data) {
     errors.last_name = "Last name cant be empty";
   }
 
-<<<<<<< HEAD
-  // if(Validator.isEmpty(data.shelter_status)) {
-=======
   // if (Validator.isEmpty(data.shelter_status)) {
->>>>>>> 01fab3496bbbed5e11844dda785500efa9389fe0
   //   errors.shelter_status = "Shelter status can't be empty";
   // }
 

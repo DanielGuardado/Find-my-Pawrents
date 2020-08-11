@@ -16,6 +16,12 @@ const UserSchema = new Schema(
       // default: false,
       // required: true
     },
+    shelter_name: {
+      type: String,
+    },
+    address: {
+      type: String,
+    },
     first_name: {
       type: String,
       required: true,
