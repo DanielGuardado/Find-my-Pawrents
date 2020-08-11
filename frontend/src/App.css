@@ -58,16 +58,16 @@
     padding: 18px;
 }
 
-/* .signin-form-box {
+.form-box {
     display: flex;
     justify-content: center;
     flex-direction: column;
     background-color: white;
-    height: 475px;
-    width: 375px;
+    height: 525px;
+    width: 400px;
     border-radius: 3px;
+}
 
-} */
 
 .login-input-container {
     padding: 5px;
@@ -85,8 +85,9 @@
 
 h2.login-header {
     /* font-size: 15px; */
-    margin-left: 15px;
-    margin-bottom: 0px;
+    margin-left: 30px;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 
@@ -94,16 +95,16 @@ h2.login-header {
     border: 1px solid rgb(73, 167, 227);
     border-radius: 20px;
     text-align: center;
-    margin: 4px 2px;
     padding: 10px;
     background-color: white;
+    margin-top: 3px;
+    margin-right: 10px;
 }
 
 .modal-signup-btn:hover {
     background-color: rgb(73, 167, 227);
     color: white;
 }
-
 
 
 
@@ -122,30 +123,38 @@ h2.login-header {
 
 .input-titles {
   color: rgb(73, 167, 227);
+  margin-left: 30px;
+  margin-bottom: 5px;
 }
 
 .input-boxes {
-  background-color: rgb(243, 241, 241);
+    background-color: rgb(243, 241, 241);
     height: 47px;
     width: 322px;
     border-radius: 3px;
     border: 1px solid white;
-    margin-left: 25px;
+    margin-left: 30px;
     font-size: 15px;
 }
 
-.info-input-form:hover {
+.input-boxes:hover {
     border-color: rgb(73, 167, 227);
 }
 
-
 .login-submit {
     border: 1px solid rgb(73, 167, 227);
-    border-radius: 20px;
+    border-radius: 3px;
+    height: 47px;
+    width: 322px;
     text-align: center;
-    margin: 4px 2px;
     padding: 10px;
-    background-color: white;
+    background-color: rgb(73, 167, 227);
+    margin-left: 30px;
+    margin-top: 15px;
+    font-size: 17px;
+    font-weight: 100;
+    color: white;
+
 }
 
 .login-submit:hover {
@@ -165,6 +174,7 @@ h2.login-header {
     padding: 5px;
     width: 365px;
     height: 500px;
+    margin-bottom: 27px;
 }
 
 .signup-form-top-level {
@@ -173,10 +183,10 @@ h2.login-header {
     margin-top: 20px;
 }
 
-h1.signup-header {
-    /* font-size: 15px; */
-    margin-left: 15px;
-    margin-bottom: 0px;
+h2.signup-header {
+    margin-left: 30px;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 /* .asterisk {
@@ -187,9 +197,10 @@ h1.signup-header {
     border: 1px solid rgb(73, 167, 227);
     border-radius: 20px;
     text-align: center;
-    margin: 4px 2px;
+    margin-top: 3px;
     padding: 10px;
     background-color: white;
+    margin-right: 10px;
 }
 
 .modal-login-btn:hover {
@@ -198,14 +209,20 @@ h1.signup-header {
 
 }
 
-
 .signup-submit {
     border: 1px solid rgb(73, 167, 227);
-    border-radius: 20px;
+    border-radius: 3px;
+    height: 47px;
+    width: 322px;
     text-align: center;
-    margin: 4px 2px;
     padding: 10px;
-    background-color: white;
+    background-color: rgb(73, 167, 227);
+    margin-left: 30px;
+    margin-top: 20px;
+    font-size: 17px;
+    font-weight: 100;
+    color: white;
+
 }
 
 .signup-submit:hover {

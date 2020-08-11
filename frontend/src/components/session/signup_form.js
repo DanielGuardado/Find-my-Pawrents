@@ -35,6 +35,7 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit(e) {
+    // debugger;
     e.preventDefault();
 
     let user = {
@@ -97,7 +98,7 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="signup-form-container">
-        <form onSubmit={this.handleSubmit}>
+        <form className="form-box" onSubmit={this.handleSubmit}>
           <div className="signup-input-container">
             <div className="signup-form-top-level">
               <h2 className="signup-header">Sign Up</h2>
