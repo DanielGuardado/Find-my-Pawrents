@@ -27,9 +27,8 @@ export const logoutUser = () => ({
 //thunk
 
 export const signup = (user) => (dispatch) =>
-  SessionAPIUtil.signup(user).then(
-    () => dispatch(login(user)),
-    (err) => dispatch(receiveErrors(err.response.data))
+  SessionAPIUtil.signup(user).then(() => dispatch(login(user)),
+    // (err) => dispatch(receiveErrors(err.response.data))
   );
 
 export const login = (user) => (dispatch) =>
@@ -41,9 +40,9 @@ export const login = (user) => (dispatch) =>
       const decoded = jwt_decode(token);
       dispatch(receiveCurrentUser(decoded));
     })
-    .catch((err) => {
-      dispatch(receiveErrors(err.response.data));
-    });
+    // .catch((err) => {
+    //   dispatch(receiveErrors(err.response.data));
+    // });
 
 export const logout = () => (dispatch) => {
   localStorage.removeItem("jwtToken");

@@ -58,19 +58,20 @@
     padding: 18px;
 }
 
-.form-box {
+.login-form-box {
     display: flex;
     justify-content: center;
     flex-direction: column;
     background-color: white;
-    height: 525px;
+    height: 500px;
     width: 400px;
     border-radius: 3px;
 }
 
 
 .login-input-container {
-    padding: 5px;
+    padding: 7px;
+    margin-top: 30px;
     width: 365px;
     height: 500px;
 }
@@ -87,7 +88,7 @@ h2.login-header {
     /* font-size: 15px; */
     margin-left: 30px;
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 
@@ -121,6 +122,14 @@ h2.login-header {
     color: white;
 } */
 
+.login-email-input-box {
+  margin-bottom: 10px;
+}
+
+.login-password-input-box {
+  margin-top: 3px;
+}
+
 .input-titles {
   color: rgb(73, 167, 227);
   margin-left: 30px;
@@ -129,7 +138,7 @@ h2.login-header {
 
 .input-boxes {
     background-color: rgb(243, 241, 241);
-    height: 47px;
+    height: 45px;
     width: 322px;
     border-radius: 3px;
     border: 1px solid white;
@@ -150,7 +159,7 @@ h2.login-header {
     padding: 10px;
     background-color: rgb(73, 167, 227);
     margin-left: 30px;
-    margin-top: 15px;
+    margin-top: 8px;
     font-size: 17px;
     font-weight: 100;
     color: white;
@@ -170,11 +179,21 @@ h2.login-header {
     padding: 18px;
 }
 
+.signup-form-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    height: 650px;
+    width: 400px;
+    border-radius: 3px;
+}
+
 .signup-input-container {
     padding: 5px;
     width: 365px;
     height: 500px;
-    margin-bottom: 27px;
+    margin-bottom: 160px;
 }
 
 .signup-form-top-level {
@@ -185,8 +204,27 @@ h2.login-header {
 
 h2.signup-header {
     margin-left: 30px;
-    margin-top: 5px;
-    margin-bottom: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.signup-email-input-box {
+  margin-top: 10px;
+  margin-bottom: -10px;
+}
+
+.signup-fname-input-box {
+  margin-top: 3px;
+  margin-bottom: -10px;
+}
+
+.signup-lname-input-box {
+  margin-top: 3px;
+  margin-bottom: -10px;
+}
+
+.signup-password-input-box {
+  margin-top: 3px;
 }
 
 /* .asterisk {
@@ -197,7 +235,7 @@ h2.signup-header {
     border: 1px solid rgb(73, 167, 227);
     border-radius: 20px;
     text-align: center;
-    margin-top: 3px;
+    /* margin-top: 1px; */
     padding: 10px;
     background-color: white;
     margin-right: 10px;
@@ -209,6 +247,55 @@ h2.signup-header {
 
 }
 
+.shelter-verify-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 12px;
+  margin-bottom: 5px;
+  margin-left: 17px;
+}
+
+.trigger-form {
+  margin-top: 7px;
+}
+
+.shelter-name {
+  font-size: 15px;
+  color: rgb(73, 167, 227);
+  margin-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.address {
+  font-size: 15px;
+  color: rgb(73, 167, 227);
+  margin-left: 30px;
+  margin-bottom: 5px;
+}
+
+.shelter-name-input-box {
+  margin-bottom: 10px;
+}
+
+.address-input-box {
+  margin-bottom: 10px
+}
+
+.shelter-input-boxes {
+    background-color: rgb(243, 241, 241);
+    height: 35px;
+    width: 322px;
+    border-radius: 3px;
+    border: 1px solid white;
+    margin-left: 30px;
+    font-size: 15px;
+}
+
+.shelter-input-boxes:hover {
+    border-color: rgb(73, 167, 227);
+}
+
 .signup-submit {
     border: 1px solid rgb(73, 167, 227);
     border-radius: 3px;
@@ -218,7 +305,7 @@ h2.signup-header {
     padding: 10px;
     background-color: rgb(73, 167, 227);
     margin-left: 30px;
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 17px;
     font-weight: 100;
     color: white;
