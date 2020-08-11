@@ -45,10 +45,6 @@ class SignupForm extends React.Component {
       shelter_name: this.state.shelter_name,
       address: this.state.address,
     };
-<<<<<<< HEAD
-
-=======
->>>>>>> 1bc9bfc639b76a4b0dc9bb2979b6638526179247
     this.props
       .signup(user)
       // .then(this.props.history.push("/login"))
