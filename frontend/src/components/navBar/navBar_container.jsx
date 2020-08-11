@@ -5,7 +5,7 @@ import NavBar from "./navBar";
 import { openModal } from "./../../actions/modal_actions";
 
 const msp = (state) => {
-  // debugger
+  debugger;
   return {
     currentUser: state.userSession.user,
     shelterUser: state.shelterSession.user,

@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   isAuthenticated: false,
-  user: {},
+  shelter: {},
 };
 
 export default function (state = initialState, action) {
@@ -15,12 +15,12 @@ export default function (state = initialState, action) {
       return {
         ...state,
         isAuthenticated: !!action.currentShelter,
-        user: action.currentShelter,
+        shelter: action.currentShelter,
       };
     case RECEIVE_SHELTER_LOGOUT:
       return {
         isAuthenticated: false,
-        user: undefined,
+        shelter: undefined,
       };
     case RECEIVE_SHELTER_SIGN_IN:
       return {

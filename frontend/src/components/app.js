@@ -12,7 +12,7 @@ import Modal from "./modal/modal";
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <Modal />
       <Switch>
         <AuthRoute path="/login" component={LoginFormContainer} />

@@ -5,7 +5,7 @@ import Root from "./components/root";
 import jwt_decode from "jwt-decode";
 import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
-import axios from 'axios';
+import axios from "axios";
 import "./index.css";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore(preloadedState);
 
     const currentTime = Date.now() / 1000;
-
 
     if (decodedUser.exp < currentTime) {
       store.dispatch(logout());
@@ -41,5 +40,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //npm run start
 //../ npm run server
-
-
