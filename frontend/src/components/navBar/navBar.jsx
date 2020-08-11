@@ -7,6 +7,7 @@ import './navBar.scss'
 
 class NavBar extends React.Component{
     noUserNavBar() {
+
         return(
             <div>
                 <div className='noUserNavBar-container'>
@@ -28,10 +29,11 @@ class NavBar extends React.Component{
         )};
 
    currentUserNavBar() {
+       debugger
        return(
             <div>
                <div className='currentUserNavBar-container'>
-                    <h1> USER </h1>
+                    <h1> {this.props.currentUser} </h1>
                    <button className="currentUserNavBar-nav-logout-button" onClick={()=> this.props.logout()}>logout</button>
                </div>
             </div>
