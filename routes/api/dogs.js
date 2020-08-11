@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
     .catch(err => res.status(400).json(err))
 })
 
-router.get("/shelter/:shelter_id", (req, res) => {
+router.get("/user/:shelter_id", (req, res) => {
   Dog
     .find({
       shelter_id: req.params.shelter_id
@@ -76,15 +76,15 @@ router.delete("/:id", passport.authenticate("jwt", {
   (req, res) => {
     let id = parseInt(req.params.id) 
 
-      // Dog.findByIdAndRemove(id: id)
+      // Dog.de(id: id)
       // .then(() => 'Dog has been removed')
-      // .catch(err => res.status(400).json(err))
-
-
+      // .catch(err => res.status(400).json(err)
 
       Dog.findByIdAndRemove(req.params.id, req.body, function (err, data) {
         if (!err) {
-          (() => 'Dog has been removed')
+          (res.json('Dog has been removed'))
+        } else {
+          res.status(400).json(err)
         }
       });
   })
