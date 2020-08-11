@@ -23,11 +23,7 @@ module.exports = function validateSignupInput(data) {
     errors.last_name = "Last name cant be empty";
   }
 
-<<<<<<< HEAD
-  // if(Validator.isEmpty(data.shelter_status)) {
-=======
   // if (Validator.isEmpty(data.shelter_status)) {
->>>>>>> 01fab3496bbbed5e11844dda785500efa9389fe0
   //   errors.shelter_status = "Shelter status can't be empty";
   // }
 
