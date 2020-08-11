@@ -7,6 +7,7 @@ module.exports = function validateSignupInput(data) {
   data.password = validText(data.password) ? data.password : "";
   data.first_name = validText(data.first_name) ? data.first_name : "";
   data.last_name = validText(data.last_name) ? data.last_name : "";
+  data.shelter_status = validText(data.shelter_status) ? data.shelter_status : "";
 
   if (Validator.isEmpty(data.email)) {
     errors.email = "email cant be empty";
@@ -18,6 +19,10 @@ module.exports = function validateSignupInput(data) {
   
   if (Validator.isEmpty(data.last_name)) {
     errors.last_name = "Last name cant be empty";
+  }
+
+  if(Validator.isEmpty(data.shelter_status)) {
+    errors.shelter_status = "Shelter status can't be empty";
   }
 
   if (!Validator.isEmail(data.email)) {

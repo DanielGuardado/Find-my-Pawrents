@@ -35,6 +35,7 @@ export const signup = (shelter) => (dispatch) =>
 export const login = (shelter) => (dispatch) =>
   ShelterSessionAPIUtil.login(shelter)
     .then((res) => {
+      debugger
       const { token } = res.data;
       localStorage.setItem("jwtToken", token);
       ShelterSessionAPIUtil.setAuthToken(token);

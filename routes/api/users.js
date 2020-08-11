@@ -36,6 +36,7 @@ router.post('/signup', (req, res) => {
         const newUser = new User({
           email: req.body.email,
           password: req.body.password,
+          shelter_status: req.body.shelter_status,
           first_name: req.body.first_name,
           last_name: req.body.last_name
         })

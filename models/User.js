@@ -10,6 +10,10 @@ const UserSchema = new Schema({
       type: String,
       required: true
     },
+    shelter_status: {
+      type: Boolean,
+      required: true
+    },
     first_name: {
       type: String,
       required: true
