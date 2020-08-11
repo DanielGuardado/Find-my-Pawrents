@@ -1,12 +1,10 @@
 import { combineReducers } from "redux";
-import userSession from "./session_reducer";
+import session from "./session_reducer";
 import errors from "./errors_reducer";
-import shelterSession from "./shelter_session_reducer";
 
 const RootReducer = combineReducers({
   errors,
-  userSession,
-  shelterSession,
+  session,
 });
 
 export default RootReducer;
