@@ -38,10 +38,10 @@ class NavBar extends React.Component {
     if (this.props.currentUser.user.shelter_name) {
       return (
         <div>
-          <div className="currentUserNavBar-container">
+          <div className="shelterUserNavBar-container">
             <h1>{this.props.currentUser.user.shelter_name}</h1>
             <button
-              className="currentUserNavBar-nav-logout-button"
+              className="shelterUserNavBar-nav-logout-button"
               onClick={() => this.props.logout()}
             >
               logout
@@ -53,7 +53,13 @@ class NavBar extends React.Component {
       return (
         <div>
           <div className="currentUserNavBar-container">
-            <h1>Welcome back {this.props.currentUser.user.first_name}</h1>
+            <div className='currentUserNavBar-left-side'>
+                <h1>Welcome back {this.props.currentUser.user.first_name}</h1>
+                <input type="search"
+                    placeholder='Do Not Search'
+                    className= 'search-bar-input-field'
+                />
+            </div>
             <button
               className="currentUserNavBar-nav-logout-button"
               onClick={() => this.props.logout()}

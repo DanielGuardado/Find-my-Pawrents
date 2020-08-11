@@ -1,6 +1,11 @@
 .noUserNavBar-container{
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    z-index: 1;
+    background-color: #E9F8FF;
 
     .noUserNavBar-left-side-of-navbar{
         display: flex;
@@ -56,12 +61,71 @@
 }
 
 .currentUserNavBar-container{
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    z-index: 1;
+    background-color: white;
+
+
+    .currentUserNavBar-left-side{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1{
+            font-size: 20px;
+        }
+
+        .search-bar-input-field{
+            width: 500px;
+            height: 30px;
+            border: 1px solid #0022ff;
+            margin: 1px 30px;;
+            padding: 5px 20px;
+            border-radius: 8px;
+            transition: border-color 200ms;
+            box-sizing: border-box;
+            background: white; 
+        }
+
+
+    }
 
 
     .currentUserNavBar-nav-logout-button{
+        background-color: #0022ff;
+        border-radius: 20px;
+        border: 1px solid #0022ff;
+        text-align: center;
+        width: 100px;
+        height: 36px;
+        color: white;
+        margin-right: 15px;
+        margin-top: 15px;
+        font-weight: 500;
+        font-size: 21px;
+    }
+}
+
+
+
+.shelterUserNavBar-container{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+    background-color: white;
+
+
+
+    .shelterUserNavBar-nav-logout-button{
         background-color: #0022ff;
         border-radius: 20px;
         border: 1px solid #0022ff;
