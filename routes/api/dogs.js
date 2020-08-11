@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
     .catch(err => res.status(400).json(err))
 })
 
-router.get("/shelter/:shelter_id", (req, res) => {
+router.get("/user/:shelter_id", (req, res) => {
   Dog
     .find({
       shelter_id: req.params.shelter_id
@@ -52,22 +52,50 @@ router.post('/:id/update',
     if (!isValid) {
       return res.status(400).json(errors)
     }
-    const oldDog = Dog
-      .findById(req.params.id)
 
-    oldDog.update({
-        shelter_id: req.user.id,
-        adoption_status: req.body.adoption_status,
-        name: req.body.name,
-        gender: req.body.gender,
-        breed: req.body.breed,
-        age: req.body.age,
-        description: req.body.description,
-        strengths: req.body.strengths,
-      })
-      .then(dog => res.json(dog))
-      .catch(err => res.status(400).json(err))
-  })
+
+Dog.findOneAndUpdate(req.params.id, {
+          shelter_id: req.user.id,
+          adoption_status: req.body.adoption_status,
+          name: req.body.name,
+          gender: req.body.gender,
+          breed: req.body.breed,
+          age: req.body.age,
+          description: req.body.description,
+          strengths: req.body.strengths}, 
+ function (err, dog) {
+        if (!err) {
+          (res.json(dog))
+        } else {
+          res.status(400).json(err)
+        }
+        });
+
+
+
+    // const oldDog = Dog
+    //   .findById(req.params.id)
+
+    // oldDog.update({
+    //     shelter_id: req.user.id,
+    //     adoption_status: req.body.adoption_status,
+    //     name: req.body.name,
+    //     gender: req.body.gender,
+    //     breed: req.body.breed,
+    //     age: req.body.age,
+    //     description: req.body.description,
+    //     strengths: req.body.strengths,
+    //   })
+      // .then(dog => res.json(dog))
+      // .catch(err => res.status(400).json(err))
+
+
+// Place.findOneAndUpdate({req.params.id}, req.body, function (err, place) {
+//   res.send(place);
+});
+
+
+
 
 
 router.delete("/:id", passport.authenticate("jwt", {
@@ -76,15 +104,15 @@ router.delete("/:id", passport.authenticate("jwt", {
   (req, res) => {
     let id = parseInt(req.params.id) 
 
-      // Dog.findByIdAndRemove(id: id)
+      // Dog.de(id: id)
       // .then(() => 'Dog has been removed')
-      // .catch(err => res.status(400).json(err))
-
-
+      // .catch(err => res.status(400).json(err)
 
       Dog.findByIdAndRemove(req.params.id, req.body, function (err, data) {
         if (!err) {
-          (() => 'Dog has been removed')
+          (res.json('Dog has been removed'))
+        } else {
+          res.status(400).json(err)
         }
       });
   })

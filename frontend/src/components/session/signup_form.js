@@ -9,8 +9,11 @@ class SignupForm extends React.Component {
       first_name: "",
       last_name: "",
       password: "",
-      shelter_status: "USER",
+      shelter_status: "",
+      address: "",
+      shelter_name: "",
       errors: {},
+      trigger: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,13 +37,18 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     // debugger;
     e.preventDefault();
+
     let user = {
       email: this.state.email,
       first_name: this.state.first_name,
       last_name: this.state.last_name,
       password: this.state.password,
       shelter_status: this.state.shelter_status,
+      shelter_name: this.state.shelter_name,
+      address: this.state.address,
     };
+
+    debugger;
 
     this.props
       .signup(user, this.props.history)
@@ -56,6 +64,35 @@ class SignupForm extends React.Component {
         ))}
       </ul>
     );
+  }
+
+  triggerForm() {
+    if (this.state.trigger) {
+      return (
+        <>
+          <div className="">
+            <div className="">Shelter Name</div>
+            <input
+              className="input-boxes"
+              type="text"
+              value={this.state.shelter_name}
+              onChange={this.update("shelter_name")}
+              placeholder="Shelter Name"
+            />
+          </div>
+          <div className="">
+            <div className="input-titles">Address</div>
+            <input
+              className="input-boxes"
+              type="text"
+              value={this.state.address}
+              onChange={this.update("address")}
+              placeholder="Address"
+            />
+          </div>
+        </>
+      );
+    }
   }
 
   render() {
@@ -111,6 +148,28 @@ class SignupForm extends React.Component {
                 placeholder="Password"
               />
               <br />
+              <div className=""></div>
+              <div className="">Are you a shelter?</div>
+              Yes
+              <input
+                className=""
+                name="status"
+                type="radio"
+                value="SHELTER"
+                onChange={this.update("shelter_status")}
+                onClick={() => this.setState({ trigger: true })}
+              />
+              No
+              <input
+                className=""
+                name="status"
+                type="radio"
+                value="USER"
+                onChange={this.update("shelter_status")}
+                onClick={() => this.setState({ trigger: false })}
+              />
+              <br />
+              {this.triggerForm()}
               <input className="signup-submit" type="submit" value="Sign up!" />
               <div className="render-errors">{this.renderErrors()}</div>
             </div>
