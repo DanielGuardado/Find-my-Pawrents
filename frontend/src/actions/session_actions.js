@@ -5,6 +5,7 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
@@ -24,12 +25,16 @@ export const logoutUser = () => ({
   type: RECEIVE_USER_LOGOUT,
 });
 
+export const removeErrors = () => ({
+    type: CLEAR_ERRORS,
+    errors: [],
+});
+
 //thunk
 
 export const signup = (user) => (dispatch) =>
-  SessionAPIUtil.signup(user).then(
-    () => dispatch(login(user)),
-    (err) => dispatch(receiveErrors(err.response.data))
+  SessionAPIUtil.signup(user).then(() => dispatch(login(user)),
+    // (err) => dispatch(receiveErrors(err.response.data))
   );
 
 export const login = (user) => (dispatch) =>
@@ -41,12 +46,14 @@ export const login = (user) => (dispatch) =>
       const decoded = jwt_decode(token);
       dispatch(receiveCurrentUser(decoded));
     })
-    .catch((err) => {
-      dispatch(receiveErrors(err.response.data));
-    });
+    // .catch((err) => {
+    //   dispatch(receiveErrors(err.response.data));
+    // });
 
 export const logout = () => (dispatch) => {
   localStorage.removeItem("jwtToken");
   SessionAPIUtil.setAuthToken(false);
   dispatch(logoutUser());
 };
+
+export const clearErrors = () => dispatch => dispatch(removeErrors());

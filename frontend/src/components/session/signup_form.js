@@ -27,7 +27,6 @@ class SignupForm extends React.Component {
   // }
 
   update(field) {
-    // debugger
     return (e) =>
       this.setState({
         [field]: e.currentTarget.value,
@@ -35,7 +34,6 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // debugger;
     e.preventDefault();
 
     let user = {
@@ -47,20 +45,20 @@ class SignupForm extends React.Component {
       shelter_name: this.state.shelter_name,
       address: this.state.address,
     };
-
-    debugger;
-
     this.props
-      .signup(user, this.props.history)
-      .then(this.props.history.push("/login"))
-      .then(this.props.closeModal);
+      .signup(user)
+      // .then(this.props.history.push("/login"))
+      .then(this.props.closeModal)
+      .catch((err) => {
+        this.props.receiveErrors(err.response.data);
+      });
   }
 
   renderErrors() {
     return (
       <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>{this.state.errors[error]}</li>
+        {Object.keys(this.props.errors).map((error, i) => (
+          <li key={`error-${i}`}>{this.props.errors[error]}</li>
         ))}
       </ul>
     );
@@ -70,20 +68,20 @@ class SignupForm extends React.Component {
     if (this.state.trigger) {
       return (
         <>
-          <div className="">
-            <div className="">Shelter Name</div>
+          <div className="shelter-name-input-box">
+            <div className="shelter-name">Shelter Name</div>
             <input
-              className="input-boxes"
+              className="shelter-input-boxes"
               type="text"
               value={this.state.shelter_name}
               onChange={this.update("shelter_name")}
               placeholder="Shelter Name"
             />
           </div>
-          <div className="">
-            <div className="input-titles">Address</div>
+          <div className="address-input-box">
+            <div className="address">Address</div>
             <input
-              className="input-boxes"
+              className="shelter-input-boxes"
               type="text"
               value={this.state.address}
               onChange={this.update("address")}
@@ -98,14 +96,14 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="signup-form-container">
-        <form className="form-box" onSubmit={this.handleSubmit}>
+        <form className="signup-form-box" onSubmit={this.handleSubmit}>
           <div className="signup-input-container">
             <div className="signup-form-top-level">
               <h2 className="signup-header">Sign Up</h2>
               <div>{this.props.otherForm}</div>
             </div>
             <div className="signup-form">
-              <div className="email-input-box">
+              <div className="signup-email-input-box">
                 <div className="input-titles">Email</div>
                 <input
                   className="input-boxes"
@@ -116,7 +114,7 @@ class SignupForm extends React.Component {
                 />
               </div>
               <br />
-              <div className="first-name-input-box">
+              <div className="signup-fname-input-box">
                 <div className="input-titles">First Name</div>
                 <input
                   className="input-boxes"
@@ -127,7 +125,7 @@ class SignupForm extends React.Component {
                 />
               </div>
               <br />
-              <div className="last-name-input-box">
+              <div className="signup-lname-input-box">
                 <div className="input-titles">Last Name</div>
                 <input
                   className="input-boxes"
@@ -138,7 +136,7 @@ class SignupForm extends React.Component {
                 />
               </div>
               <br />
-              <div className="password-input-box"></div>
+              <div className="signup-password-input-box"></div>
               <div className="input-titles">Password</div>
               <input
                 className="input-boxes"
@@ -148,28 +146,34 @@ class SignupForm extends React.Component {
                 placeholder="Password"
               />
               <br />
-              <div className=""></div>
-              <div className="">Are you a shelter?</div>
-              Yes
-              <input
-                className=""
-                name="status"
-                type="radio"
-                value="SHELTER"
-                onChange={this.update("shelter_status")}
-                onClick={() => this.setState({ trigger: true })}
-              />
-              No
-              <input
-                className=""
-                name="status"
-                type="radio"
-                value="USER"
-                onChange={this.update("shelter_status")}
-                onClick={() => this.setState({ trigger: false })}
-              />
-              <br />
-              {this.triggerForm()}
+              <div className="shelter-verify-container">
+                <div className="shelter-verify-buttons">
+                  <div className="are-you-a-shelter">Are you a shelter?</div>
+                  <div className="radio-buttons">
+                    Yes
+                    <input
+                      className=""
+                      name="status"
+                      type="radio"
+                      value="SHELTER"
+                      onChange={this.update("shelter_status")}
+                      onClick={() => this.setState({ trigger: true })}
+                    />
+                  </div>
+                  <div className="radio-buttons">
+                    No
+                    <input
+                      className=""
+                      name="status"
+                      type="radio"
+                      value="USER"
+                      onChange={this.update("shelter_status")}
+                      onClick={() => this.setState({ trigger: false })}
+                    />
+                  </div>
+                </div>
+                <div className="trigger-form">{this.triggerForm()}</div>
+              </div>
               <input className="signup-submit" type="submit" value="Sign up!" />
               <div className="render-errors">{this.renderErrors()}</div>
             </div>

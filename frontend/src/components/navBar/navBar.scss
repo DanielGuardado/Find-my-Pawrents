@@ -10,12 +10,23 @@
         #logo{
             height: 70px;
         }
-        p{
+        .nav-about{
             padding-top: 14px;
             margin: 0 30px;
             font-size: 21px;
             font-weight: 500;
+            font-family: Marker Felt, fantasy;
+            cursor:pointer;
         }
+        .nav-contact{
+            padding-top: 14px;
+            margin: 0 30px;
+            font-size: 21px;
+            font-weight: 500;
+            font-family: Marker Felt, fantasy;
+            cursor:pointer;
+        }
+
     }
 
 
@@ -25,9 +36,9 @@
         justify-content: center;
 
         .noUserNavBar-nav-login-button{
-            background-color: #0022ff;
+            background-color: rgb(73, 167, 227);
             border-radius: 20px;
-            border: 1px solid #0022ff;
+            border: 1px solid rgb(73, 167, 227);
             text-align: center;
             width: 78px;
             height: 36px;
@@ -36,13 +47,15 @@
             margin-top: 15px;
             font-weight: 500;
             font-size: 21px;
+            cursor:pointer;
+            font-family: Marker Felt, fantasy;
 
         }
 
         .noUserNavBar-nav-signup-button{
-            background-color: #0022ff;
+            background-color: rgb(73, 167, 227);
             border-radius: 20px;
-            border: 1px solid #0022ff;
+            border: 1px solid rgb(73, 167, 227);
             text-align: center;
             width: 100px;
             height: 36px;
@@ -51,6 +64,8 @@
             margin-top: 15px;
             font-weight: 500;
             font-size: 21px;
+            cursor:pointer;
+            font-family: Marker Felt, fantasy;
         }
     }
 }
@@ -62,9 +77,9 @@
 
 
     .currentUserNavBar-nav-logout-button{
-        background-color: #0022ff;
+        background-color: rgb(73, 167, 227);
         border-radius: 20px;
-        border: 1px solid #0022ff;
+        border: 1px solid rgb(73, 167, 227);
         text-align: center;
         width: 100px;
         height: 36px;
