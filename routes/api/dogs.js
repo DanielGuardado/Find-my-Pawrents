@@ -76,9 +76,17 @@ router.delete("/:id", passport.authenticate("jwt", {
   (req, res) => {
     let id = parseInt(req.params.id) 
 
-      Dog.findByIdAndRemove(id)
-      .then(() => 'Dog has been removed')
-      .catch(err => res.status(400).json(err))
+      // Dog.findByIdAndRemove(id: id)
+      // .then(() => 'Dog has been removed')
+      // .catch(err => res.status(400).json(err))
+
+
+
+      Dog.findByIdAndRemove(req.params.id, req.body, function (err, data) {
+        if (!err) {
+          (() => 'Dog has been removed')
+        }
+      });
   })
 
 
