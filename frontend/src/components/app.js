@@ -7,6 +7,7 @@ import NavBarContainer from "./navBar/navBar_container";
 import Splash from "./splash/splash_container";
 import { Switch, Route } from "react-router-dom";
 import Modal from "./modal/modal";
+import DogIndex from "./dogs/dog_index_container";
 
 const App = () => {
   return (
@@ -15,6 +16,9 @@ const App = () => {
       <Switch>
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
+        <Route path="/dogs">
+          <DogIndex />
+        </Route>
         <Route path="/">
           <NavBarContainer />
           <Splash />

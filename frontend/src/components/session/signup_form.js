@@ -27,7 +27,6 @@ class SignupForm extends React.Component {
   // }
 
   update(field) {
-    // debugger
     return (e) =>
       this.setState({
         [field]: e.currentTarget.value,
@@ -35,7 +34,6 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // debugger;
     e.preventDefault();
 
     let user = {
@@ -47,8 +45,6 @@ class SignupForm extends React.Component {
       shelter_name: this.state.shelter_name,
       address: this.state.address,
     };
-
-    debugger;
 
     this.props
       .signup(user, this.props.history)
