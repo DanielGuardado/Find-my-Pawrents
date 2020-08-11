@@ -7,6 +7,7 @@ const passport = require('passport');
 
 const users = require("./routes/api/users")
 const shelters = require("./routes/api/shelters")
+const dogs = require("./routes/api/dogs")
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -22,7 +23,8 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.use("/api/users", users);
-app.use("/api/shelters", shelters)
+app.use("/api/shelters", shelters);
+app.use("/api/dogs", dogs);
 
 
 

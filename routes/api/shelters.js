@@ -81,7 +81,7 @@ router.post("/login", (req, res) => {
     email
   }).then((shelter) => {
     if (!shelter) {
-      errors.handle = "This sheshelter does not exist";
+      errors.handle = "This shelter does not exist";
       return res.status(400).json(errors);
     }
 
