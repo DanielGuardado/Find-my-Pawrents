@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
         type="button"
         onClick={() => dispatch(openModal("login"))}
       >
-        Sign in
+        Log In
       </button>
     ),
     closeModal: () => dispatch(closeModal()),

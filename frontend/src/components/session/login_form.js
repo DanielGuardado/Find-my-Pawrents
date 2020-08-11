@@ -39,7 +39,10 @@ class LoginForm extends React.Component {
       password: this.state.password,
     };
 
-    this.props.login(user).then(this.props.closeModal);
+    this.props
+      .login(user)
+      .then(this.props.history.push("/login"))
+      .then(this.props.closeModal)
   }
 
   renderErrors() {
@@ -55,7 +58,7 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit}>
+        <form className="form-box" onSubmit={this.handleSubmit}>
           <div className="login-input-container">
             <div className="login-form-top-level">
               <h2 className="login-header">Log In</h2>
@@ -84,8 +87,8 @@ class LoginForm extends React.Component {
                 />
               </div>
               <br />
-              <input className="login-submit" type="submit" value="Log in!" />
               <div className="render-errors">{this.renderErrors()}</div>
+              <input className="login-submit" type="submit" value="Log in!" />
             </div>
           </div>
         </form>
