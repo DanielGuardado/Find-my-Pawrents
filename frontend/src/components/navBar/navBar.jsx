@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavBar = ({ currentUser, shelterUser, logout, openModal }) => {
+const NavBar = ({ currentUser, logout, openModal }) => {
   const noUserNavBar = () => (
     <div>
       <div>
@@ -26,22 +26,19 @@ const NavBar = ({ currentUser, shelterUser, logout, openModal }) => {
     </div>
   );
 
-  const shelterUserNavBar = () => (
-    <div>
-      <h1>shelterUser</h1>
-    </div>
-  );
+  // const shelterUserNavBar = () => (
+  //   <div>
+  //     <h1>shelterUser</h1>
+  //   </div>
+  // );
 
-  if (currentUser) {
-    debugger;
-    return currentUserNavBar();
-  } else if (shelterUser) {
-    debugger;
-    return shelterUserNavBar();
-  } else {
-    debugger;
-    return noUserNavBar();
-  }
+  // if (currentUser.user.id) {
+  //   return currentUserNavBar();
+  // } else if (shelterUser.shelter.id) {
+  //   return shelterUserNavBar();
+  // } else {
+  //   return noUserNavBar();
+  // }
 };
 
 export default NavBar;
