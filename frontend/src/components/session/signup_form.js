@@ -47,19 +47,23 @@ class SignupForm extends React.Component {
       shelter_name: this.state.shelter_name,
       address: this.state.address,
     };
-
     this.props
-      .signup(user, this.props.history)
+      .signup(user)
       // .then(this.props.history.push("/login"))
-      // .then(this.props.closeModal);
+      .then(this.props.closeModal)
+        .catch((err) => {
+          debugger
+          this.props.receiveErrors(err.response.data)
+        });
+        debugger
+    
   }
 
   renderErrors() {
-    debugger
     return (
       <ul>
         {Object.keys(this.props.errors).map((error, i) => (
-          <li key={`error-${i}`}>{this.state.errors[error]}</li>
+          <li key={`error-${i}`}>{this.props.errors[error]}</li>
         ))}
       </ul>
     );
