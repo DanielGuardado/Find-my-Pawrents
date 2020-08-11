@@ -35,6 +35,9 @@ const DogSchema = new Schema({
     default: 'Available',
     required: true,
   },
+  img: {
+    data: Buffer, contentType: String
+  },
   date: {
     type: Date,
     default: Date.now
