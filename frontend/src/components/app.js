@@ -3,7 +3,7 @@ import "../App.css";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
-// import NavBarContainer from "./navBar/navBar_container";
+import NavBarContainer from "./navBar/navBar_container";
 import Splash from "./splash/splash_container";
 import { Switch, Route } from "react-router-dom";
 import Modal from "./modal/modal";
@@ -16,7 +16,7 @@ const App = () => {
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <Route path="/">
-          {/* <NavBarContainer /> */}
+          <NavBarContainer />
           <Splash />
         </Route>
       </Switch>

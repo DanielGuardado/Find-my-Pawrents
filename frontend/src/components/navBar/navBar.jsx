@@ -32,13 +32,13 @@ const NavBar = ({ currentUser, logout, openModal }) => {
   //   </div>
   // );
 
-  // if (currentUser.user.id) {
-  //   return currentUserNavBar();
-  // } else if (shelterUser.shelter.id) {
-  //   return shelterUserNavBar();
-  // } else {
-  //   return noUserNavBar();
-  // }
+  if (currentUser.user.id) {
+    return currentUserNavBar();
+//   } else if (shelterUser.shelter.id) {
+//     return shelterUserNavBar();
+} else {
+    return noUserNavBar();
+  }
 };
 
 export default NavBar;
