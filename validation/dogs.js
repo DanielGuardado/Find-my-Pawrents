@@ -24,7 +24,6 @@ module.exports = function validateDogInput(data) {
   // }
 
 
-
   if (Validator.isEmpty(data.gender)) {
     errors.text = 'Gender is a required field'
   }

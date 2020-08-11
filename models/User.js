@@ -12,8 +12,9 @@ const UserSchema = new Schema(
       required: true,
     },
     shelter_status: {
-      type: String,
-      required: true,
+      type: String
+      // default: false,
+      // required: true
     },
     first_name: {
       type: String,
@@ -29,5 +30,5 @@ const UserSchema = new Schema(
   }
 );
 
-const User = mongoose.model("users", UserSchema);
+const User = mongoose.model('users', UserSchema);
 module.exports = User;
