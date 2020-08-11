@@ -48,18 +48,17 @@ class SignupForm extends React.Component {
       address: this.state.address,
     };
 
-    debugger;
-
     this.props
       .signup(user, this.props.history)
-      .then(this.props.history.push("/login"))
-      .then(this.props.closeModal);
+      // .then(this.props.history.push("/login"))
+      // .then(this.props.closeModal);
   }
 
   renderErrors() {
+    debugger
     return (
       <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
+        {Object.keys(this.props.errors).map((error, i) => (
           <li key={`error-${i}`}>{this.state.errors[error]}</li>
         ))}
       </ul>
