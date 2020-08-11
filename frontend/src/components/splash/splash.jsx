@@ -21,7 +21,7 @@ class SplashPage extends React.Component {
       <div>
         <div>
           <div>
-            <h1>Make a difference, help save a life</h1>
+            <div className="splash-header">Make a difference, help save a life</div>
           </div>
         </div>
         <Slider {...settings}>

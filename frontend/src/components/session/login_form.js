@@ -58,14 +58,14 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        <form className="form-box" onSubmit={this.handleSubmit}>
+        <form className="login-form-box" onSubmit={this.handleSubmit}>
           <div className="login-input-container">
             <div className="login-form-top-level">
               <h2 className="login-header">Log In</h2>
               <div>{this.props.otherForm}</div>
             </div>
             <div className="login-form">
-              <div className="email-input-box">
+              <div className="login-email-input-box">
                 <div className="input-titles">Email</div>
                 <input
                   className="input-boxes"
@@ -76,7 +76,7 @@ class LoginForm extends React.Component {
                 />
               </div>
               <br />
-              <div className="email-input-box">
+              <div className="login-password-input-box">
                 <div className="input-titles">Password</div>
                 <input
                   className="input-boxes"

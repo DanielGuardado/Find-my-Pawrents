@@ -7,25 +7,33 @@ import './navBar.scss'
 
 class NavBar extends React.Component{
     noUserNavBar() {
-        return(
-            <div>
-                <div className='noUserNavBar-container'>
-                    <div className='noUserNavBar-left-side-of-navbar'>
-                        <img id='logo' src={logo}/>
-                        <p>About</p>
-                        <p>Contact</p>
-                    </div>
-                    <div className='noUserNavBar-right-side-of-navbar'>
-                        <button className="noUserNavBar-nav-login-button" onClick={() => this.props.openModal("login")}>
-                            Login
-                        </button>
-                        <button className="noUserNavBar-nav-signup-button" onClick={() => this.props.openModal("signup")}>
-                            Sign Up
-                        </button>
-                    </div>
-                </div>
+        return (
+          <div>
+            <div className="noUserNavBar-container">
+              <div className="noUserNavBar-left-side-of-navbar">
+                <a href="/" className="logo">
+                  <img id="logo" src={logo} />
+                </a>
+                <p>About</p>
+                <p>Contact</p>
+              </div>
+              <div className="noUserNavBar-right-side-of-navbar">
+                <button
+                  className="noUserNavBar-nav-login-button"
+                  onClick={() => this.props.openModal("login")}
+                >
+                  Login
+                </button>
+                <button
+                  className="noUserNavBar-nav-signup-button"
+                  onClick={() => this.props.openModal("signup")}
+                >
+                  Sign Up
+                </button>
+              </div>
             </div>
-        )};
+          </div>
+        );};
 
    currentUserNavBar() {
        return(
