@@ -52,7 +52,12 @@ router.post('/signup', (req, res) => {
               .then((user) => {
                 const payload = {
                   id: user.id,
-                  email: user.email
+                  email: user.email,
+                  shelter_status: user.shelter_status,
+                  first_name: user.first_name,
+                  last_name: user.last_name,
+                  shelter_name: user.shelter_name,
+                  address: user.address
                 }
                 jwt.sign(
                   payload,
@@ -96,8 +101,13 @@ router.post("/login", (req, res) => {
     bcrypt.compare(password, user.password).then((isMatch) => {
       if (isMatch) {
         const payload = {
-          id: user.id,
-          email: user.email
+              id: user.id,
+              email: user.email,
+              shelter_status: user.shelter_status,
+              first_name: user.first_name,
+              last_name: user.last_name,
+              shelter_name: user.shelter_name,
+              address: user.address
         };
         jwt.sign(
           payload,
