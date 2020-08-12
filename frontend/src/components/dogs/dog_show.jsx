@@ -58,34 +58,45 @@ class DogShow extends React.Component {
       return (
         <div className="appt-container">
           <form className="appt-form">
-            <div>
-              <label className="choose-time" htmlFor="time">
-                Choose a time for your appointment:{" "}
-              </label>
-              <input type="time" name="time" min="9:00" max="18:00" required />
-              <small>Shelter hours</small>
-            </div>
-            <div>
-              <label htmlFor="cal">Pick a date </label>
-              <input type="date" name="cal" required />
-            </div>
-            <div>
-              <label htmlFor="phone">Give us that PHONE </label>
-              <input
-                type="tel"
-                name="phone"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                required
-              />
-              <small> Format: 123-456-7890</small>
-            </div>
-            <div>
-              <label htmlFor="comments">Questions or comments</label>
-              <div className="comments">
-                <textarea name="comments" cols="30" rows="10"></textarea>
+            <div className="appt-form-content">
+              <h1 className="appt-header">Appointment</h1>
+              <div className="appt-fill-in">
+                <div className="time">
+                  <label className="choose-time" htmlFor="time">
+                    Choose a time for your appointment:{" "}
+                  </label>
+                  <input
+                    type="time"
+                    name="time"
+                    min="9:00"
+                    max="18:00"
+                    required
+                  />
+                </div>
+                <small>Shelter hours: Mon - Sun: 9AM - 6PM</small>
+                <div>
+                  <label htmlFor="cal">Pick a date: </label>
+                  <input type="date" name="cal" required />
+                </div>
+                <div>
+                  <label htmlFor="phone">Give us that PHONE </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    required
+                  />
+                  <small> Format: 123-456-7890</small>
+                </div>
+                <div>
+                  <label htmlFor="comments">Questions or comments:</label>
+                  <div className="comments">
+                    <textarea name="comments" cols="30" rows="10"></textarea>
+                  </div>
+                </div>
+                <button type="submit">Schedule Appt</button>
               </div>
             </div>
-            <button type="submit">Schedule Appt</button>
           </form>
         </div>
       );

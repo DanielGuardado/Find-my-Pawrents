@@ -1,6 +1,6 @@
 .dog-show-container {
     background-color: #f4f4f4;
-    padding: 100px 0px;
+    padding-top: 100px;
     font-family: Marker Felt, fantasy;
 }
 .dog-show-sub-container {
@@ -59,7 +59,7 @@
 }
 
 .description {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Gill Sans, sans-serif;
 }
 
 .appt-btn {
@@ -79,5 +79,28 @@
 }
 
 .appt-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
+    border-radius: 30px;
+    border: 6px solid rgb(73, 167, 227);
+    margin-left:70px;
+    margin-right:70px;
+    padding: 20px;
+    overflow: scroll;
+    background-color: rgb(232, 248, 253);
+    height: 400px;
+}
+
+.appt-form-content {
+    margin-top: 10px;
+}
+
+h1.appt-header {
+    justify-content: center;
+}
+
+.appt-fill-in {
+    font-size: 20px;
 }
