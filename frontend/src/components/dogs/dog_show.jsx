@@ -4,10 +4,42 @@ class DogShow extends React.Component {
     super(props);
     this.state = {
       formStatus: false,
+      appt_time: "",
+      appt_date: "",
+      comments: "",
+      phone_number: "",
+      shelter_id: this.props.dog.shelter_id,
+      dog_id: this.props.dog.id,
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
     this.props.fetchDog(this.props.match.params.dogId);
+  }
+
+  update(field) {
+    return (e) =>
+      this.setState({
+        [field]: e.currentTarget.value,
+      });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    let appointment = {
+      appt_time: this.state.appt_time,
+      appt_date: this.state.appt_date,
+      comments: this.state.comments,
+      phone_number: this.state.phone_number,
+      shelter_id: this.props.dog.shelter_id,
+      dog_id: this.props.dog._id,
+    };
+    this.props.createAppointment(appointment)
+      .catch((err) => {
+        this.props.receiveErrors(err.response.data);
+      });
   }
 
   dogRender() {
@@ -35,19 +67,33 @@ class DogShow extends React.Component {
     if (this.state.formStatus) {
       return (
         <>
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <div>
               <label htmlFor="time">Choose a time for your appointment:</label>
-              <input type="time" name="time" min="9:00" max="18:00" required />
+              <input
+                onChange={this.update("appt_time")}
+                type="time"
+                name="time"
+                min="9:00"
+                step="600"
+                max="18:00"
+                required
+              />
               <small>Shelter hours</small>
             </div>
             <div>
               <label htmlFor="cal">Pick a date</label>
-              <input type="date" name="cal" required />
+              <input
+                onChange={this.update("appt_date")}
+                type="date"
+                name="cal"
+                required
+              />
             </div>
             <div>
               <label htmlFor="phone">Give us that PHONE</label>
               <input
+                onChange={this.update("phone_number")}
                 type="tel"
                 name="phone"
                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
@@ -57,7 +103,12 @@ class DogShow extends React.Component {
             </div>
             <div>
               <label htmlFor="comments">Questions or comments</label>
-              <textarea name="comments" cols="30" rows="10"></textarea>
+              <textarea
+                onChange={this.update("comments")}
+                name="comments"
+                cols="30"
+                rows="10"
+              ></textarea>
             </div>
             <button type="submit">Schedule Appt</button>
           </form>
