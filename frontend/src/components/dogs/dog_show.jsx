@@ -1,5 +1,7 @@
 import React from "react";
 import "./dog_show.scss";
+import NavBar from "./../navBar/navBar_container";
+
 
 class DogShow extends React.Component {
   constructor(props) {
@@ -10,6 +12,7 @@ class DogShow extends React.Component {
       appt_date: "",
       comments: "",
       phone_number: "",
+      appt_status: "Pending Approval",
       shelter_id: this.props.dog.shelter_id,
       dog_id: this.props.dog.id,
     };
@@ -35,6 +38,7 @@ class DogShow extends React.Component {
       appt_date: this.state.appt_date,
       comments: this.state.comments,
       phone_number: this.state.phone_number,
+      appt_status: "Pending Approval",
       shelter_id: this.props.dog.shelter_id,
       dog_id: this.props.dog._id,
     };
@@ -88,54 +92,67 @@ class DogShow extends React.Component {
   appForm() {
     if (this.state.formStatus) {
       return (
-   
-        <div>
-          <form className="appt-form" onSubmit={this.handleSubmit}>
-            <div>
-              <label htmlFor="time">Choose a time for your appointment:</label>
-              <input
-                onChange={this.update("appt_time")}
-                type="time"
-                name="time"
-                min="9:00"
-                max="18:00"
-                required
-              />
-              <small>Shelter hours</small>
-            </div>
-            <div>
-              <label htmlFor="cal">Pick a date</label>
-              <input
-                onChange={this.update("appt_date")}
-                type="date"
-                name="cal"
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="phone">Give us that PHONE </label>
-              <input
-                onChange={this.update("phone_number")}
-                type="tel"
-                name="phone"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                required
-              />
-              <small> Format: 123-456-7890</small>
-            </div>
-            <div>
-              <label htmlFor="comments">Questions or comments</label>
-              <div className="comments">
-                <textarea name="comments" cols="30" rows="10"></textarea>
+        <div className="appt-form-container">
+          <div className="appt-form-box">
+            <form className="appt-form" onSubmit={this.handleSubmit}>
+              <h1 className="appt-header">Appointment</h1>
+              <div className="appt-fill-in">
+                <div className="choose-time">
+                  <label htmlFor="time">Choose a time: </label>
+                  <input
+                    onChange={this.update("appt_time")}
+                    type="time"
+                    name="time"
+                    min="9:00"
+                    max="18:00"
+                    required
+                  />
+                  <div className="shelter-hrs">
+                    <small>*Shelter hours: Mon - Sun: 9AM - 6PM*</small>
+                  </div>
+                </div>
+                <div className="choose-date">
+                  <label htmlFor="cal">Choose a date: </label>
+                  <input
+                    onChange={this.update("appt_date")}
+                    type="date"
+                    name="cal"
+                    required
+                  />
+                </div>
+                <div className="phone-number">
+                  <label htmlFor="phone">Phone number: </label>
+                  <input
+                    onChange={this.update("phone_number")}
+                    type="tel"
+                    name="phone"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    required
+                  />
+                  <small className="phone-format"> (format: 123-456-7890)</small>
+                </div>
+                <div className="questions-comments">
+                  <label htmlFor="comments">Questions or comments:</label>
+                  {/* <div className="comments">
+                  <textarea name="comments" cols="30" rows="10"></textarea>
+                </div> */}
+                  <div className="comments">
+                    <textarea
+                      onChange={this.update("comments")}
+                      name="comments"
+                      cols="30"
+                      rows="10"
+                    ></textarea>
+                  </div>
+                </div>
+                <input
+                  className="appt-submit"
+                  type="submit"
+                  value="Make an Appointment"
+                ></input>
               </div>
-              <textarea
-                onChange={this.update("comments")}
-                name="comments"
-                cols="30"
-                rows="10"
-              ></textarea>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       );
     }
@@ -143,22 +160,40 @@ class DogShow extends React.Component {
   apptBtn() {
     return (
       <>
-        <button className="appt-btn"
+        <button
+          className="appt-btn"
           onClick={() => this.setState({ formStatus: !this.state.formStatus })}
         >
-          Schedule now!
+          ⇊ Schedule now ⇊
         </button>
       </>
     );
   }
 
+  // render() {
+  //   if(this.props.loggedIn) {
+  //   return (
+  //     <div className="">
+  //       {this.dogRender()}
+  //       {this.appForm()}
+  //     </div>
+  //   )} else {
+  //     return (
+  //       <div className="">
+  //         {this.dogRender()}
+  //       </div>
+  //     );
+  //   };
+  // }
+
   render() {
     return (
       <div className="">
+      <NavBar />
         {this.dogRender()}
         {this.appForm()}
       </div>
-    );
+    )
   }
 }
 

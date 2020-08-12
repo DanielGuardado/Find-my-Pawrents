@@ -23,3 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 /components/firebase/index.js
+/components/firebase/firebase2.js

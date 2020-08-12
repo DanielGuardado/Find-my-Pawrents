@@ -1,7 +1,9 @@
 .dog-show-container {
     background-color: #f4f4f4;
-    padding-top: 100px;
+    padding-top: 130px;
+    padding-bottom: 65px;
     font-family: Marker Felt, fantasy;
+    font-size: 20px;
 }
 .dog-show-sub-container {
     display: flex;
@@ -42,7 +44,7 @@
 .dog-name {
     font-size: 30px;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .dog-show-infos {
@@ -70,12 +72,13 @@
     background-color: rgb(73, 167, 227);
     color: white;
     border-radius: 30px;
+    cursor:pointer;
 }
 
-.appt-container {
+.appt-form-box {
     background-color: #f4f4f4;
-    padding: 100px 0px;
     font-family: Marker Felt, fantasy;
+    padding-bottom: 50px;
 }
 
 .appt-form {
@@ -85,12 +88,10 @@
     position: relative;
     border-radius: 30px;
     border: 6px solid rgb(73, 167, 227);
-    margin-left:70px;
-    margin-right:70px;
+    margin: 0 200px;
     padding: 20px;
     overflow: scroll;
     background-color: rgb(232, 248, 253);
-    height: 400px;
 }
 
 .appt-form-content {
@@ -102,5 +103,32 @@ h1.appt-header {
 }
 
 .appt-fill-in {
+    margin-top: 10px;
     font-size: 20px;
+    text-align: center;
 }
+
+.shelter-hrs {
+    color: red;
+    font-size: 15px;
+}
+
+.appt-submit {
+    justify-content: center;
+    margin-top: 15px;
+    border: 2px solid rgb(73, 167, 227);
+    font-size: 20px;
+    background-color: rgb(73, 167, 227);
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.choose-time, .choose-date, .phone-number, .questions-comments {
+    margin-bottom: 10px;
+}
+
+.phone-format {
+    font-size: 15px;
+}
+

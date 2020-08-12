@@ -43,9 +43,8 @@ class LoginForm extends React.Component {
       .login(user)
       .then(this.props.closeModal)
       .catch((err) => {
-        this.props.receiveErrors(err.response.data)
+        this.props.receiveErrors(err.response.data);
       });
-     
   }
 
   renderErrors() {
