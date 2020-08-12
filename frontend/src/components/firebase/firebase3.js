@@ -1,10 +1,10 @@
 module.exports = {
   apiKey: process.env.apiKey,
-  authDomain: process.env.authDomain,
-  databaseURL: process.env.databaseURL,
-  projectId: process.env.projectId,
-  storageBucket: process.env.storageBucket,
+  authDomain: "mern-dogs.firebaseapp.com",
+  databaseURL: "https://mern-dogs.firebaseio.com",
+  projectId: "mern-dogs",
+  storageBucket: "mern-dogs.appspot.com",
   messagingSenderId: process.env.messagingSenderId,
   appId: process.env.appId,
-  measurementId: process.env.measurementId,
+  measurementId: "G-KV5VS1THYB",
 };
