@@ -39,7 +39,7 @@ const DogSchema = new Schema({
     default: "Available",
     required: true,
   },
-  date: {
+  timestamps: {
     type: Date,
     default: Date.now,
   },

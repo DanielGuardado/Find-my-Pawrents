@@ -1,8 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
-// date time comments phone
-
 class AdoptionForm extends React.Component {
   constructor(props) {
     super(props);

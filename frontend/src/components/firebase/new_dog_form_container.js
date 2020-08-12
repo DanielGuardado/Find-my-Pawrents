@@ -4,7 +4,8 @@ import NewDogForm from "./new_dog_form";
 
 const mapStateToProps = (state) => {
   return {
-    // errors: state.errors.session,
+    currentUser: state.session.user,
+    errors: state.errors.session,
   };
 };
 
