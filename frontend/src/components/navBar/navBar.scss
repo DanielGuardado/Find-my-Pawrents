@@ -80,21 +80,19 @@
     top: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
     z-index: 1;
-    background-color: white;
+    background-color: #E9F8FF;
+    font-family: Marker Felt, fantasy;
 
 
     .currentUserNavBar-left-side{
-        display: flex;
-        justify-content: space-between;
+         display: flex;
         align-items: center;
+        justify-content: center;
+        margin-left: 50px;
 
-        h1{
-            font-size: 20px;
-            // color: red;
-        }
+     
 
         .search-bar-input-field{
             width: 500px;
@@ -134,24 +132,65 @@
     top: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
     z-index: 1;
-    background-color: white;
+    background-color: #E9F8FF;
+    font-family: Marker Felt, fantasy;
 
 
 
-    .shelterUserNavBar-nav-logout-button{
-        background-color: #0022ff;
-        border-radius: 20px;
-        border: 1px solid #0022ff;
-        text-align: center;
-        width: 100px;
-        height: 36px;
-        color: white;
-        margin-right: 15px;
-        margin-top: 15px;
-        font-weight: 500;
-        font-size: 21px;
+    .shelterUserNavBar-left-side-of-navbar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 50px;
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
     }
+
+
+
+    
+    
+    .shelterUserNavBar-right-side-of-navbar{
+        
+        
+        .shelterUserNavBar-nav-normal-button{
+            background-color: rgb(73, 167, 227);
+            border-radius: 20px;
+            border: 1px solid rgb(73, 167, 227);
+            text-align: center;
+            width: 100px;
+            height: 36px;
+            color: white;
+            margin-right: 15px;
+            margin-top: 15px;
+            font-weight: 500;
+            font-size: 21px;
+            font-family: Marker Felt, fantasy;
+
+        }
+
+        .shelterUserNavBar-nav-appointment-button{
+            background-color: rgb(73, 167, 227);
+            border-radius: 20px;
+            border: 1px solid rgb(73, 167, 227);
+            text-align: center;
+            width: 150px;
+            height: 36px;
+            color: white;
+            margin-right: 15px;
+            margin-top: 15px;
+            font-weight: 500;
+            font-size: 21px;
+            font-family: Marker Felt, fantasy;
+
+        }
+
+    }
+
 }

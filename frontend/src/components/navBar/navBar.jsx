@@ -1,11 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "./dogLogo2.png";
+import { withRouter } from 'react-router'
+
 import "./navBar.scss";
 
 // ({ currentUser, logout, openModal })
 
 class NavBar extends React.Component {
+    constructor(props){
+      super(props)
+
+      // this.handleLogout = this.handleLogout.bind(this)
+      // this.logout = this.logout.bind(this)
+    }
+
+  // handleLogout() {
+  //   debugger
+  //   return(
+  //     this.props.logout()
+  //     .then(() => { this.props.history.push('/') })
+  //   )
+  // }
+
+
   noUserNavBar() {
     return (
       <div>
@@ -26,7 +44,7 @@ class NavBar extends React.Component {
           <div className="noUserNavBar-right-side-of-navbar">
             <a href="#/dogs">
                 <button className="noUserNavBar-nav-login-button">
-                    DOGS
+                    Dogs
                 </button> 
             </a>
     
@@ -53,12 +71,35 @@ class NavBar extends React.Component {
       return (
         <div>
             <div className="shelterUserNavBar-container">
-                <h1>{this.props.currentUser.user.shelter_name}</h1>
+                  <div className="shelterUserNavBar-left-side-of-navbar">
+                      <a href="/">
+                          <h1>Welcome back {this.props.currentUser.user.shelter_name}</h1>
+                      </a>
+                  </div>  
+                  <div className="shelterUserNavBar-right-side-of-navbar">
+                      <a href="#/dogs">
+                          <button className="shelterUserNavBar-nav-normal-button">
+                            Dogs
+                          </button>
+                      </a>
+                      <button className="shelterUserNavBar-nav-normal-button">
+                            My Dogs
+                          </button>
+                      <button className="shelterUserNavBar-nav-appointment-button">
+                            Appointments
+                      </button>
+                      <button className="shelterUserNavBar-nav-appointment-button">
+                            Add Dog
+                      </button>
+                      <a href="/">
+                       <button className="shelterUserNavBar-nav-normal-button" onClick={() => this.props.logout()} >
+                            logout
+                      </button> 
+                      </a>
+                </div>
+
             </div>
-            <button className="shelterUserNavBar-nav-logout-button" onClick={() => this.props.logout()}>
-              logout
-            </button>
-          </div>
+        </div>
         
       );
     } else {
@@ -72,11 +113,16 @@ class NavBar extends React.Component {
                         placeholder='Do not search'
                         className='search-bar-input-field'/>
             </div>
-            <button
-              className="currentUserNavBar-nav-logout-button"
-              onClick={() => this.props.logout()}>
-              logout
-            </button>
+            <a href="/">
+              <button
+                className="currentUserNavBar-nav-logout-button">
+                    Favorite
+              </button>
+              <button
+                className="currentUserNavBar-nav-logout-button" onClick={() => this.props.logout()}>
+                    logout
+              </button>
+            </a>
           </div>
         </div>
       );
@@ -100,4 +146,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
