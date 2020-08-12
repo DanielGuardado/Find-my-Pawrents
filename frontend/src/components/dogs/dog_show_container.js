@@ -1,10 +1,10 @@
 import { connect } from "react-redux";
 import { fetchDog } from "../../actions/dog_actions";
-import DogIndex from "./dog_index";
+import DogShow from "./dog_show";
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    dog: state.dogs[ownProps.match.params.id],
+    dog: state.dogs,
   };
 };
 
