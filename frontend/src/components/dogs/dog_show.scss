@@ -1,0 +1,83 @@
+.dog-show-container {
+    background-color: #f4f4f4;
+    padding: 100px 0px;
+    font-family: Marker Felt, fantasy;
+}
+.dog-show-sub-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border-radius: 30px;
+    border: 6px solid rgb(73, 167, 227);
+    margin-left:70px;
+    margin-right:70px;
+    padding: 20px;
+    overflow: scroll;
+    background-color: rgb(232, 248, 253);
+
+}
+
+.dog-show-info {
+    // display: grid;
+    // grid-template-columns: 50% 50%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+.dog-image {
+    margin-top: 30px;
+}
+
+.dog-show-info-list {
+    font-family: Marker Felt, fantasy;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.dog-name {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.dog-show-infos {
+    font-weight: 50;
+}
+
+.dog-age, .dog-breed, .dog-gender, .dog-strengths, .dog-status, .dog-about {
+    margin-bottom: 7px;
+}
+
+.dog-description {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.appt-btn {
+    justify-content: center;
+    margin-top: 50px;
+    border: 2px solid rgb(73, 167, 227);
+    font-size: 20px;
+    background-color: rgb(73, 167, 227);
+    color: white;
+    border-radius: 30px;
+}
+
+.appt-container {
+    background-color: #f4f4f4;
+    padding: 100px 0px;
+    font-family: Marker Felt, fantasy;
+}
+
+.appt-form {
+    position: relative;
+}

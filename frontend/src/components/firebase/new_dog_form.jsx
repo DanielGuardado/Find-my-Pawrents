@@ -1,20 +1,37 @@
 import React from "react";
-import { storage } from "./index";
+import { storage } from "./firebase";
 
 class NewDogForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Kyle",
-      gender: "Male",
-      breed: "Cool",
-      age: "16",
-      description: "I'm very smart",
-      strengths: "Shapeshifter",
+      name: "",
+      gender: "",
+      breed: "",
+      age: "",
+      description: "",
+      strengths: "",
       image: null,
-      shelter_id: 1,
+      shelter_id: this.props.currentUser.id,
+      errors: {},
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  renderErrors() {
+    return (
+      <ul>
+        {Object.keys(this.props.errors).map((error, i) => (
+          <li key={`error-${i}`}>{this.props.errors[error]}</li>
+        ))}
+      </ul>
+    );
+  }
+
+  preview() {
+    if (this.state.image) {
+      return <img src={this.state.image} alt="" style={{ width: "500px" }} />;
+    }
   }
 
   update(field) {
@@ -41,43 +58,161 @@ class NewDogForm extends React.Component {
   }
 
   handleChange = (e) => {
+    let image;
     if (e.target.files[0]) {
-      this.setState({ image: e.target.files[0] });
+      image = e.target.files[0];
+      // this.setState({ image: image });
+      const uploadTask = storage.ref(`images/${image.name}`).put(image);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {},
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          storage
+            .ref("images")
+            .child(image.name)
+            .getDownloadURL()
+            .then((url) => {
+              this.setState({ image: url });
+            });
+        }
+      );
     }
   };
 
-  handleUpload = () => {
-    const { image } = this.state;
-    const uploadTask = storage.ref(`images/${image.name}`).put(image);
-    uploadTask.on(
-      "state_changed",
-      (snapshot) => {},
-      (error) => {
-        console.log(error);
-      },
-      () => {
-        storage
-          .ref("images")
-          .child(image.name)
-          .getDownloadURL()
-          .then((url) => {
-            this.setState({ image: url });
-          });
-      }
-    );
-  };
+  // handleUpload = () => {
+  //   const { image } = this.state;
+  //   const uploadTask = storage.ref(`images/${image.name}`).put(image);
+  //   uploadTask.on(
+  //     "state_changed",
+  //     (snapshot) => {},
+  //     (error) => {
+  //       console.log(error);
+  //     },
+  //     () => {
+  //       storage
+  //         .ref("images")
+  //         .child(image.name)
+  //         .getDownloadURL()
+  //         .then((url) => {
+  //           this.setState({ image: url });
+  //         });
+  //     }
+  //   );
+  // };
+
   render() {
     return (
-      <div>
-        test
-        <input type="file" onChange={this.handleChange} />
-        <button onClick={this.handleUpload}>Upload</button>
-        <button className="signup-submit" onClick={this.handleSubmit}>
+      <div className="adoption-form-container">
+        {/* <button onClick={this.handleUpload}>Upload</button> */}
+        {/* <button className="signup-submit" onClick={this.handleSubmit}>
           Submit dog
-        </button>
+        </button> */}
+        <form className="adoption-form-box" onSubmit={this.handleSubmit}>
+          <div className="adoption-input-container">
+            <div className="adoption-form-top-level">
+              <h2 className="adoption-header">Adoption Form</h2>
+            </div>
+            <div className="adoption-form">
+              <div className="adoption-name-input-box">
+                <div className="input-titles">Name</div>
+                <input
+                  className="input-boxes"
+                  type="text"
+                  value={this.state.name}
+                  onChange={this.update("name")}
+                />
+              </div>
+              <br />
+              <div className="adoption-gender-input-box">
+                <div>Gender</div>
+                <div className="radio-buttons">
+                  Male
+                  <input
+                    className=""
+                    name="gender"
+                    type="radio"
+                    value="Male"
+                    onChange={this.update("gender")}
+                  />
+                </div>
+                <div className="radio-buttons">
+                  Female
+                  <input
+                    className=""
+                    name="gender"
+                    type="radio"
+                    value="Female"
+                    onChange={this.update("gender")}
+                  />
+                </div>
+              </div>
+              <br />
+              <div className="adoption-breed-input-box">
+                <div className="input-titles">Breed</div>
+                <input
+                  className="input-boxes"
+                  type="text"
+                  value={this.state.breed}
+                  onChange={this.update("breed")}
+                />
+              </div>
+              <br />
+              <div className="adoption-age-input-box"></div>
+              <div className="input-titles">Age</div>
+              <input
+                className="input-boxes"
+                type="text"
+                value={this.state.age}
+                onChange={this.update("age")}
+              />
+              <br />
+              <div className="adoption-description-input-box">
+                <div className="input-titles">Description</div>
+                <input
+                  className="input-boxes"
+                  type="text"
+                  value={this.state.description}
+                  onChange={this.update("description")}
+                />
+              </div>
+              <br />
+              <div className="adoption-strengths-input-box">
+                <div className="input-titles">Strengths</div>
+                <input
+                  className="input-boxes"
+                  type="text"
+                  value={this.state.strengths}
+                  onChange={this.update("strengths")}
+                />
+              </div>
+              <br />
+              <input type="file" onChange={this.handleChange} />
+              {this.preview()}
+              <input
+                className="adoption-submit"
+                type="submit"
+                value="List for Adoption!"
+              />
+              <br />
+              <div className="render-errors">{this.renderErrors()}</div>
+            </div>
+          </div>
+        </form>
       </div>
     );
   }
 }
+
+// <div>
+//   test
+//   <input type="file" onChange={this.handleChange} />
+//   <button onClick={this.handleUpload}>Upload</button>
+//   <button className="signup-submit" onClick={this.handleSubmit}>
+//     Submit dog
+//   </button>
+// </div>;
 
 export default NewDogForm;
