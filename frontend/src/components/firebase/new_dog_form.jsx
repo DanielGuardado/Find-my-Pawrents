@@ -37,7 +37,6 @@ class NewDogForm extends React.Component {
       image: this.state.image,
       shelter_id: this.state.shelter_id,
     };
-    debugger;
     this.props.createDog(dog);
   }
 
