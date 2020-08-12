@@ -31,24 +31,14 @@ class NavBar extends React.Component {
             </a>
     
             <button
-<<<<<<< HEAD
-              className="noUserNavBar-nav-login-button"
-              onClick={() => this.props.openModal("login")}
-=======
                 className="noUserNavBar-nav-login-button"
                 onClick={() => this.props.openModal("login")}
->>>>>>> f189894ffcd53d831e5fa528c7eabf2fe51f9a16
             >
               Login
             </button>
             <button
-<<<<<<< HEAD
-              className="noUserNavBar-nav-signup-button"
-              onClick={() => this.props.openModal("signup")}
-=======
                 className="noUserNavBar-nav-signup-button"
                 onClick={() => this.props.openModal("signup")}
->>>>>>> f189894ffcd53d831e5fa528c7eabf2fe51f9a16
             >
               Sign Up
             </button>
