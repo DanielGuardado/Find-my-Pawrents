@@ -101,7 +101,7 @@ class SplashPage extends React.Component {
                     <div>Ask a Question</div>
                 </div>
                 <div className='splash-page-footer-newsletter'>
-                    <h1>To get the latest information on dog adoption and car sign up for the FIND MY PAWRENTS newsletter</h1>
+                    <h1>To get the latest information on dog adoption sign up for the FIND MY PAWRENTS newsletter</h1>
                     <button>SIGN UP</button>
                 </div>
             </div>

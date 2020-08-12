@@ -23,10 +23,12 @@ class DogIndexItem extends React.Component {
     const { dog } = this.props;
     return (
       <ul >
-        <div id='dog-index-page-image-container'>
+        <div id='dog-index-page-card-container'>
+          <div id='dog-index-page-image-container'>
             <Link to={`/dogs/${dog._id}`}>
                 <img id='dog-index-page-image' src={dog.image} alt="1" />
             </Link>
+        
           </div>
           <div className='dog-index-page-list-content-container'>        
               <li><span>Name:</span> {dog.name}</li>
@@ -37,6 +39,7 @@ class DogIndexItem extends React.Component {
                 <img id='icons' src={commenticon} />
               </div>
           </div>
+        </div>
       </ul>
     );
   }
