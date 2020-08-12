@@ -12,6 +12,7 @@ class DogShow extends React.Component {
       appt_date: "",
       comments: "",
       phone_number: "",
+      appt_status: "Pending Approval",
       shelter_id: this.props.dog.shelter_id,
       dog_id: this.props.dog.id,
     };
@@ -37,6 +38,7 @@ class DogShow extends React.Component {
       appt_date: this.state.appt_date,
       comments: this.state.comments,
       phone_number: this.state.phone_number,
+      appt_status: "Pending Approval",
       shelter_id: this.props.dog.shelter_id,
       dog_id: this.props.dog._id,
     };
