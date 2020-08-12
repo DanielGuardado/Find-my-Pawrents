@@ -39,13 +39,12 @@ class LoginForm extends React.Component {
       password: this.state.password,
     };
 
-    this.props
-      .login(user)
-      .then(this.props.closeModal)
-      .catch((err) => {
-        this.props.receiveErrors(err.response.data)
-      });
-     
+    this.props.login(user).then(this.props.closeModal);
+    // .catch((err) => {
+    //   if (err.response.data) {
+    //     this.props.receiveErrors(err.response.data);
+    //   }
+    // });
   }
 
   renderErrors() {
