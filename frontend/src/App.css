@@ -100,6 +100,7 @@ h2.login-header {
     background-color: white;
     margin-top: 3px;
     margin-right: 10px;
+    cursor:pointer;
 }
 
 .modal-signup-btn:hover {
@@ -163,6 +164,7 @@ h2.login-header {
     font-size: 17px;
     font-weight: 100;
     color: white;
+    cursor:pointer;
 
 }
 
@@ -239,6 +241,7 @@ h2.signup-header {
     padding: 10px;
     background-color: white;
     margin-right: 10px;
+    cursor:pointer;
 }
 
 .modal-login-btn:hover {
@@ -309,6 +312,7 @@ h2.signup-header {
     font-size: 17px;
     font-weight: 100;
     color: white;
+    cursor:pointer;
 
 }
 
