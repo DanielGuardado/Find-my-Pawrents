@@ -26,29 +26,29 @@ export const logoutUser = () => ({
 });
 
 export const removeErrors = () => ({
-    type: CLEAR_ERRORS,
-    errors: [],
+  type: CLEAR_ERRORS,
+  errors: [],
 });
 
 //thunk
 
 export const signup = (user) => (dispatch) =>
-  SessionAPIUtil.signup(user).then(() => dispatch(login(user)),
+  SessionAPIUtil.signup(user).then(
+    () => dispatch(login(user))
     // (err) => dispatch(receiveErrors(err.response.data))
   );
 
 export const login = (user) => (dispatch) =>
-  SessionAPIUtil.login(user)
-    .then((res) => {
-      const { token } = res.data;
-      localStorage.setItem("jwtToken", token);
-      SessionAPIUtil.setAuthToken(token);
-      const decoded = jwt_decode(token);
-      dispatch(receiveCurrentUser(decoded));
-    })
-    // .catch((err) => {
-    //   dispatch(receiveErrors(err.response.data));
-    // });
+  SessionAPIUtil.login(user).then((res) => {
+    const { token } = res.data;
+    localStorage.setItem("jwtToken", token);
+    SessionAPIUtil.setAuthToken(token);
+    const decoded = jwt_decode(token);
+    dispatch(receiveCurrentUser(decoded));
+  });
+// .catch((err) => {
+//   dispatch(receiveErrors(err.response.data));
+// });
 
 export const logout = () => (dispatch) => {
   localStorage.removeItem("jwtToken");
@@ -56,4 +56,4 @@ export const logout = () => (dispatch) => {
   dispatch(logoutUser());
 };
 
-export const clearErrors = () => dispatch => dispatch(removeErrors());
+export const clearErrors = () => (dispatch) => dispatch(removeErrors());
