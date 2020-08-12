@@ -52,18 +52,6 @@ class NavBar extends React.Component {
     if (this.props.currentUser.user.shelter_name) {
       return (
         <div>
-<<<<<<< HEAD
-          <div className="currentUserNavBar-container">
-            <h1>{this.props.currentUser.user.shelter_name}</h1>
-            <button
-              className="currentUserNavBar-nav-logout-button"
-              onClick={() => this.props.logout()}
-            >
-              logout
-            </button>
-          </div>
-        </div>
-=======
             <div className="shelterUserNavBar-container">
                 <h1>{this.props.currentUser.user.shelter_name}</h1>
             </div>
@@ -72,15 +60,11 @@ class NavBar extends React.Component {
             </button>
           </div>
         
->>>>>>> f189894ffcd53d831e5fa528c7eabf2fe51f9a16
       );
     } else {
       return (
         <div>
           <div className="currentUserNavBar-container">
-<<<<<<< HEAD
-            <h1>{this.props.currentUser.user.first_name}</h1>
-=======
             <div className='currentUserNavBar-left-side'>
                 <h1>Welcome {this.props.currentUser.user.first_name}</h1>
                     <input
@@ -88,7 +72,6 @@ class NavBar extends React.Component {
                         placeholder='Do not search'
                         className='search-bar-input-field'/>
             </div>
->>>>>>> f189894ffcd53d831e5fa528c7eabf2fe51f9a16
             <button
               className="currentUserNavBar-nav-logout-button"
               onClick={() => this.props.logout()}>
