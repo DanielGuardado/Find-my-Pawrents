@@ -22,6 +22,9 @@ const AppointmentSchema = new Schema({
     type: String,
     required: true,
   },
+  phone_number: {
+    type: String
+  },
   comments: {
     type: String,
   },

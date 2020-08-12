@@ -111,6 +111,7 @@ router.post(
       appt_time: req.body.appt_time,
       appt_date: req.body.appt_date,
       comments: req.body.comments,
+      phone_number: req.body.phone_number,
       shelter_id: req.body.shelter_id,
       dog_id: req.body.dog_id,
     });
