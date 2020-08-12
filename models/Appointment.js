@@ -28,6 +28,10 @@ const AppointmentSchema = new Schema({
   comments: {
     type: String,
   },
+  appt_status: {
+    type: String,
+    required: true
+  },
   timestamps: {
     type: Date,
     default: Date.now,
