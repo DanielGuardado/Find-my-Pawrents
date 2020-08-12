@@ -24,15 +24,21 @@ class NavBar extends React.Component {
             </div>
           </div>
           <div className="noUserNavBar-right-side-of-navbar">
+            <a href="#/dogs">
+                <button className="noUserNavBar-nav-login-button">
+                    DOGS
+                </button> 
+            </a>
+    
             <button
-              className="noUserNavBar-nav-login-button"
-              onClick={() => this.props.openModal("login")}
+                className="noUserNavBar-nav-login-button"
+                onClick={() => this.props.openModal("login")}
             >
               Login
             </button>
             <button
-              className="noUserNavBar-nav-signup-button"
-              onClick={() => this.props.openModal("signup")}
+                className="noUserNavBar-nav-signup-button"
+                onClick={() => this.props.openModal("signup")}
             >
               Sign Up
             </button>
@@ -46,26 +52,29 @@ class NavBar extends React.Component {
     if (this.props.currentUser.user.shelter_name) {
       return (
         <div>
-          <div className="currentUserNavBar-container">
-            <h1>{this.props.currentUser.user.shelter_name}</h1>
-            <button
-              className="currentUserNavBar-nav-logout-button"
-              onClick={() => this.props.logout()}
-            >
+            <div className="shelterUserNavBar-container">
+                <h1>{this.props.currentUser.user.shelter_name}</h1>
+            </div>
+            <button className="shelterUserNavBar-nav-logout-button" onClick={() => this.props.logout()}>
               logout
             </button>
           </div>
-        </div>
+        
       );
     } else {
       return (
         <div>
           <div className="currentUserNavBar-container">
-            <h1>{this.props.currentUser.user.first_name}</h1>
+            <div className='currentUserNavBar-left-side'>
+                <h1>Welcome {this.props.currentUser.user.first_name}</h1>
+                    <input
+                        type="search"
+                        placeholder='Do not search'
+                        className='search-bar-input-field'/>
+            </div>
             <button
               className="currentUserNavBar-nav-logout-button"
-              onClick={() => this.props.logout()}
-            >
+              onClick={() => this.props.logout()}>
               logout
             </button>
           </div>
