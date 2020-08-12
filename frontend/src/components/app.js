@@ -5,6 +5,7 @@ import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import NavBarContainer from "./navBar/navBar_container";
 import Splash from "./splash/splash_container";
+import AdoptionFormContainer from "./adoption/adoption_form_container";
 import { Switch, Route } from "react-router-dom";
 import Modal from "./modal/modal";
 import DogIndex from "./dogs/dog_index_container";
@@ -22,6 +23,9 @@ const App = () => {
         <Route path="/">
           <NavBarContainer />
           <Splash />
+        </Route>
+        <Route path="/adoption">
+          <AdoptionFormContainer />
         </Route>
       </Switch>
     </div>
