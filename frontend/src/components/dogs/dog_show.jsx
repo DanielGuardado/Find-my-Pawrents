@@ -135,7 +135,6 @@ class DogShow extends React.Component {
                 rows="10"
               ></textarea>
             </div>
-            <button type="submit">Schedule Appt</button>
           </form>
         </div>
       );
