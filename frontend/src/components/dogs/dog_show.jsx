@@ -25,6 +25,7 @@ class DogShow extends React.Component {
           <li>{dog.gender}</li>
           <li>{dog.description}</li>
           <li>{dog.date}</li>
+          <img src={dog.image} alt="1" style={{ width: "500px" }} />
           {this.apptBtn()}
         </ul>
       );
