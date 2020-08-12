@@ -22,7 +22,6 @@
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
-    "postinstall": "frontend/src/components/firebase/index.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

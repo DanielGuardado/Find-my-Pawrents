@@ -4,7 +4,6 @@
   "description": "connecting shelters and petseekers",
   "main": "app.js",
   "scripts": {
-    "postinstall": "frontend/src/components/firebase/index.js",
     "server:debug": "nodemon --inspect app.js",
     "start": "node app.js",
     "server": "nodemon app.js",
