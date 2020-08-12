@@ -20,13 +20,13 @@ router.get("/test", (req, res) => {
 //     .catch((err) => res.status(400).json(err));
 // });
 
-// router.get("/user/:shelter_id", (req, res) => {
-//   Dog.find({
-//     shelter_id: req.params.shelter_id,
-//   })
-//     .then((dogs) => res.json(dogs))
-//     .catch((err) => res.status(400).json(err));
-// });
+router.get("/user/:shelter_id", (req, res) => {
+  Appointment.find({
+    shelter_id: req.params.shelter_id,
+  })
+    .then((appts) => res.json(appts))
+    .catch((err) => res.status(400).json(err));
+});
 
 router.get("/:id", (req, res) => {
   Appointment.findById(req.params.id)
