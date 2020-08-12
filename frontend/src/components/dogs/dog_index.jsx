@@ -16,7 +16,7 @@ class DogIndex extends React.Component {
     const dog = this.props.dogs.map((dog, idx) => (
       <DogIndexItem key={idx} dog={dog} />
     ));
-    return <div className="">{dog}</div>;
+    return <div className="dog-index-page-list-container">{dog}</div>;
   }
 
   render() {

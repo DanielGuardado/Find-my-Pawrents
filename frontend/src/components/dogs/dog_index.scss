@@ -1,3 +1,91 @@
 .dog-index-page-main-container{
-    margin-top: 100px;
+    padding: 100px 60px;
+    background-color: #f4f4f4;
+    font-family: Marker Felt, fantasy;
+    // grid-template-columns: 40 30 30;
+    
+    .dog-index-page-list-container{
+        border-bottom: 1px solid black;
+        margin-bottom: 30px;
+        margin: 0px auto;
+        padding-bottom: 30px;
+        // display: flex;
+        // flex-direction: column;
+        grid-template-columns: 25% 25% 25% 25%;
+        display: grid;
+
+        #dog-index-page-image-container{
+            display: flex;
+            justify-content: space-around;
+        }
+
+
+        .dog-index-page-list-content-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            list-style-type: none;
+
+            // flex-direction: column;
+            // box-sizing: border-box;
+
+            #icon-container{
+                border: 1px solid lightblue;
+                border-radius: 15px;
+                background-color: #E9F8FF;
+
+                #icons{
+                    width: 20px;
+                    margin: 10px;
+                }
+            }
+
+            
+            li{
+                margin: 0 10px;
+                font-family: Gill Sans, sans-serif;
+
+            }
+
+            li span {
+                // padding-left: 20px;
+                margin-right: 3px;
+                font-family: Marker Felt, fantasy;
+
+            }
+      
+            // #dog-index-page-description{
+            // width: 80%;
+            // display: inline;
+            // white-space: nowrap;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+            // }
+            //  #dog-index-page-description-2{
+            // width: 80%;
+            // display: block;
+            // white-space: nowrap;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+            // }
+            
+            // #dog-index-page-click-here{
+            // color: blue;
+            // }
+
+        }
+
+        #dog-index-page-image{
+            width: 100%;
+            height: 280px;
+            // width: 100%;
+            // height: 100%;
+        }
+        
+    
+
+    }
+
 }
+
