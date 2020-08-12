@@ -13,6 +13,7 @@ module.exports = function validateDogInput(data) {
   data.age = validText(data.age) ? data.age : "";
   data.description = validText(data.description) ? data.description : "";
   data.strengths = validText(data.strengths) ? data.strengths : "";
+  data.image = data.image ? data.image : "";
 
   if (Validator.isEmpty(data.name)) {
     errors.text = "Name is a required field";
@@ -26,6 +27,10 @@ module.exports = function validateDogInput(data) {
     errors.text = "Gender is a required field";
   }
 
+  if (Validator.isEmpty(data.image)) {
+    errors.text = "Image is a required field";
+  }
+  
   if (!Validator.isIn(data.gender, ["Male", "Female"])) {
     errors.text = "Gender must be Male or Female";
   }

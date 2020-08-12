@@ -20,13 +20,13 @@ router.get("/test", (req, res) => {
 //     .catch((err) => res.status(400).json(err));
 // });
 
-// router.get("/user/:shelter_id", (req, res) => {
-//   Dog.find({
-//     shelter_id: req.params.shelter_id,
-//   })
-//     .then((dogs) => res.json(dogs))
-//     .catch((err) => res.status(400).json(err));
-// });
+router.get("/user/:shelter_id", (req, res) => {
+  Appointment.find({
+    shelter_id: req.params.shelter_id,
+  })
+    .then((appts) => res.json(appts))
+    .catch((err) => res.status(400).json(err));
+});
 
 router.get("/:id", (req, res) => {
   Appointment.findById(req.params.id)
@@ -34,44 +34,44 @@ router.get("/:id", (req, res) => {
     .catch((err) => res.status(400).json(err));
 });
 
-// router.post(
-//   "/:id/update",
-//   passport.authenticate("jwt", {
-//     session: false,
-//   }),
-//   (req, res) => {
-//     const { isValid, errors } = validateDogInput(req.body);
+router.post(
+  "/:id/update",
+  passport.authenticate("jwt", {
+    session: false,
+  }),
+  (req, res) => {
+    const { isValid, errors } = validateAppointmentInput(req.body);
 
-//     if (!isValid) {
-//       return res.status(400).json(errors);
-//     }
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
 
-//     Dog.findByIdAndUpdate(
-//       req.params.id,
-//       {
-//         shelter_id: req.user.id,
-//         adoption_status: req.body.adoption_status,
-//         name: req.body.name,
-//         gender: req.body.gender,
-//         breed: req.body.breed,
-//         age: req.body.age,
-//         description: req.body.description,
-//         strengths: req.body.strengths,
-//       },
-//       {
-//         new: true,
-//       },
-//       function (err, dog) {
-//         if (!err) {
-//           res.json(dog);
-//         } else {
-//           res.status(400).json(err);
-//         }
-//       }
-//     );
+    Appointment.findByIdAndUpdate(
+      req.params.id,
+      {
+      user_id: req.user.id,
+        appt_time: req.body.appt_time,
+        appt_date: req.body.appt_date,
+        comments: req.body.comments,
+        phone_number: req.body.phone_number,
+        shelter_id: req.body.shelter_id,
+        dog_id: req.body.dog_id,
+        appt_status: req.body.appt_status
+      },
+      {
+        new: true,
+      },
+      function (err, appt) {
+        if (!err) {
+          res.json(appt);
+        } else {
+          res.status(400).json(err);
+        }
+      }
+    );
 
-//   }
-// );
+  }
+);
 
 // router.delete(
 //   "/:id",
@@ -114,10 +114,11 @@ router.post(
       phone_number: req.body.phone_number,
       shelter_id: req.body.shelter_id,
       dog_id: req.body.dog_id,
+      appt_status: req.body.appt_status
     });
 
     newAppointment.save().then((appt) => res.json(appt))
-    .catch( err => console.log("there is an error"));
+    .catch((err) => res.status(400).json(err));
   }
 );
 
