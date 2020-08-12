@@ -50,7 +50,9 @@ class SignupForm extends React.Component {
       // .then(this.props.history.push("/login"))
       .then(this.props.closeModal)
       .catch((err) => {
-        this.props.receiveErrors(err.response.data);
+        if (err.response.data) {
+          this.props.receiveErrors(err.response.data);
+        }
       });
   }
 
