@@ -41,8 +41,8 @@ class DogIndexItem extends React.Component {
                 {dog.adoption_status}
               </li>
               <div id="icon-container">
-                <img id="icons" src={likeicon} />
-                <img id="icons" src={commenticon} />
+                <img id="like-icon" src={likeicon} />
+                <img id="comment-icon" src={commenticon} />
               </div>
             </div>
           </div>
