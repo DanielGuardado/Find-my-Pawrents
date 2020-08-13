@@ -42,14 +42,14 @@ class NavBar extends React.Component {
           </div>
           <div className="noUserNavBar-right-side-of-navbar">
             <a href="#/dogs">
-              <button className="noUserNavBar-nav-login-button">Dogs</button>
+              <button className="noUserNavBar-nav-dogs-button">Dogs</button>
             </a>
 
             <button
               className="noUserNavBar-nav-login-button"
               onClick={() => this.props.openModal("login")}
             >
-              Login
+              Log in
             </button>
             <button
               className="noUserNavBar-nav-signup-button"
@@ -70,8 +70,9 @@ class NavBar extends React.Component {
           <div className="shelterUserNavBar-container">
             <div className="shelterUserNavBar-left-side-of-navbar">
               <a href="/">
-                <h1>Welcome back {this.props.currentUser.user.shelter_name}</h1>
+                <img id="logo" src={logo} alt="logo" />
               </a>
+              <h2 className="welcome-back">Welcome back {this.props.currentUser.user.shelter_name}</h2>
             </div>
             <div className="shelterUserNavBar-right-side-of-navbar">
               <a href="#/dogs">
@@ -79,9 +80,11 @@ class NavBar extends React.Component {
                   Dogs
                 </button>
               </a>
-              <button className="shelterUserNavBar-nav-normal-button">
-                My Dogs
-              </button>
+              <a href="#/my_dogs">
+                <button className="shelterUserNavBar-nav-normal-button">
+                  My Dogs
+                </button>
+              </a>
               <button className="shelterUserNavBar-nav-appointment-button">
                 Appointments
               </button>
@@ -93,7 +96,7 @@ class NavBar extends React.Component {
                   className="shelterUserNavBar-nav-normal-button"
                   onClick={() => this.props.logout()}
                 >
-                  logout
+                  Log out
                 </button>
               </a>
             </div>
@@ -105,24 +108,43 @@ class NavBar extends React.Component {
         <div>
           <div className="currentUserNavBar-container">
             <div className="currentUserNavBar-left-side">
-              <h1>Welcome {this.props.currentUser.user.first_name}</h1>
+              <a href="/">
+                <img id="logo" src={logo} alt="logo" />
+              </a>
+              <h2 className="welcome">
+                Welcome {this.props.currentUser.user.first_name}!
+              </h2>
               <input
                 type="search"
                 placeholder="Do not search"
                 className="search-bar-input-field"
               />
             </div>
-            <a href="/">
-              <button className="currentUserNavBar-nav-logout-button">
-                Favorite
-              </button>
-              <button
-                className="currentUserNavBar-nav-logout-button"
-                onClick={() => this.props.logout()}
-              >
-                logout
-              </button>
-            </a>
+            <div className="currentUserNavBar-right-side">
+              <a href="#/dogs">
+                <button className="currentUserNavBar-nav-dogs-button">
+                  Dogs
+                </button>
+              </a>
+              <a href="/">
+                <button className="currentUserNavBar-nav-favorite-button">
+                  Favorites
+                </button>
+              </a>
+              <a href="#/dogs">
+                <button className="currentUserNavBar-nav-appt-button">
+                  My Appointments
+                </button>
+              </a>
+              <a href="/">
+                <button
+                  className="currentUserNavBar-nav-logout-button"
+                  onClick={() => this.props.logout()}
+                >
+                  Log Out
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       );
