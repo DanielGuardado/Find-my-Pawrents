@@ -10,23 +10,22 @@
   border-radius: 3px;
 }
 
-// .adoption-form-container {
-//   display: grid;
-//   grid-template-columns: 50% 50%;
-//   height: 100vh;
-//   width: 100vw;
-//   font-family: Marker Felt, fantasy;
+.new-dog-form-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 100vh;
+  width: 100vw;
+  font-family: Marker Felt, fantasy;
+  padding-top: 70px;
 
-//   .adoption-form-image {
-//       background-image: url("https://cdn.pricearchive.org/images/aliexpress.com/32831346626/Cute-Vertical-Stripes-Pet-Harness-Vest-with-Leash-Set-with-Pretty-Flower-Bow-Tie-Breathable-for.jpg");
-//       background-size: 100% 100%;
-//       background-repeat: no-repeat;
-//   }
-// }
+  .new-dog-form-image {
+      background-image: url("https://cdn.pricearchive.org/images/aliexpress.com/32831346626/Cute-Vertical-Stripes-Pet-Harness-Vest-with-Leash-Set-with-Pretty-Flower-Bow-Tie-Breathable-for.jpg");
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+  }
+}
 
-
-
-.adoption-form-box {
+.new-dog-form-box {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -51,7 +50,7 @@
   margin-left: 65px;
 }
 
-.adoption-description-input-box {
+.new-dog-description-input-box {
   margin-top: 12px;
 }
 
@@ -60,7 +59,7 @@
   margin-bottom: 15px;
 }
 
-.adoption-submit {
+.new-dog-submit {
   margin-left: 150px;
   border: 1px solid rgb(73, 167, 227);
   border-radius: 20px;

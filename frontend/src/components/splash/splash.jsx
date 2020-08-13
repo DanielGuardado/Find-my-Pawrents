@@ -1,13 +1,8 @@
 import React from "react";
 import "./Splash.scss";
 import Slider from "react-slick";
-import Dog1 from "./Dog1.jpg";
-import Dog2 from "./Dog2.jpg";
-import Dog3 from "./Dog3.jpg";
+// import Dog3 from "./Dog3.jpg";
 import Dog4 from "./Dog4.jpg";
-import Dog5 from "./Dog5.jpg";
-import Dog6 from "./Dog6.jpg";
-import Dog7 from "./Dog7.jpg";
 import Dog8 from "./Dog8.jpg";
 import Donation from './donate.png'
 import adoption from './adoption.png'
@@ -42,7 +37,7 @@ class SplashPage extends React.Component {
                         <img src={Dog8} alt="d2" className="Dog" />
                     </div>
                     <div>
-                        <img src={Dog3} alt="d3" className="Dog" />
+                        {/* <img src={Dog3} alt="d3" className="Dog" /> */}
                     </div>
                 </Slider>
             </div>
