@@ -10,11 +10,8 @@ import Modal from "./modal/modal";
 import DogIndex from "./dogs/dog_index_container";
 import DogShow from "./dogs/dog_show_container";
 import ReactFirebase from "./firebase/new_dog_form_container";
-<<<<<<< HEAD
-import AppointmentContainer from './appointment/appointment_container'
-=======
+import AppointmentContainer from "./appointment/appointment_container";
 import MyDogsIndex from "./shelter_dogs/shelter_my_dogs_container";
->>>>>>> my_dogs_feature
 
 const App = () => {
   return (
@@ -26,7 +23,11 @@ const App = () => {
         <Route path="/dogs/:dogId" exact component={DogShow} />
         <Route path="/my_dogs" exact component={MyDogsIndex} />
         <ProtectedRoute path="/new_dog" exact component={ReactFirebase} />
-        <ProtectedRoute path="/appointments" exact component={AppointmentContainer} />
+        <ProtectedRoute
+          path="/appointments"
+          exact
+          component={AppointmentContainer}
+        />
         <Route path="/dogs">
           <DogIndex />
         </Route>
