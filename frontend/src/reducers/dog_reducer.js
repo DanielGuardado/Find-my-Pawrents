@@ -1,4 +1,9 @@
-import { RECEIVE_DOGS, RECEIVE_DOG, REMOVE_DOG } from "../actions/dog_actions";
+import {
+  RECEIVE_DOGS,
+  RECEIVE_DOG,
+  REMOVE_DOG,
+  RECEIVE_SHELTER_DOGS,
+} from "../actions/dog_actions";
 
 const dogReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -21,6 +26,13 @@ const dogReducer = (state = {}, action) => {
     case REMOVE_DOG:
       delete copy[action.dogId];
       return copy;
+    case RECEIVE_SHELTER_DOGS:
+      let obj1 = {};
+      action.dogs.data.forEach((dog) => {
+        obj[dog._id] = dog;
+        // Object.assign(obj, { [dog._id]: dog });
+      });
+      return obj1;
     default:
       return state;
   }

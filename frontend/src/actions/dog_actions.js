@@ -4,6 +4,7 @@ export const RECEIVE_DOGS = "RECEIVE_DOGS";
 export const RECEIVE_DOG = "RECEIVE_DOG";
 export const REMOVE_DOG = "REMOVE_DOG";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+export const RECEIVE_SHELTER_DOGS = "RECEIVE_SHELTER_DOGS";
 
 export const receiveDogs = (dogs) => ({
   type: RECEIVE_DOGS,
@@ -25,6 +26,11 @@ export const receiveDogErrors = (errors) => ({
   errors,
 });
 
+export const receiveSheterDogs = (shelter) => ({
+  type: RECEIVE_SHELTER_DOGS,
+  shelter,
+});
+
 export const fetchDogs = () => (dispatch) =>
   DogAPIUtil.fetchDogs().then((dogs) => dispatch(receiveDogs(dogs)));
 
@@ -42,3 +48,8 @@ export const updateDog = (dog) => (dispatch) =>
 
 export const deleteDog = (dogId) => (dispatch) =>
   DogAPIUtil.deleteDog(dogId).then(() => dispatch(removeDog(dogId)));
+
+export const fetchShelterDogs = (shelterId) => (dispatch) =>
+  DogAPIUtil.fetchShelterDogs(shelterId).then((shelterDogs) =>
+    dispatch(receiveSheterDogs(shelterDogs))
+  );
