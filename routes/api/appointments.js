@@ -65,27 +65,23 @@ router.post(
   }
 );
 
-// router.delete(
-//   "/:id",
-//   passport.authenticate("jwt", {
-//     session: false,
-//   }),
-//   (req, res) => {
-//     let id = parseInt(req.params.id);
+router.delete(
+  "/:id",
+  passport.authenticate("jwt", {
+    session: false,
+  }),
+  (req, res) => {
+    let id = parseInt(req.params.id);
 
-//     // Dog.de(id: id)
-//     // .then(() => 'Dog has been removed')
-//     // .catch(err => res.status(400).json(err)
-
-//     Dog.findByIdAndRemove(req.params.id, req.body, function (err, data) {
-//       if (!err) {
-//         res.json("Dog has been removed");
-//       } else {
-//         res.status(400).json(err);
-//       }
-//     });
-//   }
-// );
+    Appointment.findByIdAndRemove(req.params.id, req.body, function (err, data) {
+      if (!err) {
+        res.json("Dog has been removed");
+      } else {
+        res.status(400).json(err);
+      }
+    });
+  }
+);
 
 router.post(
   "/",
