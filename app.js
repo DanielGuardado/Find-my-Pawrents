@@ -11,6 +11,7 @@ const path = require("path");
 
 const users = require("./routes/api/users");
 const dogs = require("./routes/api/dogs");
+const likes = require("./routes/api/likes");
 const appointments = require("./routes/api/appointments");
 
 
@@ -32,6 +33,7 @@ app.use(bodyParser.json());
 app.use("/api/users", users);
 app.use("/api/dogs", dogs);
 app.use("/api/appointments", appointments);
+app.use("/api/likes", likes);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));

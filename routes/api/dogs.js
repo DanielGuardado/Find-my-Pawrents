@@ -13,9 +13,9 @@ router.get("/test", (req, res) => {
 
 router.get("/", (req, res) => {
   Dog.find()
-    .sort({
-      date: -1,
-    })
+    // .sort({
+    //   date: -1,
+    // })
     .then((dogs) => res.json(dogs))
     .catch((err) => res.status(400).json(err));
 });
@@ -70,31 +70,6 @@ router.post(
       }
     );
 
-    // Dog
-    //   .findById(req.params.id)
-    //   .then(dog => res.json(dog))
-    //   .catch(err => res.status(400).json(err))
-    // })
-
-    // const oldDog = Dog
-    //   .findById(req.params.id)
-
-    // oldDog.update({
-    //     shelter_id: req.user.id,
-    //     adoption_status: req.body.adoption_status,
-    //     name: req.body.name,
-    //     gender: req.body.gender,
-    //     breed: req.body.breed,
-    //     age: req.body.age,
-    //     description: req.body.description,
-    //     strengths: req.body.strengths,
-    //   })
-    //   oldDog.save()
-    //   .then(dog => res.json(dog))
-    //   .catch(err => res.status(400).json(err))
-
-    // Place.findOneAndUpdate({req.params.id}, req.body, function (err, place) {
-    //   res.send(place);
   }
 );
 
@@ -106,9 +81,6 @@ router.delete(
   (req, res) => {
     let id = parseInt(req.params.id);
 
-    // Dog.de(id: id)
-    // .then(() => 'Dog has been removed')
-    // .catch(err => res.status(400).json(err)
 
     Dog.findByIdAndRemove(req.params.id, req.body, function (err, data) {
       if (!err) {
