@@ -17,9 +17,9 @@ class DogShow extends React.Component {
       // shelter_id: this.props.dog.shelter_id,
       // dog_id: this.props.dog.id,
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   componentDidMount() {
     this.props.fetchDog(this.props.id);
     if (this.props.dog) {
@@ -51,6 +51,7 @@ class DogShow extends React.Component {
       this.props.receiveErrors(err.response.data);
     });
   }
+
   dogDelete() {
     if (
       this.props.dog &&

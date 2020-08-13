@@ -1,0 +1,112 @@
+.shelter-my-dogs-background{
+    // background-image: url("https://www.coppersdream.org/uploads/1/5/7/7/1577488/zoom_backgrounds.png");
+    background-repeat: no-repeat;
+    // max-width: 40%;
+    // height:auto;
+    padding-top: 78px;
+//     -webkit-mask-image: linear-gradient(to top, white, transparent);
+//   mask-image: linear-gradient(to top, white, transparent);
+}
+.no-dogs-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding-top: 20%;
+    flex-direction: column;
+    font-family: Gill Sans, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    font-family: Marker Felt, fantasy;
+
+}
+
+div.no-dogs {
+    font-size: 30px;
+    // color: white;
+    // background: rgb(220, 232, 240);
+    background: rgb(247, 247, 131);
+    border: 1px solid rgb(247, 247, 131);
+    width: 200px;
+    height: 130px;
+    position: relative;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+//   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+//   -webkit-text-stroke-width: 1px;
+//   -webkit-text-stroke-color: black;
+
+}
+
+div.no-dogs:before {
+    // font-size: 30px;
+    // color: white;
+    // background: rgb(220, 232, 240);
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 26px;
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-right: 26px solid rgb(247, 247, 131);
+    border-bottom: 13px solid transparent;
+
+}
+
+
+.add-dog-here-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 80px;
+    background: rgb(247, 247, 131);
+    position: relative;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    right: 505%;
+}
+
+.add-dog-here-button:before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // width: 120px;
+    // height: 80px;
+    // background: rgb(247, 247, 131);
+    // position: relative;
+    // -moz-border-radius: 10px;
+    // -webkit-border-radius: 10px;
+    // border-radius: 10px;
+
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 26px;
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-left: 26px solid rgb(247, 247, 131);
+    border-bottom: 13px solid transparent;
+}
+
+.add-dog-here {
+    border: 2px solid rgb(247, 247, 131);
+    border-radius: 7px;
+    background-color: rgb(247, 247, 131);
+    // margin-top: 20px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: Marker Felt, fantasy;
+}
+
+
+
