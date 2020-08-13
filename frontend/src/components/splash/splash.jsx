@@ -1,14 +1,17 @@
 import React from "react";
 import "./Splash.scss";
 import Slider from "react-slick";
-import Dog1 from "./Dog1.jpg";
-import Dog2 from "./Dog2.jpg";
-import Dog3 from "./Dog3.jpg";
-import Dog4 from "./Dog4.jpg";
-import Dog5 from "./Dog5.jpg";
-import Dog6 from "./Dog6.jpg";
-import Dog7 from "./Dog7.jpg";
-import Dog8 from "./Dog8.jpg";
+// import Dog1 from "./Dog1.jpg";
+// import Dog2 from "./Dog2.jpg";
+// import Dog3 from "./Dog3.jpg";
+// import Dog4 from "./Dog4.jpg";
+// import Dog5 from "./Dog5.jpg";
+// import Dog6 from "./Dog6.jpg";
+// import Dog7 from "./Dog7.jpg";
+// import Dog8 from "./Dog8.jpg";
+import DogBanner1 from "./DogBanner1.jpg";
+import DogBanner2 from "./DogBanner2.jpg";
+import DogBanner3 from "./DogBanner3.png";
 import Donation from './donate.png'
 import adoption from './adoption.png'
 import volunteer from './volunteer.png'
@@ -16,14 +19,19 @@ import volunteer from './volunteer.png'
 class SplashPage extends React.Component {
   render() {
     const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      variableWidth: true,
-      autoplay: true,
-      autoplaySpeed: 5000,
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    //   dots: true,
+    //   infinite: true,
+    //   speed: 500,
+    //   slidesToShow: 1,
+    //   slidesToScroll: 1,
+    //   variableWidth: true,
+    //   autoplay: true,
+    //   autoplaySpeed: 5000,
     };
 
     return (
@@ -34,17 +42,25 @@ class SplashPage extends React.Component {
                         <h1>Make a difference, help save a life</h1>
                     </div>
                 </div>
+                <div id='test'>
                 <Slider {...settings}>
                     <div>
-                        <img src={Dog4} alt="d1" className="Dog" />
+                        <img src={DogBanner1} alt="d1" className="Dog" />
                     </div>
                     <div>
+                        <img src={DogBanner2} alt="d1" className="Dog" />
+                    </div>
+                    <div>
+                        <img src={DogBanner3} alt="d1" className="Dog" />
+                    </div>
+                    {/* <div>
                         <img src={Dog8} alt="d2" className="Dog" />
                     </div>
                     <div>
                         <img src={Dog3} alt="d3" className="Dog" />
-                    </div>
+                    </div> */}
                 </Slider>
+                </div>
             </div>
 
             <div>
@@ -100,10 +116,10 @@ class SplashPage extends React.Component {
                     <div>Donate</div>
                     <div>Ask a Question</div>
                 </div>
-                <div className='splash-page-footer-newsletter'>
+                {/* <div className='splash-page-footer-newsletter'>
                     <h1>To get the latest information on dog adoption sign up for the FIND MY PAWRENTS newsletter</h1>
                     <button>SIGN UP</button>
-                </div>
+                </div> */}
             </div>
       </div>
     );
