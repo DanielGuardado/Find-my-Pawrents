@@ -11,6 +11,12 @@ const LikeSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "users",
   },
+  dog_name: {
+    type:  String,
+  },
+  dog_image: {
+    type: 
+  },
   timestamps: {
     type: Date,
     default: Date.now,

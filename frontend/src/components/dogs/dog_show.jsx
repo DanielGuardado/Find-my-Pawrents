@@ -27,6 +27,9 @@ class DogShow extends React.Component {
     let like = {
       dog_id: this.props.dog._id,
       user_id: this.props.currentUser.id,
+      dog_name: this.props.dog.name,
+      dog_image: this.props.dog.image,
+
     };
     this.props.createLike(like);
   };
