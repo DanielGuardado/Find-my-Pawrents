@@ -22,7 +22,6 @@ class DogShow extends React.Component {
   }
 
   handleLike = () => {
-    debugger;
     let like = {
       dog_id: this.props.dog._id,
       user_id: this.props.currentUser.id,
