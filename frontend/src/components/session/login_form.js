@@ -112,15 +112,17 @@ class LoginForm extends React.Component {
               <br />
               <div className="render-errors">{this.renderErrors()}</div>
               <input className="login-submit" type="submit" value="Log in!" />
-              <button
-                onClick={this.demoLogin} className='demo-button'>
-                      Demo
-              </button>
-              <button
-                 onClick={this.shelterdemoLogin} className='demo-button'>
-                      Demo
-              </button>
-
+              <div className="demo-buttons">
+                <button onClick={this.demoLogin} className="demo-button">
+                  Demo
+                </button>
+                <button
+                  onClick={this.shelterdemoLogin}
+                  className="shelter-demo-button"
+                >
+                  Shelter Demo
+                </button>
+              </div>
             </div>
           </div>
         </form>
