@@ -27,6 +27,7 @@
             flex-direction: column;
             list-style-type: none;
 
+
             // flex-direction: column;
             // box-sizing: border-box;
 
@@ -92,13 +93,16 @@
 
 #dog-index-page-card-container{
     border: 1px solid black;
+    border-radius: 20px;
     // width: 200px;
     padding: 30px 30px;
     // margin: 0 30px;
     height: 430px;
     // min-height: 400px;
-    background-color: black;
-
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 
     
 }
@@ -110,7 +114,7 @@
         // width: 300px;
         padding: 20px 30px;
         // margin: 0 30px;
-        height: 300px;
+        height: 330px;
         // min-height: 300px;
     }
 }
