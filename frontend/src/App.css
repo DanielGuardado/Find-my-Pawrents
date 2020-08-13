@@ -56,6 +56,7 @@
 
 .login-form-container {
     padding: 18px;
+    font-family: Marker Felt, fantasy
 }
 
 .login-form-box {
@@ -88,7 +89,7 @@ h2.login-header {
     /* font-size: 15px; */
     margin-left: 30px;
     margin-top: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 
@@ -98,9 +99,11 @@ h2.login-header {
     text-align: center;
     padding: 10px;
     background-color: white;
-    margin-top: 3px;
+    margin-top: -3px;
     margin-right: 10px;
     cursor:pointer;
+    font-size: 18px;
+    font-family: Marker Felt, fantasy;
 }
 
 .modal-signup-btn:hover {
@@ -161,14 +164,47 @@ h2.login-header {
     background-color: rgb(73, 167, 227);
     margin-left: 30px;
     margin-top: 8px;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 100;
     color: white;
     cursor:pointer;
+    font-family: Marker Felt, fantasy
+
 
 }
 
 .login-submit:hover {
+    background-color: rgb(73, 167, 227);
+    color: white;
+}
+
+.demo-button, .shelter-demo-button {
+  border: 1px solid rgb(73, 167, 227);
+    border-radius: 3px;
+    height: 37px;
+    width: 322px;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(73, 167, 227);
+    margin-left: 20px;
+    margin-top: 15px;
+    font-size: 17px;
+    font-weight: 100;
+    color: white;
+    cursor:pointer;
+    font-family: Marker Felt, fantasy;
+}
+
+.demo-buttons {
+  display: flex;
+}
+
+.demo-button:hover {
+    background-color: rgb(73, 167, 227);
+    color: white;
+}
+
+.shelter-demo-button:hover {
     background-color: rgb(73, 167, 227);
     color: white;
 }
@@ -179,6 +215,7 @@ h2.login-header {
 
 .signup-form-container {
     padding: 18px;
+    font-family: Marker Felt, fantasy;
 }
 
 .signup-form-box {
@@ -242,6 +279,8 @@ h2.signup-header {
     background-color: white;
     margin-right: 10px;
     cursor:pointer;
+    font-size: 18px;
+    font-family: Marker Felt, fantasy;
 }
 
 .modal-login-btn:hover {
@@ -309,10 +348,11 @@ h2.signup-header {
     background-color: rgb(73, 167, 227);
     margin-left: 30px;
     margin-top: 10px;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 100;
     color: white;
     cursor:pointer;
+    font-family: Marker Felt, fantasy;
 
 }
 

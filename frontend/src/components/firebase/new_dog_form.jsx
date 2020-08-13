@@ -1,5 +1,8 @@
 import React from "react";
 import { storage } from "./firebase";
+import "./new_dog.scss";
+import NavBar from "./../navBar/navBar_container";
+
 
 class NewDogForm extends React.Component {
   constructor(props) {
@@ -107,18 +110,21 @@ class NewDogForm extends React.Component {
 
   render() {
     return (
-      <div className="adoption-form-container">
+      <div className='new-dog-form-master-container'>
+        <NavBar className="new-dog-form-nav" />
+      <div className="new-dog-form-container">
         {/* <button onClick={this.handleUpload}>Upload</button> */}
         {/* <button className="signup-submit" onClick={this.handleSubmit}>
           Submit dog
         </button> */}
-        <form className="adoption-form-box" onSubmit={this.handleSubmit}>
-          <div className="adoption-input-container">
-            <div className="adoption-form-top-level">
-              <h2 className="adoption-header">Adoption Form</h2>
+        <div className="new-dog-form-image" />
+        <form className="new-dog-form-box" onSubmit={this.handleSubmit}>
+          <div className="new-dog-input-container">
+            <div className="new-dog-form-top-level">
+              <h2 className="new-dog-header">Adoption Form</h2>
             </div>
-            <div className="adoption-form">
-              <div className="adoption-name-input-box">
+            <div className="new-dog-form">
+              <div className="new-dog-name-input-box">
                 <div className="input-titles">Name</div>
                 <input
                   className="input-boxes"
@@ -128,31 +134,33 @@ class NewDogForm extends React.Component {
                 />
               </div>
               <br />
-              <div className="adoption-gender-input-box">
-                <div>Gender</div>
-                <div className="radio-buttons">
-                  Male
-                  <input
-                    className=""
-                    name="gender"
-                    type="radio"
-                    value="Male"
-                    onChange={this.update("gender")}
-                  />
-                </div>
-                <div className="radio-buttons">
-                  Female
-                  <input
-                    className=""
-                    name="gender"
-                    type="radio"
-                    value="Female"
-                    onChange={this.update("gender")}
-                  />
+              <div className="new-dog-gender-input-box">
+                <div className="gender-buttons">
+                  <label>Gender </label>
+                  <div className="radio-buttons">
+                    <input
+                      className=""
+                      name="gender"
+                      type="radio"
+                      value="Male"
+                      onChange={this.update("gender")}
+                    />
+                    Male
+                  </div>
+                  <div className="radio-buttons">
+                    <input
+                      className=""
+                      name="gender"
+                      type="radio"
+                      value="Female"
+                      onChange={this.update("gender")}
+                    />
+                    Female
+                  </div>
                 </div>
               </div>
               <br />
-              <div className="adoption-breed-input-box">
+              <div className="new-dog-breed-input-box">
                 <div className="input-titles">Breed</div>
                 <input
                   className="input-boxes"
@@ -162,7 +170,7 @@ class NewDogForm extends React.Component {
                 />
               </div>
               <br />
-              <div className="adoption-age-input-box"></div>
+              <div className="new-dog-age-input-box"></div>
               <div className="input-titles">Age</div>
               <input
                 className="input-boxes"
@@ -171,7 +179,7 @@ class NewDogForm extends React.Component {
                 onChange={this.update("age")}
               />
               <br />
-              <div className="adoption-description-input-box">
+              <div className="new-dog-description-input-box">
                 <div className="input-titles">Description</div>
                 <input
                   className="input-boxes"
@@ -181,7 +189,7 @@ class NewDogForm extends React.Component {
                 />
               </div>
               <br />
-              <div className="adoption-strengths-input-box">
+              <div className="new-dog-strengths-input-box">
                 <div className="input-titles">Strengths</div>
                 <input
                   className="input-boxes"
@@ -191,18 +199,27 @@ class NewDogForm extends React.Component {
                 />
               </div>
               <br />
-              <input type="file" onChange={this.handleChange} />
-              {this.preview()}
-              <input
-                className="adoption-submit"
-                type="submit"
-                value="List for Adoption!"
-              />
-              <br />
+              <div>
+                <input
+                  className="file-upload"
+                  type="file"
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div>
+                <input
+                  className="new-dog-submit"
+                  type="submit"
+                  value="List for Adoption!"
+                />
+                <br />
+                {/* <div className="preview">{this.preview()}</div> */}
+              </div>
               <div className="render-errors">{this.renderErrors()}</div>
             </div>
           </div>
         </form>
+      </div>
       </div>
     );
   }

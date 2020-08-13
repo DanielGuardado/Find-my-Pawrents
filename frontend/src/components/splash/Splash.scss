@@ -8,10 +8,16 @@
 .Dog {
 //   width: 1000px;
 //   height: 600px;
+    // max-width: 1920px;
     width: 100%;
-    height: 800px;
+    height: 500px;
+    object-fit: cover;
 
 
+}
+
+#test{
+    width: 100%;
 }
 // .featured {
 //   width: 100%;
@@ -25,7 +31,7 @@
 //   width: 200px;
 // }
 .slick-slider {
-  margin: auto;
+    margin: auto;
 //   width: 1000px;
     width: 100%;
 }
@@ -38,6 +44,8 @@
 
 .splash-page-main-content-container{
     margin-top: 100px;
+    font-family: Marker Felt, fantasy;
+
     
     h1{
         text-align: center;
@@ -65,7 +73,7 @@
 
 .splash-page-footer-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     color: white;
     background-color: black;
     // padding: 50px 100px;
@@ -73,7 +81,7 @@
     .splash-page-footer-parts{
         display: flex;
         flex-direction: column;
-        margin: 10px 100px;
+        margin: 10px 100;
         width: 400px;
 
         h1{
@@ -83,17 +91,18 @@
             font-size: 12px;
         }
     }
-    .splash-page-footer-newsletter{
-        margin: 10px 100px;
+    // .splash-page-footer-newsletter{
+    //     margin: 10px 100px;
 
 
-         h1{
-            font-size: 12px;
-        }
+    //      h1{
+    //         font-size: 12px;
+    //     }
        
-          button{
-            width: 300px;
-        }
-    }
+    //       button{
+    //         width: 300px;
+    //     }
+    
+    // }
 
 }

@@ -23,28 +23,30 @@ class DogIndexItem extends React.Component {
     const { dog } = this.props;
     return (
       <ul>
-        <div id="dog-index-page-image-container">
-          <Link to={`/dogs/${dog._id}`}>
-            <img id="dog-index-page-image" src={dog.image} alt="1" />
-          </Link>
-        </div>
-        <div className="dog-index-page-list-content-container">
-          <li>
-            <span>Name:</span> {dog.name}
-          </li>
-          <li>
-            <span>Age:</span>
-            {dog.age}
-          </li>
-          <li>
-            <span>Status:</span>
-            {dog.adoption_status}
-          </li>
-          <div id="icon-container">
-            <img id="icons" src={likeicon} alt="icons" />
-            <img id="icons" src={commenticon} alt="icons" />
+        <Link to={`/dogs/${dog._id}`}>
+          <div id="dog-index-page-card-container">
+            <div id="dog-index-page-image-container">
+              <img id="dog-index-page-image" src={dog.image} alt="1" />
+            </div>
+            <div className="dog-index-page-list-content-container">
+              <li>
+                <span>Name:</span> {dog.name}
+              </li>
+              <li>
+                <span>Age:</span>
+                {dog.age}
+              </li>
+              <li>
+                <span>Status:</span>
+                {dog.adoption_status}
+              </li>
+              <div id="icon-container">
+                <img id="icons" src={likeicon} />
+                <img id="icons" src={commenticon} />
+              </div>
+            </div>
           </div>
-        </div>
+        </Link>
       </ul>
     );
   }
