@@ -170,31 +170,31 @@ class DogShow extends React.Component {
     );
   }
 
-  render() {
-    if(this.props.loggedIn) {
-    return (
-      <div className="">
-        {this.dogRender()}
-        {this.appForm()}
-      </div>
-    )} else {
-      return (
-        <div className="">
-          {this.dogRender()}
-        </div>
-      );
-    };
-  }
-
   // render() {
+  //   if(this.props.loggedIn) {
   //   return (
   //     <div className="">
-  //     <NavBar />
   //       {this.dogRender()}
   //       {this.appForm()}
   //     </div>
-  //   )
+  //   )} else {
+  //     return (
+  //       <div className="">
+  //         {this.dogRender()}
+  //       </div>
+  //     );
+  //   };
   // }
+
+  render() {
+    return (
+      <div className="">
+      <NavBar />
+        {this.dogRender()}
+        {this.appForm()}
+      </div>
+    )
+  }
 }
 
 export default DogShow;
