@@ -46,7 +46,7 @@ class DogShow extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
+    debugger;
     let appointment = {
       appt_time: this.state.appt_time,
       appt_date: this.state.appt_date,
@@ -55,7 +55,10 @@ class DogShow extends React.Component {
       appt_status: "Pending Approval",
       shelter_id: this.props.dog.shelter_id,
       dog_id: this.props.dog._id,
+      dog_name: this.props.dog.name,
+      image: this.props.dog.image,
     };
+    debugger;
     this.props.createAppointment(appointment).catch((err) => {
       this.props.receiveErrors(err.response.data);
     });
