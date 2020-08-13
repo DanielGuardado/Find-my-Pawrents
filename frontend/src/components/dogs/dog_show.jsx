@@ -5,6 +5,7 @@ import NavBar from "./../navBar/navBar_container";
 class DogShow extends React.Component {
   constructor(props) {
     super(props);
+    this.newData = React.createRef();
     this.state = {
       formStatus: false,
       appt_time: "",
@@ -19,6 +20,7 @@ class DogShow extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.newData = this.newData.bind(this)
   }
   componentDidMount() {
     this.props.fetchDog(this.props.id);
@@ -34,6 +36,19 @@ class DogShow extends React.Component {
         [field]: e.currentTarget.value,
       });
   }
+
+  scrollBottom() {
+    window.scrollTo({
+      bottom: 0,
+      behavior: "smooth",
+    });
+  }
+
+  handleForm = (e) => {
+    this.setState({ formStatus: !this.state.formStatus })
+    // debugger
+    // this.newData.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   handleSubmit(e) {
     e.preventDefault();
@@ -114,7 +129,7 @@ class DogShow extends React.Component {
   appForm() {
     if (this.state.formStatus) {
       return (
-        <div className="appt-form-container">
+        <div ref={this.newData} className="appt-form-container">
           <div className="appt-form-box">
             <form className="appt-form" onSubmit={this.handleSubmit}>
               <h1 className="appt-header">Appointment</h1>
@@ -184,14 +199,11 @@ class DogShow extends React.Component {
   }
   apptBtn() {
     return (
-      <>
-        <button
-          className="appt-btn"
-          onClick={() => this.setState({ formStatus: !this.state.formStatus })}
-        >
+      <div>
+        <button  className="appt-btn" onClick={() => this.handleForm()}>
           ⇊ Schedule now ⇊
         </button>
-      </>
+      </div>
     );
   }
 

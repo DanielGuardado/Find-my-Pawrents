@@ -4,6 +4,7 @@ const passport = require("passport");
 
 // const validateLikeInput = require("../../validation/likes");
 const Like = require("../../models/Like");
+const Dog = require("../../models/Dog")
 
 router.get("/test", (req, res) => {
   res.json({
@@ -24,7 +25,7 @@ router.post(
     });
 
     newLike.save().then((like) => res.json(like))
-    .catch((err) => res.status(400).json(err))
+      .catch((err) => res.status(400).json(err))
   }
 );
 
@@ -43,6 +44,23 @@ router.get("/dog/:dog_id/count", (req, res) => {
     .then((likes) => res.json(likes.length))
     .catch((err) => res.status(400).json(err));
 });
+
+
+router.get("/user/:user_id", (req, res) => {
+  // let dogIds = []
+  // let likes = Like.find({
+  //   user_id: req.params.user_id
+  // })
+
+
+  // var dogIds = Like.find({
+  //   user_id: req.params.user_id
+  // }).map(function (like) {
+  //   return like.dog_id;
+  // });
+
+
+})
 
 
 router.delete(
