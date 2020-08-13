@@ -22,11 +22,20 @@ class DogShow extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     // this.newData = this.newData.bind(this)
   }
+
+  handleLike = () => {
+    let like = {
+      dog_id: this.props.dog._id,
+      user_id: this.props.currentUser.id,
+    };
+    this.props.createLike(like);
+  };
+
   componentDidMount() {
     this.props.fetchDog(this.props.id);
     if (this.props.dog) {
       this.setState({ shelter_id: this.props.dog.shelter_id });
-      this.setState({ shelter_id: this.props.dog.dog_id });
+      this.setState({ dog_id: this.props.dog.dog_id });
     }
   }
 
@@ -66,6 +75,13 @@ class DogShow extends React.Component {
       this.props.receiveErrors(err.response.data);
     });
   }
+
+  dogLike() {
+    if (this.props.dog && this.props.currentUser.id) {
+      return <button onClick={this.handleLike}>Like me</button>;
+    }
+  }
+
   dogDelete() {
     if (
       this.props.dog &&
@@ -230,6 +246,7 @@ class DogShow extends React.Component {
         {this.dogRender()}
         {this.appForm()}
         {this.dogDelete()}
+        {this.dogLike()}
       </div>
     );
   }

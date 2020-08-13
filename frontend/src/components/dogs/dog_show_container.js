@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import { fetchDog, deleteDog } from "../../actions/dog_actions";
 import { createAppointment } from "../../actions/appointment_actions";
 import { receiveErrors } from "../../actions/session_actions";
+import { createLike } from "../../actions/like_action";
 
 import DogShow from "./dog_show";
 
@@ -19,6 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
   createAppointment: (appt) => dispatch(createAppointment(appt)),
   receiveErrors: (errors) => dispatch(receiveErrors(errors)),
   deleteDog: (dogId) => dispatch(deleteDog(dogId)),
+  createLike: (like) => dispatch(createLike(like)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DogShow);
