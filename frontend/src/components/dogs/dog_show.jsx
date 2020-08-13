@@ -2,7 +2,6 @@ import React from "react";
 import "./dog_show.scss";
 import NavBar from "./../navBar/navBar_container";
 
-
 class DogShow extends React.Component {
   constructor(props) {
     super(props);
@@ -13,14 +12,20 @@ class DogShow extends React.Component {
       comments: "",
       phone_number: "",
       appt_status: "Pending Approval",
-      shelter_id: this.props.dog.shelter_id,
-      dog_id: this.props.dog.id,
+      shelter_id: "",
+      dog_id: "",
+      // shelter_id: this.props.dog.shelter_id,
+      // dog_id: this.props.dog.id,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
-    this.props.fetchDog(this.props.match.params.dogId);
+    this.props.fetchDog(this.props.id);
+    if (this.props.dog) {
+      this.setState({ shelter_id: this.props.dog.shelter_id });
+      this.setState({ shelter_id: this.props.dog.dog_id });
+    }
   }
 
   update(field) {
@@ -42,10 +47,27 @@ class DogShow extends React.Component {
       shelter_id: this.props.dog.shelter_id,
       dog_id: this.props.dog._id,
     };
-    this.props.createAppointment(appointment)
-      .catch((err) => {
-        this.props.receiveErrors(err.response.data);
-      });
+    this.props.createAppointment(appointment).catch((err) => {
+      this.props.receiveErrors(err.response.data);
+    });
+  }
+  dogDelete() {
+    if (
+      this.props.dog &&
+      this.props.currentUser.id === this.props.dog.shelter_id
+    ) {
+      return (
+        <button
+          onClick={() =>
+            this.props
+              .deleteDog(this.props.dog._id)
+              .then(() => this.props.history.push("/dogs"))
+          }
+        >
+          Remove Dog
+        </button>
+      );
+    }
   }
 
   dogRender() {
@@ -129,7 +151,10 @@ class DogShow extends React.Component {
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     required
                   />
-                  <small className="phone-format"> (format: 123-456-7890)</small>
+                  <small className="phone-format">
+                    {" "}
+                    (format: 123-456-7890)
+                  </small>
                 </div>
                 <div className="questions-comments">
                   <label htmlFor="comments">Questions or comments:</label>
@@ -189,11 +214,12 @@ class DogShow extends React.Component {
   render() {
     return (
       <div className="">
-      <NavBar />
+        <NavBar />
         {this.dogRender()}
         {this.appForm()}
+        {this.dogDelete()}
       </div>
-    )
+    );
   }
 }
 

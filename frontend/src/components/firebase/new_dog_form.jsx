@@ -54,7 +54,9 @@ class NewDogForm extends React.Component {
       image: this.state.image,
       shelter_id: this.state.shelter_id,
     };
-    this.props.createDog(dog);
+    this.props
+      .createDog(dog)
+      .then(() => this.props.history.push(`/dogs/${this.props.dogId}`));
   }
 
   handleChange = (e) => {

@@ -1,13 +1,9 @@
 import React from "react";
 import DogIndexItem from "./dog_index_item";
-import NavBar from './../navBar/navBar_container'
-import './dog_index.scss'
+import NavBar from "./../navBar/navBar_container";
+import "./dog_index.scss";
 
 class DogIndex extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.fetchDogs();
   }
@@ -20,12 +16,12 @@ class DogIndex extends React.Component {
   }
 
   render() {
-    return  (
+    return (
       <div>
         <NavBar />
         <div className="dog-index-page-main-container">{this.dogShow()}</div>
       </div>
-    )
+    );
   }
 }
 export default DogIndex;

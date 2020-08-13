@@ -2,10 +2,13 @@ import { connect } from "react-redux";
 import { createDog } from "../../actions/dog_actions";
 import NewDogForm from "./new_dog_form";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  debugger;
   return {
     currentUser: state.session.user,
     errors: state.errors.session,
+    // dogs: state.dogs[ownProps.match.params.dogId],
+    dogId: Object.keys(state.dogs)[0],
   };
 };
 

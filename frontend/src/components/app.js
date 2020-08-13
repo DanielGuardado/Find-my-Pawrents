@@ -5,7 +5,6 @@ import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import NavBarContainer from "./navBar/navBar_container";
 import Splash from "./splash/splash_container";
-import AdoptionFormContainer from "./adoption/adoption_form_container";
 import { Switch, Route } from "react-router-dom";
 import Modal from "./modal/modal";
 import DogIndex from "./dogs/dog_index_container";
@@ -20,16 +19,13 @@ const App = () => {
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <Route path="/dogs/:dogId" exact component={DogShow} />
-        <Route path="/new_dog" exact component={ReactFirebase} />
+        <ProtectedRoute path="/new_dog" exact component={ReactFirebase} />
         <Route path="/dogs">
           <DogIndex />
         </Route>
         <Route path="/">
           <NavBarContainer />
           <Splash />
-        </Route>
-        <Route path="/adoption">
-          <AdoptionFormContainer />
         </Route>
       </Switch>
     </div>

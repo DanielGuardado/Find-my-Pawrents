@@ -1,19 +1,24 @@
 import { connect } from "react-redux";
-import { fetchDog } from "../../actions/dog_actions";
+import { fetchDog, deleteDog } from "../../actions/dog_actions";
 import { createAppointment } from "../../actions/appointment_actions";
-import { receiveErrors } from "../../actions/session_actions"
+import { receiveErrors } from "../../actions/session_actions";
+
 import DogShow from "./dog_show";
 
 const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.match.params.dogId;
   return {
-    dog: state.dogs,
+    currentUser: state.session.user,
+    dog: state.dogs[ownProps.match.params.dogId],
+    id,
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
   fetchDog: (dogId) => dispatch(fetchDog(dogId)),
-  createAppointment: appt => dispatch(createAppointment(appt)),
-  receiveErrors: (errors) => dispatch(receiveErrors(errors)),  
+  createAppointment: (appt) => dispatch(createAppointment(appt)),
+  receiveErrors: (errors) => dispatch(receiveErrors(errors)),
+  deleteDog: (dogId) => dispatch(deleteDog(dogId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DogShow);

@@ -14,7 +14,7 @@ router.get("/test", (req, res) => {
 router.get("/", (req, res) => {
   Dog.find()
     .sort({
-      date: -1,
+      timestamps: -1,
     })
     .then((dogs) => res.json(dogs))
     .catch((err) => res.status(400).json(err));
@@ -97,6 +97,13 @@ router.post(
     //   res.send(place);
   }
 );
+
+// router.delete("/:id", (req, res) => {
+//   passport.authenticate("jwt", { session: false }),
+//     Dog.findByIdAndDelete(req.params.id)
+//       .then(() => res.json({ msg: "Dog deleted" }))
+//       .catch((err) => res.status(400).json(err));
+// });
 
 router.delete(
   "/:id",
