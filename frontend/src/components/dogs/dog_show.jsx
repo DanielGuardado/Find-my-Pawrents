@@ -24,7 +24,7 @@ class DogShow extends React.Component {
     this.props.fetchDog(this.props.id);
     if (this.props.dog) {
       this.setState({ shelter_id: this.props.dog.shelter_id });
-      this.setState({ shelter_id: this.props.dog.dog_id });
+      this.setState({ dog_id: this.props.dog.dog_id });
     }
   }
 
