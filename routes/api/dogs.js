@@ -119,7 +119,8 @@ router.post(
       image: req.body.image,
     });
 
-    newDog.save().then((dog) => res.json(dog));
+    newDog.save().then((dog) => res.json(dog))
+     .catch((err) => console.log(err));
   }
 );
 

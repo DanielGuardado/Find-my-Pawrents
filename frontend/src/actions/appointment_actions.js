@@ -11,6 +11,11 @@ export const receiveAppt = (appt) => ({
   appt,
 });
 
+export const receiveAppts = appts => ({
+  type: RECEIVE_APPTS,
+  appts
+})
+
 
 
 export const fetchAppointment = (appointmentId) => (dispatch) =>
@@ -18,3 +23,6 @@ export const fetchAppointment = (appointmentId) => (dispatch) =>
 
 export const createAppointment = (appointment) => (dispatch) =>
  ApptAPIUtil.createAppointment(appointment).then((appointment) => dispatch(receiveAppt(appointment)));
+
+ export const fetchAppointments = shelterId => dispatch => 
+ ApptAPIUtil.fetchAppointments(shelterId).then(appointments => dispatch(receiveAppts(appointments)))
