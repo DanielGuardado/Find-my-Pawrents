@@ -57,8 +57,13 @@ class SplashPage extends React.Component {
                         <img src={Dog8} alt="d2" className="Dog" />
                     </div>
                     <div>
+<<<<<<< HEAD
                         <img src={Dog3} alt="d3" className="Dog" />
                     </div> */}
+=======
+                        {/* <img src={Dog3} alt="d3" className="Dog" /> */}
+                    </div>
+>>>>>>> ceaeb28468399fef36bff83503751080336ae759
                 </Slider>
                 </div>
             </div>
