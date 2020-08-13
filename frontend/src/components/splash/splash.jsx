@@ -21,16 +21,16 @@ class SplashPage extends React.Component {
     const settings = {
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 2000,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
     //   dots: true,
     //   infinite: true,
     //   speed: 500,
     //   slidesToShow: 1,
     //   slidesToScroll: 1,
     //   variableWidth: true,
-    //   autoplay: true,
+         autoplay: true,
     //   autoplaySpeed: 5000,
     };
 
