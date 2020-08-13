@@ -3,7 +3,6 @@ import { createDog } from "../../actions/dog_actions";
 import NewDogForm from "./new_dog_form";
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
     currentUser: state.session.user,
     errors: state.errors.session,
