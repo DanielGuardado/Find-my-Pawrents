@@ -11,14 +11,6 @@ router.get("/test", (req, res) => {
   });
 });
 
-// router.get("/", (req, res) => {
-//   Dog.find()
-//     .sort({
-//       date: -1,
-//     })
-//     .then((dogs) => res.json(dogs))
-//     .catch((err) => res.status(400).json(err));
-// });
 
 router.get("/user/:shelter_id", (req, res) => {
   Appointment.find({
