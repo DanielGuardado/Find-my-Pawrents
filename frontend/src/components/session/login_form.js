@@ -14,6 +14,8 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
+    this.shelterdemoLogin = this.shelterdemoLogin.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -46,6 +48,25 @@ class LoginForm extends React.Component {
         this.props.receiveErrors(err.response.data);
       });
   }
+
+  demoLogin(e) {
+    e.preventDefault();
+    const demoUser = {
+      email: 'demo@gmail.com',
+      password: 'demopassword'
+      };
+        this.props.demoAction(demoUser).then(this.props.closeModal);
+    }
+  shelterdemoLogin(e) {
+    e.preventDefault();
+    const demoUser = {
+      email: 'shelterdemo@gmail.com',
+      password: 'shelterdemopassword'
+      };
+        this.props.demoAction(demoUser).then(this.props.closeModal);
+    }
+
+
 
   renderErrors() {
     return (
@@ -91,6 +112,17 @@ class LoginForm extends React.Component {
               <br />
               <div className="render-errors">{this.renderErrors()}</div>
               <input className="login-submit" type="submit" value="Log in!" />
+              <div className="demo-buttons">
+                <button onClick={this.demoLogin} className="demo-button">
+                  Demo
+                </button>
+                <button
+                  onClick={this.shelterdemoLogin}
+                  className="shelter-demo-button"
+                >
+                  Shelter Demo
+                </button>
+              </div>
             </div>
           </div>
         </form>

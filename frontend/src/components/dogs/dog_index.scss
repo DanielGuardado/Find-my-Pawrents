@@ -13,6 +13,8 @@
         // flex-direction: column;
         grid-template-columns: 25% 25% 25% 25%;
         display: grid;
+        margin-right: 25px;
+        margin-left: -20px;
 
         #dog-index-page-image-container{
             display: flex;
@@ -102,9 +104,15 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-evenly;  
+}
 
-    
+#dog-index-page-card-container:hover {
+  transform: scale(1.05, 1.05);
+}
+
+#dog-index-page-card-container:hover::after {
+ opacity: 1;
 }
 
 @media screen and (max-width:1550px){

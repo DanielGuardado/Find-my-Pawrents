@@ -23,7 +23,10 @@ const mapDispatchToProps = (dispatch) => {
             </button>
         ),
         closeModal: () => dispatch(closeModal()),
-        receiveErrors: errors => dispatch(receiveErrors(errors))
+        receiveErrors: errors => dispatch(receiveErrors(errors)),
+        demoAction: demoUser => dispatch(login(demoUser)),
+
+
     }
 }
 

@@ -89,7 +89,7 @@ h2.login-header {
     /* font-size: 15px; */
     margin-left: 30px;
     margin-top: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 
@@ -174,6 +174,37 @@ h2.login-header {
 }
 
 .login-submit:hover {
+    background-color: rgb(73, 167, 227);
+    color: white;
+}
+
+.demo-button, .shelter-demo-button {
+  border: 1px solid rgb(73, 167, 227);
+    border-radius: 3px;
+    height: 37px;
+    width: 322px;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(73, 167, 227);
+    margin-left: 20px;
+    margin-top: 15px;
+    font-size: 17px;
+    font-weight: 100;
+    color: white;
+    cursor:pointer;
+    font-family: Marker Felt, fantasy;
+}
+
+.demo-buttons {
+  display: flex;
+}
+
+.demo-button:hover {
+    background-color: rgb(73, 167, 227);
+    color: white;
+}
+
+.shelter-demo-button:hover {
     background-color: rgb(73, 167, 227);
     color: white;
 }
