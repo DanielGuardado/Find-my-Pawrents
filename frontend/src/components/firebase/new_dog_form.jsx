@@ -1,6 +1,7 @@
 import React from "react";
 import { storage } from "./firebase";
 import "./new_dog.scss";
+import NavBar from "./../navBar/navBar_container";
 
 
 class NewDogForm extends React.Component {
@@ -112,7 +113,6 @@ class NewDogForm extends React.Component {
         {/* <button className="signup-submit" onClick={this.handleSubmit}>
           Submit dog
         </button> */}
-
         <div className="adoption-form-image" />
         <form className="adoption-form-box" onSubmit={this.handleSubmit}>
           <div className="adoption-input-container">
