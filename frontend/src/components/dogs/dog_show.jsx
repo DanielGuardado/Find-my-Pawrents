@@ -52,6 +52,7 @@ class DogShow extends React.Component {
     });
   }
   dogDelete() {
+    debugger;
     if (
       this.props.dog &&
       this.props.currentUser.id === this.props.dog.shelter_id

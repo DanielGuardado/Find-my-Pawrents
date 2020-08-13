@@ -10,6 +10,7 @@ import Modal from "./modal/modal";
 import DogIndex from "./dogs/dog_index_container";
 import DogShow from "./dogs/dog_show_container";
 import ReactFirebase from "./firebase/new_dog_form_container";
+import MyDogsIndex from "./shelter_dogs/shelter_my_dogs_container";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <Route path="/dogs/:dogId" exact component={DogShow} />
+        <Route path="/my_dogs" exact component={MyDogsIndex} />
         <ProtectedRoute path="/new_dog" exact component={ReactFirebase} />
         <Route path="/dogs">
           <DogIndex />
