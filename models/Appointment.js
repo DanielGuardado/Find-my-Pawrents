@@ -12,7 +12,7 @@ const AppointmentSchema = new Schema({
   },
   user_id: {
     type: Schema.Types.ObjectId,
-      ref: "users",
+    ref: "users",
   },
   appt_time: {
     type: String,
@@ -23,14 +23,22 @@ const AppointmentSchema = new Schema({
     required: true,
   },
   phone_number: {
-    type: String
+    type: String,
   },
   comments: {
     type: String,
   },
   appt_status: {
     type: String,
-    required: true
+    required: true,
+  },
+  dog_name: {
+    type: String,
+    required: true,
+  },
+  image: {
+    type: String,
+    required: true,
   },
   timestamps: {
     type: Date,

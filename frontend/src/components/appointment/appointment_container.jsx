@@ -1,21 +1,22 @@
 import { connect } from "react-redux";
 import { fetchAppointments } from "../../actions/appointment_actions";
+import { fetchDogs } from "../../actions/dog_actions";
+
 import Appointments from "./appointment";
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
-    return {
-        shelterId: state.session.user.id,
-        appointments: state.appointments[ownProps.match.params.shelter_id],
-
-    };
+  return {
+    shelterId: state.session.user.id,
+    // appointments: state.appointments[ownProps.match.params.shelter_id],
+    appointments: Object.values(state.appointments),
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
-    debugger
-    return{
+  return {
+    // fetchAppointments: (shelterId) => dispatch(fetchAppointments(shelterId)),
     fetchAppointments: (shelterId) => dispatch(fetchAppointments(shelterId)),
-    }
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Appointments);
