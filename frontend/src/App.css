@@ -56,6 +56,7 @@
 
 .login-form-container {
     padding: 18px;
+    font-family: Marker Felt, fantasy
 }
 
 .login-form-box {
@@ -98,9 +99,11 @@ h2.login-header {
     text-align: center;
     padding: 10px;
     background-color: white;
-    margin-top: 3px;
+    margin-top: -3px;
     margin-right: 10px;
     cursor:pointer;
+    font-size: 18px;
+    font-family: Marker Felt, fantasy;
 }
 
 .modal-signup-btn:hover {
@@ -161,10 +164,12 @@ h2.login-header {
     background-color: rgb(73, 167, 227);
     margin-left: 30px;
     margin-top: 8px;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 100;
     color: white;
     cursor:pointer;
+    font-family: Marker Felt, fantasy
+
 
 }
 
@@ -179,6 +184,7 @@ h2.login-header {
 
 .signup-form-container {
     padding: 18px;
+    font-family: Marker Felt, fantasy;
 }
 
 .signup-form-box {
@@ -242,6 +248,8 @@ h2.signup-header {
     background-color: white;
     margin-right: 10px;
     cursor:pointer;
+    font-size: 18px;
+    font-family: Marker Felt, fantasy;
 }
 
 .modal-login-btn:hover {
@@ -309,10 +317,11 @@ h2.signup-header {
     background-color: rgb(73, 167, 227);
     margin-left: 30px;
     margin-top: 10px;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 100;
     color: white;
     cursor:pointer;
+    font-family: Marker Felt, fantasy;
 
 }
 

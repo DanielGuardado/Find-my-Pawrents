@@ -1,5 +1,7 @@
 import React from "react";
 import { storage } from "./firebase";
+import "./new_dog.scss";
+
 
 class NewDogForm extends React.Component {
   constructor(props) {
@@ -110,6 +112,8 @@ class NewDogForm extends React.Component {
         {/* <button className="signup-submit" onClick={this.handleSubmit}>
           Submit dog
         </button> */}
+
+        <div className="adoption-form-image" />
         <form className="adoption-form-box" onSubmit={this.handleSubmit}>
           <div className="adoption-input-container">
             <div className="adoption-form-top-level">
@@ -127,26 +131,28 @@ class NewDogForm extends React.Component {
               </div>
               <br />
               <div className="adoption-gender-input-box">
-                <div>Gender</div>
-                <div className="radio-buttons">
-                  Male
-                  <input
-                    className=""
-                    name="gender"
-                    type="radio"
-                    value="Male"
-                    onChange={this.update("gender")}
-                  />
-                </div>
-                <div className="radio-buttons">
-                  Female
-                  <input
-                    className=""
-                    name="gender"
-                    type="radio"
-                    value="Female"
-                    onChange={this.update("gender")}
-                  />
+                <div className="gender-buttons">
+                  <label>Gender </label>
+                  <div className="radio-buttons">
+                    <input
+                      className=""
+                      name="gender"
+                      type="radio"
+                      value="Male"
+                      onChange={this.update("gender")}
+                    />
+                    Male
+                  </div>
+                  <div className="radio-buttons">
+                    <input
+                      className=""
+                      name="gender"
+                      type="radio"
+                      value="Female"
+                      onChange={this.update("gender")}
+                    />
+                    Female
+                  </div>
                 </div>
               </div>
               <br />
@@ -189,14 +195,22 @@ class NewDogForm extends React.Component {
                 />
               </div>
               <br />
-              <input type="file" onChange={this.handleChange} />
-              {this.preview()}
-              <input
-                className="adoption-submit"
-                type="submit"
-                value="List for Adoption!"
-              />
-              <br />
+              <div>
+                <input
+                  className="file-upload"
+                  type="file"
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div>
+                <input
+                  className="adoption-submit"
+                  type="submit"
+                  value="List for Adoption!"
+                />
+                <br />
+                <div className="preview">{this.preview()}</div>
+              </div>
               <div className="render-errors">{this.renderErrors()}</div>
             </div>
           </div>
