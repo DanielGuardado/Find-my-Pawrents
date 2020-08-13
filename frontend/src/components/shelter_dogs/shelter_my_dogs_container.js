@@ -3,7 +3,6 @@ import { fetchShelterDogs, deleteDog } from "../../actions/dog_actions";
 import MyDogsIndex from "./shelter_my_dogs";
 
 const mapStateToProps = (state) => {
-  debugger;
   return {
     dogs: Object.values(state.dogs),
     currentUser: state.session.user,

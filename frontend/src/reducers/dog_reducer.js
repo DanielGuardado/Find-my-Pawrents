@@ -27,7 +27,6 @@ const dogReducer = (state = {}, action) => {
       delete copy[action.dogId];
       return copy;
     case RECEIVE_SHELTER_DOGS:
-      debugger;
       let obj1 = {};
       action.shelter.data.forEach((dog) => {
         obj1[dog._id] = dog;

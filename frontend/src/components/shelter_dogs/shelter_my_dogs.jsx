@@ -14,7 +14,6 @@ class MyDogsIndex extends React.Component {
   }
 
   render() {
-    debugger;
     if (this.props.dogs.length === 0) {
       return (
         <>
