@@ -24,5 +24,5 @@ export const fetchAppointment = (appointmentId) => (dispatch) =>
 export const createAppointment = (appointment) => (dispatch) =>
  ApptAPIUtil.createAppointment(appointment).then((appointment) => dispatch(receiveAppt(appointment)));
 
- export const fetchAppointments = shelterId => dispatch => 
+ export const fetchAppointments = shelterId => (dispatch) => 
  ApptAPIUtil.fetchAppointments(shelterId).then(appointments => dispatch(receiveAppts(appointments)))
