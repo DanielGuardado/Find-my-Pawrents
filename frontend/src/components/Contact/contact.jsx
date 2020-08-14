@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "./../navBar/navBar_container";
 import "./contact.scss";
 import WaveTop from "./wave-top.png";
 import WaveMid from "./wave-mid.png";
@@ -27,28 +26,35 @@ class ContactPage extends React.Component {
     return (
       <div>
         <div className="contact-page-main-container">
-          <div class="waveWrapper waveAnimation">
-            <div class="waveWrapperInner bgTop">
+          <div class="contact-aveWrapper contact-waveAnimation">
+            <div class="contact-waveWrapperInner contact-bgTop">
               <div
-                class="wave waveTop"
+                class="contact-wave contact-waveTop"
                 //   style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"
                 style={styles.WaveTop}
               ></div>
             </div>
-            <div class="waveWrapperInner bgMiddle">
+            <div class="contact-waveWrapperInner contact-bgMiddle">
               <div
-                class="wave waveMiddle"
+                class="contact-wave contact-waveMiddle"
                 //   style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"
                 style={styles.WaveMid}
               ></div>
             </div>
-            <div class="waveWrapperInner bgBottom">
+            <div class="contact-waveWrapperInner contact-bgBottom">
               <div
-                class="wave waveBottom"
+                class="contact-wave contact-waveBottom"
                 style={styles.WaveBot}
                 //   style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"
               ></div>
             </div>
+          <form className="contact-page-form">
+              <div className="contact-page-input-container">
+                  <div className="contact-page-top-level">
+                    <h2 className="contact-header">Contact Us</h2>
+                  </div>
+              </div>
+          </form>
           </div>
         </div>
       </div>

@@ -29,14 +29,14 @@ class AppointmentIndex extends React.Component {
       <div>
         <NavBar />
         <div className="appointments-page-list-container">
-        <h1 id="all-appts-title">Here are all your appointments!</h1>
+        <h1 id="all-appts-title1">Here are all your appointments!</h1>
           <table className="appttable">
             <tr className="tableheaders">
               <th>Name</th>
               <th>Appointment Date</th>
               <th>Appointment Time</th>
               <th>Phone Number</th>
-              <th>Comments</th>
+              <th className="comments">Comments</th>
               <th>Appointment Status</th>
               <th>Approved?</th>
             </tr>

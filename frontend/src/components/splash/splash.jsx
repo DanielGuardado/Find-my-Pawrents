@@ -1,5 +1,6 @@
 import React from "react";
 import "./Splash.scss";
+// import "../Contact/contact.scss";
 import Slider from "react-slick";
 // import Dog1 from "./Dog1.jpg";
 // import Dog2 from "./Dog2.jpg";
@@ -16,6 +17,22 @@ import DogBanner3 from "./DogBanner3.png";
 import Donation from "./donate.png";
 import adoption from "./adoption.png";
 import volunteer from "./volunteer.png";
+import WaveTop from "../Contact/wave-top.png";
+import WaveMid from "../Contact/wave-mid.png";
+import WaveBot from "../Contact/wave-bot.png";
+
+const styles = {
+  WaveTop: {
+    backgroundImage: `url(${WaveTop})`,
+  },
+  WaveMid: {
+    backgroundImage: `url(${WaveMid})`,
+  },
+  WaveBot: {
+    backgroundImage: `url(${WaveBot})`,
+  },
+};
+
 class SplashPage extends React.Component {
   render() {
     const settings = {
@@ -140,6 +157,36 @@ class SplashPage extends React.Component {
                     <h1>To get the latest information on dog adoption sign up for the FIND MY PAWRENTS newsletter</h1>
                     <button>SIGN UP</button>
                 </div> */}
+        </div>
+        <div class="waveWrapper waveAnimation">
+          <div class="waveWrapperInner bgTop">
+            <div
+              class="wave waveTop"
+              //   style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"
+              style={styles.WaveTop}
+            ></div>
+          </div>
+          <div class="waveWrapperInner bgMiddle">
+            <div
+              class="wave waveMiddle"
+              //   style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"
+              style={styles.WaveMid}
+            ></div>
+          </div>
+          <div class="waveWrapperInner bgBottom">
+            <div
+              class="wave waveBottom"
+              style={styles.WaveBot}
+              //   style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"
+            ></div>
+          </div>
+          <form className="contact-page-form">
+            <div className="contact-page-input-container">
+              <div className="contact-page-top-level">
+                <h2 className="contact-header">Contact Us</h2>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     );

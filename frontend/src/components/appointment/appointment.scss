@@ -1,8 +1,10 @@
-#all-appts-title{
-    padding-top: 20px;
+#all-appts-title1 {
     text-align: center;
-    font-family: Marker Felt,
-    fantasy;
+    font-family: Marker Felt, fantasy;
+    background-color: #f4f4f4;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    margin-top: 50px;
 }
 
 .appointments-page-list-container {
@@ -60,6 +62,7 @@ table {
     font-family: Marker Felt,
     fantasy;
     border: 1px solid rgb(73, 167, 227);
+    font-size: 15px;
 }
 
 #btn-approve {
@@ -73,3 +76,6 @@ table {
     background-color: #cf4a4a !important;
 }
 
+.comments {
+    width: 300px;
+}
