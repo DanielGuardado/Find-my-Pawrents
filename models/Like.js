@@ -15,7 +15,7 @@ const LikeSchema = new Schema({
     type:  String,
   },
   dog_image: {
-    type: 
+    type: String
   },
   timestamps: {
     type: Date,
