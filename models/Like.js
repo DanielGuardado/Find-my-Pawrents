@@ -12,10 +12,12 @@ const LikeSchema = new Schema({
     ref: "users",
   },
   dog_name: {
-    type:  String,
+    type: String,
+    required: true,
   },
   dog_image: {
-    type: String
+    type: String,
+    required: true
   },
   timestamps: {
     type: Date,
