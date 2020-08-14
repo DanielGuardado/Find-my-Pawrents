@@ -12,14 +12,14 @@ class AppointmentIndex extends React.Component {
     if (typeof this.props.appointments === "undefined") {
       return null;
     }
-
+    debugger
     const appointments = this.props.appointments.map((appointment, idx) => (
       // let dog = this.props.fetchDog(appointment.dog_id)
-
+  
       <AppointmentIndexItem key={idx} appointment={appointment} updateAppointment={this.props.updateAppointment} />
     ));
 
-    return <div className="appointments-page-list-container">{appointments}</div>;
+    return <div>{appointments}</div>;
   }
 
   
@@ -29,7 +29,7 @@ class AppointmentIndex extends React.Component {
       <div>
         <NavBar />
         <div className="appointments-page-list-container">
-        <h1 id="all-appts-title">Here are all your appointments</h1>
+        <h1 id="all-appts-title">Here are all your appointments!</h1>
           <table className="appttable">
             <tr className="tableheaders">
               <th>Name</th>
@@ -38,6 +38,7 @@ class AppointmentIndex extends React.Component {
               <th>Phone Number</th>
               <th>Comments</th>
               <th>Appointment Status</th>
+              <th>Approved?</th>
             </tr>
         {this.appointmentShow()}
         </table>
