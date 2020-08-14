@@ -92,9 +92,11 @@ class NavBar extends React.Component {
                   Appointments
                 </button>
               </a>
-              <button className="shelterUserNavBar-nav-appointment-button">
-                Add Dog
-              </button>
+              <a href="#/new_dog">
+                <button className="shelterUserNavBar-nav-appointment-button">
+                  Add Dog
+                </button>
+              </a>
               <a href="/">
                 <button
                   className="shelterUserNavBar-nav-normal-button"
