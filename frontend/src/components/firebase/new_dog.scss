@@ -19,9 +19,9 @@
   padding-top: 70px;
 
   .new-dog-form-image {
-      background-image: url("https://cdn.pricearchive.org/images/aliexpress.com/32831346626/Cute-Vertical-Stripes-Pet-Harness-Vest-with-Leash-Set-with-Pretty-Flower-Bow-Tie-Breathable-for.jpg");
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
+    background-image: url("https://cdn.pricearchive.org/images/aliexpress.com/32831346626/Cute-Vertical-Stripes-Pet-Harness-Vest-with-Leash-Set-with-Pretty-Flower-Bow-Tie-Breathable-for.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
   }
 }
 
@@ -37,13 +37,11 @@
   padding-left: 150px;
 }
 
-
 .gender-buttons {
   display: flex;
   justify-content: space-evenly;
   margin-left: -10px;
 }
-
 
 .file-upload {
   margin: 10px 0px;
@@ -67,12 +65,13 @@
   padding: 10px;
   background-color: rgb(73, 167, 227);
   color: white;
-  cursor:pointer;
+  cursor: pointer;
   font-size: 18px;
   font-family: Marker Felt, fantasy;
-
 }
-
+.new-dog-submit:hover {
+  background-color: #77caff;
+}
 .preview {
   margin-top: 15px;
 }

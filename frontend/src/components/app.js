@@ -11,6 +11,7 @@ import DogIndex from "./dogs/dog_index_container";
 import DogShow from "./dogs/dog_show_container";
 import ReactFirebase from "./firebase/new_dog_form_container";
 import AppointmentContainer from "./appointment/appointment_container";
+import UserAppointmentContainer from "./user_appointments/user_appointment_container";
 import MyDogsIndex from "./shelter_dogs/shelter_my_dogs_container";
 import AboutPageContainer from "./About/about_container";
 
@@ -29,6 +30,11 @@ const App = () => {
           path="/appointments"
           exact
           component={AppointmentContainer}
+        />
+        <ProtectedRoute
+          path="/user_appointments"
+          exact
+          component={UserAppointmentContainer}
         />
         <Route path="/dogs">
           <DogIndex />

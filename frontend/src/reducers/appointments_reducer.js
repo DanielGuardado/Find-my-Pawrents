@@ -17,7 +17,6 @@ const appointmentReducer = (state = {}, action) => {
         obj[appt._id] = appt;
         // Object.assign(obj, { [dog._id]: dog });
       });
-
       return obj;
     default:
       return state;

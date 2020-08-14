@@ -10,18 +10,7 @@ import "./navBar.scss";
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.handleLogout = this.handleLogout.bind(this)
-    // this.logout = this.logout.bind(this)
   }
-
-  // handleLogout() {
-  //   debugger
-  //   return(
-  //     this.props.logout()
-  //     .then(() => { this.props.history.push('/') })
-  //   )
-  // }
 
   noUserNavBar() {
     return (
@@ -32,9 +21,7 @@ class NavBar extends React.Component {
               <img id="logo" src={logo} alt="logo" />
             </a>
             <div className="nav-about">
-              <a href="#/about">
-                About
-              </a>
+              <a href="#/about">About</a>
               <Link to="/about" />
             </div>
             <div className="nav-contact">
@@ -74,7 +61,9 @@ class NavBar extends React.Component {
               <a href="/">
                 <img id="logo" src={logo} alt="logo" />
               </a>
-              <h2 className="welcome-back">Welcome back {this.props.currentUser.user.shelter_name}</h2>
+              <h2 className="welcome-back">
+                Welcome back {this.props.currentUser.user.shelter_name}
+              </h2>
             </div>
             <div className="shelterUserNavBar-right-side-of-navbar">
               <a href="#/dogs">
@@ -92,9 +81,11 @@ class NavBar extends React.Component {
                   Appointments
                 </button>
               </a>
-              <button className="shelterUserNavBar-nav-appointment-button">
-                Add Dog
-              </button>
+              <Link to="/new_dog">
+                <button className="shelterUserNavBar-nav-appointment-button">
+                  Add Dog
+                </button>
+              </Link>
               <a href="/">
                 <button
                   className="shelterUserNavBar-nav-normal-button"
@@ -135,11 +126,11 @@ class NavBar extends React.Component {
                   Favorites
                 </button>
               </a>
-              <a href="#/dogs">
+              <Link to="/user_appointments">
                 <button className="currentUserNavBar-nav-appt-button">
                   My Appointments
                 </button>
-              </a>
+              </Link>
               <a href="/">
                 <button
                   className="currentUserNavBar-nav-logout-button"

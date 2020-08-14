@@ -1,13 +1,14 @@
 import React from "react";
 import "./dog_show.scss";
 import NavBar from "./../navBar/navBar_container";
-
+import likeicon from "./like-icon.png";
 class DogShow extends React.Component {
   constructor(props) {
     super(props);
     this.newData = React.createRef();
     this.state = {
       formStatus: false,
+      submitStatus: false,
       appt_time: "",
       appt_date: "",
       comments: "",
@@ -22,13 +23,22 @@ class DogShow extends React.Component {
     // this.newData = this.newData.bind(this)
   }
 
+  date() {
+    const { dog } = this.props;
+    if (dog.timestamps) {
+      let day = dog.timestamps.slice(8, 10);
+      let month = dog.timestamps.slice(5, 7);
+      let year = dog.timestamps.slice(0, 4);
+      let date = new Date(year, month, day);
+      return <div>{date.toDateString()}</div>;
+    }
+  }
   handleLike = () => {
     let like = {
       dog_id: this.props.dog._id,
       user_id: this.props.currentUser.id,
       dog_name: this.props.dog.name,
       dog_image: this.props.dog.image,
-
     };
     this.props.createLike(like);
   };
@@ -56,14 +66,20 @@ class DogShow extends React.Component {
   }
 
   handleForm = (e) => {
-    this.setState({ formStatus: !this.state.formStatus })
-    // debugger
-    // this.newData.current.scrollIntoView({ behavior: "smooth" });
+    this.setState({ formStatus: !this.state.formStatus });
   };
+  handleSubmitMessage = (e) => {
+    this.setState({ submitStatus: true });
+  };
+
+  submit() {
+    if (this.state.submitStatus) {
+      return <div>Your application has been succesfully submited!</div>;
+    }
+  }
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
     let appointment = {
       appt_time: this.state.appt_time,
       appt_date: this.state.appt_date,
@@ -75,15 +91,22 @@ class DogShow extends React.Component {
       dog_name: this.props.dog.name,
       image: this.props.dog.image,
     };
-    debugger;
-    this.props.createAppointment(appointment).catch((err) => {
-      this.props.receiveErrors(err.response.data);
-    });
+    this.props
+      .createAppointment(appointment)
+      .then(() => this.handleForm())
+      .then(() => this.handleSubmitMessage())
+      .catch((err) => {
+        this.props.receiveErrors(err.response.data);
+      });
   }
 
   dogLike() {
     if (this.props.dog && this.props.currentUser.id) {
-      return <button onClick={this.handleLike}>Like me</button>;
+      return (
+        <button className="like-btn" onClick={this.handleLike}>
+          <img className="like-button" src={likeicon} alt="" />
+        </button>
+      );
     }
   }
 
@@ -94,6 +117,7 @@ class DogShow extends React.Component {
     ) {
       return (
         <button
+          className="appt-submit"
           onClick={() =>
             this.props
               .deleteDog(this.props.dog._id)
@@ -137,18 +161,20 @@ class DogShow extends React.Component {
                     <div className="dog-about">About:</div>
                     <div className="description">{dog.description}</div>
                   </div>
-                  <div className="dog-date">Listed Date: {dog.date}</div>
+                  <div className="dog-date">Listed Date: {this.date()}</div>
+                  {this.dogDelete()}
                 </div>
               </div>
             </div>
             <div>{this.apptBtn()}</div>
+            <div>{this.submit()}</div>
           </div>
         </div>
       );
     }
   }
   appForm() {
-    if (this.state.formStatus) {
+    if (this.state.formStatus && !this.state.submitStatus) {
       return (
         <div ref={this.newData} className="appt-form-container">
           <div className="appt-form-box">
@@ -219,13 +245,24 @@ class DogShow extends React.Component {
     }
   }
   apptBtn() {
-    return (
-      <div>
-        <button  className="appt-btn" onClick={() => this.handleForm()}>
-          ⇊ Schedule now ⇊
-        </button>
-      </div>
-    );
+    if (
+      !this.state.submitStatus &&
+      this.props.dog.shelter_id !== this.props.currentUser.id
+    ) {
+      return (
+        <div>
+          {this.dogLike()}
+
+          <button className="appt-btn" onClick={() => this.handleForm()}>
+            ⇊ Schedule now ⇊
+          </button>
+        </div>
+      );
+    } else {
+      {
+        this.submit();
+      }
+    }
   }
 
   // render() {
@@ -250,8 +287,6 @@ class DogShow extends React.Component {
         <NavBar />
         {this.dogRender()}
         {this.appForm()}
-        {this.dogDelete()}
-        {this.dogLike()}
       </div>
     );
   }

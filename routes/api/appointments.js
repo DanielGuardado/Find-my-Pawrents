@@ -11,9 +11,17 @@ router.get("/test", (req, res) => {
   });
 });
 
-router.get("/user/:shelter_id", (req, res) => {
+router.get("/shelter/:shelter_id", (req, res) => {
   Appointment.find({
     shelter_id: req.params.shelter_id,
+  })
+    .then((appts) => res.json(appts))
+    .catch((err) => res.status(400).json(err));
+});
+
+router.get("/user/:user_id", (req, res) => {
+  Appointment.find({
+    user_id: req.params.user_id,
   })
     .then((appts) => res.json(appts))
     .catch((err) => res.status(400).json(err));

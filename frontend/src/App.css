@@ -55,63 +55,58 @@
 }
 
 .login-form-container {
-    padding: 18px;
-    font-family: Marker Felt, fantasy
+  padding: 18px;
+  font-family: Marker Felt, fantasy;
 }
 
 .login-form-box {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: white;
-    height: 500px;
-    width: 400px;
-    border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  height: 500px;
+  width: 400px;
+  border-radius: 3px;
 }
 
-
 .login-input-container {
-    padding: 7px;
-    margin-top: 30px;
-    width: 365px;
-    height: 500px;
+  padding: 7px;
+  margin-top: 30px;
+  width: 365px;
+  height: 500px;
 }
 
 .login-form-top-level {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 35px;
-    margin-top: 20px;
-
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  margin-top: 20px;
 }
 
 h2.login-header {
-    /* font-size: 15px; */
-    margin-left: 30px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+  /* font-size: 15px; */
+  margin-left: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-
 .modal-signup-btn {
-    border: 1px solid rgb(73, 167, 227);
-    border-radius: 20px;
-    text-align: center;
-    padding: 10px;
-    background-color: white;
-    margin-top: -3px;
-    margin-right: 10px;
-    cursor:pointer;
-    font-size: 18px;
-    font-family: Marker Felt, fantasy;
+  border: 1px solid rgb(73, 167, 227);
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px;
+  background-color: white;
+  margin-top: -3px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: Marker Felt, fantasy;
 }
 
 .modal-signup-btn:hover {
-    background-color: rgb(73, 167, 227);
-    color: white;
+  background-color: rgb(73, 167, 227);
+  color: white;
 }
-
-
 
 /* .demo-button {
     border: 1px solid rgb(73, 167, 227);
@@ -141,58 +136,57 @@ h2.login-header {
 }
 
 .input-boxes {
-    background-color: rgb(243, 241, 241);
-    height: 45px;
-    width: 322px;
-    border-radius: 3px;
-    border: 1px solid white;
-    margin-left: 30px;
-    font-size: 15px;
+  background-color: rgb(243, 241, 241);
+  height: 45px;
+  width: 322px;
+  border-radius: 3px;
+  border: 1px solid white;
+  margin-left: 30px;
+  font-size: 15px;
 }
 
 .input-boxes:hover {
-    border-color: rgb(73, 167, 227);
+  border-color: rgb(73, 167, 227);
 }
 
 .login-submit {
-    border: 1px solid rgb(73, 167, 227);
-    border-radius: 3px;
-    height: 47px;
-    width: 322px;
-    text-align: center;
-    padding: 10px;
-    background-color: rgb(73, 167, 227);
-    margin-left: 30px;
-    margin-top: 8px;
-    font-size: 20px;
-    font-weight: 100;
-    color: white;
-    cursor:pointer;
-    font-family: Marker Felt, fantasy
-
-
+  border: 1px solid rgb(73, 167, 227);
+  border-radius: 3px;
+  height: 47px;
+  width: 322px;
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(73, 167, 227);
+  margin-left: 30px;
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: 100;
+  color: white;
+  cursor: pointer;
+  font-family: Marker Felt, fantasy;
 }
 
 .login-submit:hover {
-    background-color: rgb(73, 167, 227);
-    color: white;
+  background-color: rgb(73, 167, 227);
+  color: white;
 }
 
-.demo-button, .shelter-demo-button {
+.demo-button,
+.shelter-demo-button {
   border: 1px solid rgb(73, 167, 227);
-    border-radius: 3px;
-    height: 37px;
-    width: 322px;
-    text-align: center;
-    padding: 10px;
-    background-color: rgb(73, 167, 227);
-    margin-left: 20px;
-    margin-top: 15px;
-    font-size: 17px;
-    font-weight: 100;
-    color: white;
-    cursor:pointer;
-    font-family: Marker Felt, fantasy;
+  border-radius: 3px;
+  height: 37px;
+  width: 322px;
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(73, 167, 227);
+  margin-left: 20px;
+  margin-top: 15px;
+  font-size: 17px;
+  font-weight: 100;
+  color: white;
+  cursor: pointer;
+  font-family: Marker Felt, fantasy;
 }
 
 .demo-buttons {
@@ -200,13 +194,13 @@ h2.login-header {
 }
 
 .demo-button:hover {
-    background-color: rgb(73, 167, 227);
-    color: white;
+  background-color: rgb(73, 167, 227);
+  color: white;
 }
 
 .shelter-demo-button:hover {
-    background-color: rgb(73, 167, 227);
-    color: white;
+  background-color: rgb(73, 167, 227);
+  color: white;
 }
 
 .render-errors {
@@ -214,37 +208,37 @@ h2.login-header {
 }
 
 .signup-form-container {
-    padding: 18px;
-    font-family: Marker Felt, fantasy;
+  padding: 18px;
+  font-family: Marker Felt, fantasy;
 }
 
 .signup-form-box {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: white;
-    height: 650px;
-    width: 400px;
-    border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  height: 650px;
+  width: 400px;
+  border-radius: 3px;
 }
 
 .signup-input-container {
-    padding: 5px;
-    width: 365px;
-    height: 500px;
-    margin-bottom: 160px;
+  padding: 5px;
+  width: 365px;
+  height: 500px;
+  margin-bottom: 160px;
 }
 
 .signup-form-top-level {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
 h2.signup-header {
-    margin-left: 30px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+  margin-left: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .signup-email-input-box {
@@ -271,22 +265,21 @@ h2.signup-header {
 } */
 
 .modal-login-btn {
-    border: 1px solid rgb(73, 167, 227);
-    border-radius: 20px;
-    text-align: center;
-    /* margin-top: 1px; */
-    padding: 10px;
-    background-color: white;
-    margin-right: 10px;
-    cursor:pointer;
-    font-size: 18px;
-    font-family: Marker Felt, fantasy;
+  border: 1px solid rgb(73, 167, 227);
+  border-radius: 20px;
+  text-align: center;
+  /* margin-top: 1px; */
+  padding: 10px;
+  background-color: white;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: Marker Felt, fantasy;
 }
 
 .modal-login-btn:hover {
-    background-color: rgb(73, 167, 227);
-    color: white;
-
+  background-color: rgb(73, 167, 227);
+  color: white;
 }
 
 .shelter-verify-buttons {
@@ -321,42 +314,49 @@ h2.signup-header {
 }
 
 .address-input-box {
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 
 .shelter-input-boxes {
-    background-color: rgb(243, 241, 241);
-    height: 35px;
-    width: 322px;
-    border-radius: 3px;
-    border: 1px solid white;
-    margin-left: 30px;
-    font-size: 15px;
+  background-color: rgb(243, 241, 241);
+  height: 35px;
+  width: 322px;
+  border-radius: 3px;
+  border: 1px solid white;
+  margin-left: 30px;
+  font-size: 15px;
 }
 
 .shelter-input-boxes:hover {
-    border-color: rgb(73, 167, 227);
+  border-color: rgb(73, 167, 227);
 }
 
 .signup-submit {
-    border: 1px solid rgb(73, 167, 227);
-    border-radius: 3px;
-    height: 47px;
-    width: 322px;
-    text-align: center;
-    padding: 10px;
-    background-color: rgb(73, 167, 227);
-    margin-left: 30px;
-    margin-top: 10px;
-    font-size: 20px;
-    font-weight: 100;
-    color: white;
-    cursor:pointer;
-    font-family: Marker Felt, fantasy;
-
+  border: 1px solid rgb(73, 167, 227);
+  border-radius: 3px;
+  height: 47px;
+  width: 322px;
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(73, 167, 227);
+  margin-left: 30px;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 100;
+  color: white;
+  cursor: pointer;
+  font-family: Marker Felt, fantasy;
 }
 
 .signup-submit:hover {
-    background-color: rgb(73, 167, 227);
-    color: white;
+  background-color: rgb(73, 167, 227);
+  color: white;
+}
+
+a:hover {
+  cursor: pointer;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #77caff;
 }

@@ -1,230 +1,236 @@
-.noUserNavBar-container{
-    position: fixed;
-    top: 0;
+.noUserNavBar-container {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1;
+  background-color: #e9f8ff;
+  font-family: Marker Felt, fantasy;
+
+  .noUserNavBar-left-side-of-navbar {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    z-index: 1;
-    background-color: #E9F8FF;
-    font-family: Marker Felt, fantasy;
+    align-items: center;
+    justify-content: center;
 
-    .noUserNavBar-left-side-of-navbar{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    #logo {
+      height: 70px;
+    }
+    .nav-about {
+      padding-top: 14px;
+      margin: 0 30px;
+      font-size: 21px;
+      font-weight: 500;
+      font-family: Marker Felt, fantasy;
+      cursor: pointer;
+    }
+    .nav-contact {
+      padding-top: 14px;
+      margin: 0 30px;
+      font-size: 21px;
+      font-weight: 500;
+      font-family: Marker Felt, fantasy;
+      cursor: pointer;
+    }
+  }
 
-        #logo{
-            height: 70px;
-        }
-        .nav-about{
-            padding-top: 14px;
-            margin: 0 30px;
-            font-size: 21px;
-            font-weight: 500;
-            font-family: Marker Felt, fantasy;
-            cursor:pointer;
-        }
-        .nav-contact{
-            padding-top: 14px;
-            margin: 0 30px;
-            font-size: 21px;
-            font-weight: 500;
-            font-family: Marker Felt, fantasy;
-            cursor:pointer;
-        }
+  .noUserNavBar-right-side-of-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    .noUserNavBar-nav-login-button,
+    .noUserNavBar-nav-dogs-button {
+      background-color: rgb(73, 167, 227);
+      border-radius: 20px;
+      border: 1px solid rgb(73, 167, 227);
+      text-align: center;
+      color: white;
+      margin-right: 15px;
+      margin-top: 15px;
+      font-weight: 500;
+      font-size: 21px;
+      cursor: pointer;
+      font-family: Marker Felt, fantasy;
+      // padding: 10px;
+      width: 100px;
+      height: 36px;
     }
 
-
-    .noUserNavBar-right-side-of-navbar{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .noUserNavBar-nav-login-button, .noUserNavBar-nav-dogs-button{
-            background-color: rgb(73, 167, 227);
-            border-radius: 20px;
-            border: 1px solid rgb(73, 167, 227);
-            text-align: center;
-            color: white;
-            margin-right: 15px;
-            margin-top: 15px;
-            font-weight: 500;
-            font-size: 21px;
-            cursor:pointer;
-            font-family: Marker Felt, fantasy;
-            // padding: 10px;
-            width: 100px;
-            height: 36px;
-
-        }
-
-        .noUserNavBar-nav-signup-button{
-            background-color: rgb(73, 167, 227);
-            border-radius: 20px;
-            border: 1px solid rgb(73, 167, 227);
-            text-align: center;
-            color: white;
-            margin-right: 15px;
-            margin-top: 15px;
-            font-weight: 500;
-            font-size: 21px;
-            cursor:pointer;
-            font-family: Marker Felt, fantasy;
-            // padding: 10px;
-            width: 100px;
-            height: 36px;
-        }
+    .noUserNavBar-nav-signup-button {
+      background-color: rgb(73, 167, 227);
+      border-radius: 20px;
+      border: 1px solid rgb(73, 167, 227);
+      text-align: center;
+      color: white;
+      margin-right: 15px;
+      margin-top: 15px;
+      font-weight: 500;
+      font-size: 21px;
+      cursor: pointer;
+      font-family: Marker Felt, fantasy;
+      // padding: 10px;
+      width: 100px;
+      height: 36px;
     }
+    .noUserNavBar-nav-signup-button:hover,
+    .noUserNavBar-nav-login-button:hover,
+    .noUserNavBar-nav-dogs-button:hover {
+      background-color: #77caff;
+    }
+  }
 }
 
-.shelterUserNavBar-container{
-    position: fixed;
-    top: 0;
+.shelterUserNavBar-container {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1;
+  background-color: #e9f8ff;
+  font-family: Marker Felt, fantasy;
+
+  .shelterUserNavBar-left-side-of-navbar {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    z-index: 1;
-    background-color: #E9F8FF;
-    font-family: Marker Felt, fantasy;
+    align-items: center;
+    justify-content: center;
 
-
-
-    .shelterUserNavBar-left-side-of-navbar{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        #logo {
-            height: 70px;
-        }
-
-        h2.welcome-back {
-            margin-left: 10px;
-            margin-top: 30px;
-        }
-
-    }
-    
-    .shelterUserNavBar-right-side-of-navbar{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-        .shelterUserNavBar-nav-normal-button{
-            background-color: rgb(73, 167, 227);
-            border-radius: 20px;
-            border: 1px solid rgb(73, 167, 227);
-            text-align: center;
-            width: 100px;
-            height: 36px;
-            color: white;
-            margin-right: 15px;
-            margin-top: 15px;
-            font-weight: 500;
-            font-size: 21px;
-            font-family: Marker Felt, fantasy;
-
-        }
-
-        .shelterUserNavBar-nav-appointment-button{
-            background-color: rgb(73, 167, 227);
-            border-radius: 20px;
-            border: 1px solid rgb(73, 167, 227);
-            text-align: center;
-            width: 150px;
-            height: 36px;
-            color: white;
-            margin-right: 15px;
-            margin-top: 15px;
-            font-weight: 500;
-            font-size: 21px;
-            font-family: Marker Felt, fantasy;
-
-        }
-
+    #logo {
+      height: 70px;
     }
 
+    h2.welcome-back {
+      margin-left: 10px;
+      margin-top: 30px;
+    }
+  }
+
+  .shelterUserNavBar-right-side-of-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .shelterUserNavBar-nav-normal-button {
+      background-color: rgb(73, 167, 227);
+      border-radius: 20px;
+      border: 1px solid rgb(73, 167, 227);
+      text-align: center;
+      width: 100px;
+      height: 36px;
+      color: white;
+      margin-right: 15px;
+      margin-top: 15px;
+      font-weight: 500;
+      font-size: 21px;
+      font-family: Marker Felt, fantasy;
+    }
+
+    .shelterUserNavBar-nav-appointment-button {
+      background-color: rgb(73, 167, 227);
+      border-radius: 20px;
+      border: 1px solid rgb(73, 167, 227);
+      text-align: center;
+      width: 150px;
+      height: 36px;
+      color: white;
+      margin-right: 15px;
+      margin-top: 15px;
+      font-weight: 500;
+      font-size: 21px;
+      font-family: Marker Felt, fantasy;
+    }
+    .shelterUserNavBar-nav-appointment-button:hover,
+    .shelterUserNavBar-nav-normal-button:hover,
+    .shelterUserNavBar-nav-normal-button:hover {
+      background-color: #77caff;
+    }
+  }
 }
 
-.currentUserNavBar-container{
-    position: fixed;
-    top: 0;
+.currentUserNavBar-container {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1;
+  background-color: #e9f8ff;
+  font-family: Marker Felt, fantasy;
+
+  .currentUserNavBar-left-side {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    z-index: 1;
-    background-color: #E9F8FF;
-    font-family: Marker Felt, fantasy;
+    align-items: center;
+    justify-content: center;
+    // margin-left: 50px;
 
-
-    .currentUserNavBar-left-side{
-         display: flex;
-        align-items: center;
-        justify-content: center;
-        // margin-left: 50px;
-
-        #logo{
-            height: 70px;
-        }
-
-        h2.welcome {
-            margin-left: 10px;
-            margin-top: 30px;
-        }
-
-        .search-bar-input-field{
-            width: 400px;
-            height: 30px;
-            border: 1px solid #0022ff;
-            margin: 1px 30px;;
-            padding: 5px 20px;
-            border-radius: 8px;
-            transition: border-color 200ms;
-            box-sizing: border-box;
-            background: white; 
-        }
-
-
+    #logo {
+      height: 70px;
     }
 
-    .currentUserNavBar-right-side {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .currentUserNavBar-nav-logout-button, .currentUserNavBar-nav-favorite-button, .currentUserNavBar-nav-dogs-button {
-            background-color: rgb(73, 167, 227);
-            border-radius: 20px;
-            border: 1px solid rgb(73, 167, 227);
-            text-align: center;
-            color: white;
-            margin-right: 15px;
-            margin-top: 15px;
-            font-weight: 500;
-            font-size: 21px;
-            cursor:pointer;
-            font-family: Marker Felt, fantasy;
-            // padding: 10px;
-            width: 100px;
-            height: 36px;
-        }
-
-        .currentUserNavBar-nav-appt-button {
-            background-color: rgb(73, 167, 227);
-            border-radius: 20px;
-            border: 1px solid rgb(73, 167, 227);
-            text-align: center;
-            color: white;
-            margin-right: 15px;
-            margin-top: 15px;
-            font-weight: 500;
-            font-size: 21px;
-            cursor:pointer;
-            font-family: Marker Felt, fantasy;
-            // padding: 10px;
-            width: 180px;
-            height: 36px;
-        }
+    h2.welcome {
+      margin-left: 10px;
+      margin-top: 30px;
     }
+
+    .search-bar-input-field {
+      width: 400px;
+      height: 30px;
+      border: 1px solid #0022ff;
+      margin: 1px 30px;
+      padding: 5px 20px;
+      border-radius: 8px;
+      transition: border-color 200ms;
+      box-sizing: border-box;
+      background: white;
+    }
+  }
+
+  .currentUserNavBar-right-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .currentUserNavBar-nav-logout-button,
+    .currentUserNavBar-nav-favorite-button,
+    .currentUserNavBar-nav-dogs-button {
+      background-color: rgb(73, 167, 227);
+      border-radius: 20px;
+      border: 1px solid rgb(73, 167, 227);
+      text-align: center;
+      color: white;
+      margin-right: 15px;
+      margin-top: 15px;
+      font-weight: 500;
+      font-size: 21px;
+      cursor: pointer;
+      font-family: Marker Felt, fantasy;
+      // padding: 10px;
+      width: 100px;
+      height: 36px;
+    }
+    .currentUserNavBar-nav-logout-button:hover,
+    .currentUserNavBar-nav-favorite-button:hover,
+    .currentUserNavBar-nav-dogs-button:hover,
+    .currentUserNavBar-nav-appt-button:hover {
+      background-color: #77caff;
+    }
+
+    .currentUserNavBar-nav-appt-button {
+      background-color: rgb(73, 167, 227);
+      border-radius: 20px;
+      border: 1px solid rgb(73, 167, 227);
+      text-align: center;
+      color: white;
+      margin-right: 15px;
+      margin-top: 15px;
+      font-weight: 500;
+      font-size: 21px;
+      cursor: pointer;
+      font-family: Marker Felt, fantasy;
+      // padding: 10px;
+      width: 180px;
+      height: 36px;
+    }
+  }
 }
