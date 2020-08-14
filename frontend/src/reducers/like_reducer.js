@@ -15,9 +15,9 @@ const likeReducer = (state = {}, action) => {
       });
       return obj;
     case RECEIVE_DOG_COUNT:
-      return action.count;
+      return Object.assign({}, state, { ["count"]: action.count });
     case RECEIVE_LIKE:
-      return action.like.data;
+      return Object.assign({}, state, action.like.data);
     default:
       return state;
   }
