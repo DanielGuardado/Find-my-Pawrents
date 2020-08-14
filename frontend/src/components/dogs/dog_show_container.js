@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { fetchDog, deleteDog } from "../../actions/dog_actions";
 import { createAppointment } from "../../actions/appointment_actions";
 import { receiveErrors } from "../../actions/session_actions";
-import { createLike } from "../../actions/like_action";
+import { createLike, fetchDogLikes } from "../../actions/like_action";
 import { openModal } from "../../actions/modal_actions";
 import DogShow from "./dog_show";
 
