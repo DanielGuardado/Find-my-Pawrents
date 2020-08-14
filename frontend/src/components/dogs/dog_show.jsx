@@ -23,6 +23,13 @@ class DogShow extends React.Component {
     // this.newData = this.newData.bind(this)
   }
 
+  scrollTop = () => {
+    window.scrollTo({
+      top: 1300,
+      behavior: "smooth",
+    });
+  };
+
   date() {
     const { dog } = this.props;
     if (dog.timestamps) {
@@ -40,9 +47,14 @@ class DogShow extends React.Component {
       dog_name: this.props.dog.name,
       dog_image: this.props.dog.image,
     };
-    debugger
     this.props.createLike(like);
   };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.formStatus !== this.state.formStatus) {
+      this.scrollTop();
+    }
+  }
 
   componentDidMount() {
     this.props.fetchDog(this.props.id);
@@ -167,6 +179,7 @@ class DogShow extends React.Component {
                 </div>
               </div>
             </div>
+            <div>{this.noLogMes()}</div>
             <div>{this.apptBtn()}</div>
             <div>{this.submit()}</div>
           </div>
@@ -245,10 +258,28 @@ class DogShow extends React.Component {
       );
     }
   }
+
+  noLogMes() {
+    if (!this.props.currentUser.id) {
+      return (
+        <div>
+          <span
+            className="log-color"
+            onClick={() => this.props.openModal("login")}
+          >
+            Log in
+          </span>{" "}
+          to schedule an appointment and like!
+        </div>
+      );
+    }
+  }
+
   apptBtn() {
     if (
       !this.state.submitStatus &&
-      this.props.dog.shelter_id !== this.props.currentUser.id
+      this.props.dog.shelter_id !== this.props.currentUser.id &&
+      this.props.currentUser.id
     ) {
       return (
         <div>

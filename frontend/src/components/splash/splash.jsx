@@ -9,7 +9,8 @@ import Slider from "react-slick";
 // import Dog6 from "./Dog6.jpg";
 // import Dog7 from "./Dog7.jpg";
 // import Dog8 from "./Dog8.jpg";
-import DogBanner1 from "./DogBanner1.jpg";
+import DogBanner4 from "./DogBanner4.jpg";
+import DogBanner from "./DogBanner.jpg";
 import DogBanner2 from "./DogBanner2.jpg";
 import DogBanner3 from "./DogBanner3.png";
 import Donation from "./donate.png";
@@ -20,7 +21,7 @@ class SplashPage extends React.Component {
     const settings = {
       dots: true,
       infinite: true,
-      speed: 2000,
+      speed: 1500,
       slidesToShow: 1,
       slidesToScroll: 1,
       //   dots: true,
@@ -43,13 +44,30 @@ class SplashPage extends React.Component {
           <div id="test">
             <Slider {...settings}>
               <div>
-                <img src={DogBanner1} alt="d1" className="Dog" />
+                <img src={DogBanner} alt="d1" className="Dog" />
               </div>
               <div>
                 <img src={DogBanner2} alt="d1" className="Dog" />
               </div>
               <div>
                 <img src={DogBanner3} alt="d1" className="Dog" />
+              </div>
+              <div>
+                <img src={DogBanner4} alt="d1" className="Dog" />
+              </div>
+              <div>
+                <img
+                  src="https://animalcareinfo.com/wp-content/uploads/2018/04/AdobeStock_129584968.jpeg"
+                  alt="d1"
+                  className="Dog"
+                />
+              </div>
+              <div>
+                <img
+                  src="https://www.wdlndpet.com/images/home_banner.jpg"
+                  alt="d1"
+                  className="Dog"
+                />
               </div>
               {/* <div>
                         <img src={Dog8} alt="d2" className="Dog" />
