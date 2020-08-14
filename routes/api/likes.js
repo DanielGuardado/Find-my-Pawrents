@@ -49,20 +49,13 @@ router.get("/dog/:dog_id/count", (req, res) => {
 
 
 router.get("/user/:user_id", (req, res) => {
-  // let dogIds = []
-  // let likes = Like.find({
-  //   user_id: req.params.user_id
-  // })
+  Like.find({
+      user_id: req.params.user_id,
+    })
+    .then((likes) => res.json(likes))
+    .catch((err) => res.status(400).json(err));
+  });
 
-
-  // var dogIds = Like.find({
-  //   user_id: req.params.user_id
-  // }).map(function (like) {
-  //   return like.dog_id;
-  // });
-
-
-})
 
 
 router.delete(
