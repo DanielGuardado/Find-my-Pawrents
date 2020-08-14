@@ -19,10 +19,10 @@ class MyDogsIndex extends React.Component {
         </Link>
         <li>{dog.age}</li>
         <li>{dog.breed}</li>
-        <li>{dog.gender}</li>
-        <li>{dog.strengths}</li>
+        {/* <li>{dog.gender}</li> */}
+        {/* <li>{dog.strengths}</li> */}
         <li>{dog.adoption_status}</li>
-        <li>{dog.description}</li>
+        {/* <li>{dog.description}</li> */}
         <li>{dog.date}</li>
         {this.dogDelete()}
       </ul>

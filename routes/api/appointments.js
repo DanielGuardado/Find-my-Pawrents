@@ -11,7 +11,6 @@ router.get("/test", (req, res) => {
   });
 });
 
-
 router.get("/user/:shelter_id", (req, res) => {
   Appointment.find({
     shelter_id: req.params.shelter_id,
@@ -41,14 +40,16 @@ router.post(
     Appointment.findByIdAndUpdate(
       req.params.id,
       {
-      user_id: req.user.id,
+        user_id: req.user.id,
         appt_time: req.body.appt_time,
         appt_date: req.body.appt_date,
         comments: req.body.comments,
         phone_number: req.body.phone_number,
         shelter_id: req.body.shelter_id,
         dog_id: req.body.dog_id,
-        appt_status: req.body.appt_status
+        appt_status: req.body.appt_status,
+        image: req.body.image,
+        dog_name: req.body.dog_name,
       },
       {
         new: true,
@@ -61,7 +62,6 @@ router.post(
         }
       }
     );
-
   }
 );
 
@@ -73,7 +73,10 @@ router.delete(
   (req, res) => {
     let id = parseInt(req.params.id);
 
-    Appointment.findByIdAndRemove(req.params.id, req.body, function (err, data) {
+    Appointment.findByIdAndRemove(req.params.id, req.body, function (
+      err,
+      data
+    ) {
       if (!err) {
         res.json("Dog has been removed");
       } else {
@@ -102,11 +105,15 @@ router.post(
       phone_number: req.body.phone_number,
       shelter_id: req.body.shelter_id,
       dog_id: req.body.dog_id,
-      appt_status: req.body.appt_status
+      appt_status: req.body.appt_status,
+      image: req.body.image,
+      dog_name: req.body.dog_name,
     });
 
-    newAppointment.save().then((appt) => res.json(appt))
-    .catch((err) => res.status(400).json(err));
+    newAppointment
+      .save()
+      .then((appt) => res.json(appt))
+      .catch((err) => res.status(400).json(err));
   }
 );
 

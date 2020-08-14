@@ -12,17 +12,16 @@ const appointmentReducer = (state = {}, action) => {
         }
       );
     case RECEIVE_APPTS:
-      debugger
       let obj = {};
       action.appts.data.forEach((appt) => {
         obj[appt._id] = appt;
         // Object.assign(obj, { [dog._id]: dog });
       });
-      return obj
+
+      return obj;
     default:
       return state;
   }
 };
-
 
 export default appointmentReducer;
