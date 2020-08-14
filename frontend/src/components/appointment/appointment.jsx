@@ -36,7 +36,7 @@ class AppointmentIndex extends React.Component {
               <th>Appointment Date</th>
               <th>Appointment Time</th>
               <th>Phone Number</th>
-              <th>Comments</th>
+              <th className="comments">Comments</th>
               <th>Appointment Status</th>
               <th>Approved?</th>
             </tr>

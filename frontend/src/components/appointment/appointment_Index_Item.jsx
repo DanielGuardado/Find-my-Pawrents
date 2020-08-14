@@ -44,7 +44,7 @@ class AppointmentIndexItem extends React.Component {
             <td>{appointment.appt_date}</td>
             <td>{appointment.appt_time}</td>
             <td>{appointment.phone_number}</td>
-            <td>{appointment.comments}</td>
+            <td className="comments">{appointment.comments}</td>
             <td>{appointment.appt_status}</td>
             <div className="tablebuttons">
             <button id="btn-approve" className="appt-button" onClick={() => this.update("Approved") }>Approve</button>
