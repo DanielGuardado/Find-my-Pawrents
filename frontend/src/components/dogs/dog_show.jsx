@@ -5,6 +5,7 @@ import NavBar from "./../navBar/navBar_container";
 class DogShow extends React.Component {
   constructor(props) {
     super(props);
+    this.newData = React.createRef();
     this.state = {
       formStatus: false,
       appt_time: "",
@@ -17,14 +18,17 @@ class DogShow extends React.Component {
       // shelter_id: this.props.dog.shelter_id,
       // dog_id: this.props.dog.id,
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.newData = this.newData.bind(this)
   }
 
   handleLike = () => {
     let like = {
       dog_id: this.props.dog._id,
       user_id: this.props.currentUser.id,
+      dog_name: this.props.dog.name,
+      dog_image: this.props.dog.image,
+
     };
     this.props.createLike(like);
   };
@@ -44,9 +48,22 @@ class DogShow extends React.Component {
       });
   }
 
+  scrollBottom() {
+    window.scrollTo({
+      bottom: 0,
+      behavior: "smooth",
+    });
+  }
+
+  handleForm = (e) => {
+    this.setState({ formStatus: !this.state.formStatus })
+    // debugger
+    // this.newData.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   handleSubmit(e) {
     e.preventDefault();
-
+    debugger;
     let appointment = {
       appt_time: this.state.appt_time,
       appt_date: this.state.appt_date,
@@ -55,7 +72,10 @@ class DogShow extends React.Component {
       appt_status: "Pending Approval",
       shelter_id: this.props.dog.shelter_id,
       dog_id: this.props.dog._id,
+      dog_name: this.props.dog.name,
+      image: this.props.dog.image,
     };
+    debugger;
     this.props.createAppointment(appointment).catch((err) => {
       this.props.receiveErrors(err.response.data);
     });
@@ -130,7 +150,7 @@ class DogShow extends React.Component {
   appForm() {
     if (this.state.formStatus) {
       return (
-        <div className="appt-form-container">
+        <div ref={this.newData} className="appt-form-container">
           <div className="appt-form-box">
             <form className="appt-form" onSubmit={this.handleSubmit}>
               <h1 className="appt-header">Appointment</h1>
@@ -200,14 +220,11 @@ class DogShow extends React.Component {
   }
   apptBtn() {
     return (
-      <>
-        <button
-          className="appt-btn"
-          onClick={() => this.setState({ formStatus: !this.state.formStatus })}
-        >
+      <div>
+        <button  className="appt-btn" onClick={() => this.handleForm()}>
           ⇊ Schedule now ⇊
         </button>
-      </>
+      </div>
     );
   }
 

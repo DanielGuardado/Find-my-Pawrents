@@ -1,52 +1,38 @@
 import React from "react";
-import AppointmentIndexItem from "./appointment_index_item_container";
+import AppointmentIndexItem from "./appointment_Index_Item";
 import NavBar from "./../navBar/navBar_container";
 import "./appointment.scss";
 
 class AppointmentIndex extends React.Component {
-    componentDidMount() {
-        debugger
-        this.props.fetchAppointments(this.props.shelterId);
+  componentDidMount() {
+    this.props.fetchAppointments(this.props.shelterId);
+  }
+
+  appointmentShow() {
+    if (typeof this.props.appointments === "undefined") {
+      return null;
     }
 
-    appointmentShow() {
-        debugger
+    const appointments = this.props.appointments.map((appointment, idx) => (
+      // let dog = this.props.fetchDog(appointment.dog_id)
 
-        if (typeof this.props.appointments === 'undefined'){
-            return null;
-        }
-        debugger
+      <AppointmentIndexItem key={idx} appointment={appointment} />
+    ));
 
+    return <div className="dog-index-page-list-container">{appointments}</div>;
+  }
 
-        const appointments = this.props.appointments.map((appointment, idx) => (
-            // let dog = this.props.fetchDog(appointment.dog_id)
-
-            <AppointmentIndexItem key={idx} 
-                                appointment={appointment} 
-                                // fetchDog={this.props.fetchDog}
-                                // dog={this.props.dog}
-                                />
-            
-        ));
-        debugger
-
-        return <div className="dog-index-page-list-container">{appointments}</div>;
-    }
-
-    render() {
-        debugger
-        return (
-            <div>
-                <NavBar />
-                <h1 id='all-appts-title'>Here are all your appointments</h1>
-                <div className="">{this.appointmentShow()}</div>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <NavBar />
+        <h1 id="all-appts-title">Here are all your appointments</h1>
+        <div className="">{this.appointmentShow()}</div>
+      </div>
+    );
+  }
 }
 export default AppointmentIndex;
-
-
 
 // appt_date: "2020-08-13"
 // appt_status: "Pending Approval"
