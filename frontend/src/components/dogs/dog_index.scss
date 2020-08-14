@@ -38,7 +38,7 @@
         }
 
         #like-icon {
-          margin-right: 5px;
+          margin-right: 20px;
         }
 
         #comment-icon {
@@ -83,15 +83,12 @@
 #dog-index-page-card-container {
   border: 3px solid #49a7e3;
   border-radius: 20px;
-  // width: 200px;
-  padding: 30px 30px;
-  // margin: 0 30px;
-  height: 430px;
-  // min-height: 400px;
   background: #e9f8ff;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  height: 340px;
+  padding: 35px 60px;
 }
 #dog-index-page-card-container:hover {
   transform: scale(1.05, 1.05);
@@ -100,15 +97,12 @@
   opacity: 1;
 }
 
-
 @media screen and (max-width: 1550px) {
   #dog-index-page-card-container {
     border: 3px solid #49a7e3;
     background: #e9f8ff;
+    padding: 10px 20px;
     // width: 300px;
-    padding: 20px 30px;
-    // margin: 0 30px;
-    height: 330px;
     // min-height: 300px;
   }
 }
@@ -117,9 +111,29 @@
     border: 3px solid #49a7e3;
     background: #e9f8ff;
     // width: 300px;
-    padding: 30px 30px;
-    // margin: 0 30px;
-    height: 200px;
     // min-height: 300px;
   }
+}
+
+.dog-pad {
+  padding-top: 0px;
+}
+.list-pad {
+  padding: 10px;
+}
+.stat-pad {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.dog-item-name {
+  list-style: none;
+  font-size: 18px;
+}
+.dog-age {
+  display: flex;
+  justify-content: space-between;
+}
+.avail {
+  padding-top: 10px;
 }
