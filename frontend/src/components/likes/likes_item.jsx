@@ -9,12 +9,21 @@ class LikesIndexItem extends React.Component {
   likesRender() {
     const { like } = this.props;
     return (
-      <div>
-        <h1>{like.dog_name}</h1>
-        <Link to={`/dogs/${like.dog_id}`}>
-          <img style={{ width: "500px" }} src={like.dog_image} alt="" />
-        </Link>
-      </div>
+      <ul>
+        <div id="dog-like-page-card-container">
+          <Link id='test-link' to={`/dogs/${like.dog_id}`}>
+            <div id="dog-like-page-image-container">
+              <img id="dog-like-page-image"  src={like.dog_image} alt="" />
+              {/* <img id="imageheart"  src={like.dog_image} alt="" /> */}
+            </div>
+            <div className="dog-like-page-list-content-container">
+                <li>
+                  <h1>{like.dog_name}</h1>
+                </li>
+            </div>
+          </Link>
+        </div>
+      </ul>
     );
   }
 

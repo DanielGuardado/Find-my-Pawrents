@@ -1,6 +1,8 @@
 import React from "react";
 import LikesIndexItem from "./likes_item";
 import NavBar from "./../navBar/navBar_container";
+import "./likes.scss";
+
 
 class LikesIndex extends React.Component {
   componentDidMount() {
@@ -18,7 +20,7 @@ class LikesIndex extends React.Component {
       <LikesIndexItem key={idx} like={like} />
     ));
 
-    return <div className="dog-index-page-list-container">{likes}</div>;
+    return <div className="dog-like-page-list-container">{likes}</div>;
   }
 
   render() {
@@ -26,7 +28,7 @@ class LikesIndex extends React.Component {
       <div>
         <NavBar />
         <h1 id="all-appts-title">Here are all your likes</h1>
-        <div className="">{this.likesShow()}</div>
+        <div className="dog-like-page-main-container">{this.likesShow()}</div>
       </div>
     );
   }
