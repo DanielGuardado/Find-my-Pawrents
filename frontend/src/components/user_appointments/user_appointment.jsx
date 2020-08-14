@@ -27,7 +27,7 @@ class UserAppointmentIndex extends React.Component {
       <div>
         <NavBar />
         <h1 id="all-appts-title">Here are all your appointments</h1>
-        <div className="">{this.appointmentShow()}</div>
+        <div className="dog-index-page-main-container">{this.appointmentShow()}</div>
       </div>
     );
   }

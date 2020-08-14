@@ -14,7 +14,11 @@ import AppointmentContainer from "./appointment/appointment_container";
 import UserAppointmentContainer from "./user_appointments/user_appointment_container";
 import MyDogsIndex from "./shelter_dogs/shelter_my_dogs_container";
 import AboutPageContainer from "./About/about_container";
+<<<<<<< HEAD
 import ContactPageContainer from "./Contact/contact_container";
+=======
+import Likes from "./likes/likes_container";
+>>>>>>> 3509a43a17d6b5df3ca3da390aa553b468764c8b
 
 const App = () => {
   return (
@@ -28,6 +32,7 @@ const App = () => {
         <Route path="/about" exact component={AboutPageContainer} />
         <Route path="/contact" exact component={ContactPageContainer} />
         <ProtectedRoute path="/new_dog" exact component={ReactFirebase} />
+        <ProtectedRoute path="/my_likes" exact component={Likes} />
         <ProtectedRoute
           path="/appointments"
           exact

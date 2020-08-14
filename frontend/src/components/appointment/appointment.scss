@@ -1,9 +1,14 @@
 #all-appts-title{
-    margin-top: 100px;
+    padding-top: 20px;
+    text-align: center;
+    font-family: Marker Felt,
+    fantasy;
 }
 
 .appointments-page-list-container {
   background: #f4f4f4;
+  height: 100%;
+  padding-top: 30px;
 }
 
 .appointmentdetails {
@@ -11,7 +16,7 @@
 }
 
 .appttable {
-    float: left;
+    // float: left;
 }
 
 .tableheaders {
@@ -21,8 +26,10 @@
 table,
 th,
 td {
-    border: 1px solid black;
-    border-collapse: collapse;
+    border: 1px solid rgb(73, 167, 227);
+    border-collapse: separate;
+    font-family: Marker Felt,
+    fantasy;
 }
 
 th,
@@ -30,12 +37,15 @@ td {
     padding: 15px;
     width: 130px;
       height: 50px;
+    vertical-align: middle;
+    text-align: center;
+
 }
 
 table {
-  border-spacing: 5px;
+//   border-spacing: 5px;
   margin: auto;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .tablebuttons {
@@ -46,8 +56,20 @@ table {
 .appt-button {
     padding: 20px;
     cursor: pointer;
+    width: 161px;
+    font-family: Marker Felt,
+    fantasy;
+    border: 1px solid rgb(73, 167, 227);
 }
 
 #btn-approve {
     background-color: red($color: #a70e0e)
 }
+
+#Approved {
+    background-color: #6fca67 !important;
+}
+#Disapproved {
+    background-color: #cf4a4a !important;
+}
+

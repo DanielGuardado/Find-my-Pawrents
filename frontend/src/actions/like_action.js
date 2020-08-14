@@ -1,10 +1,16 @@
 import * as Like_API_Util from "../util/like_api_util";
 export const RECEIVE_DOG_COUNT = "RECEIVE_DOG_COUNT";
 export const RECEIVE_LIKE = "RECEIVE_LIKE";
+export const RECEIVE_LIKES = "RECEIVE_LIKES";
 
 export const receiveLike = (like) => ({
   type: RECEIVE_LIKE,
   like,
+});
+
+export const receiveLikes = (likes) => ({
+  type: RECEIVE_LIKES,
+  likes,
 });
 
 export const receiveDogLikeCount = (count) => ({
@@ -17,4 +23,8 @@ export const createLike = (like) => (dispatch) =>
 export const fetchDogLikes = (count) => (dispatch) =>
   Like_API_Util.fetchDogLikes(count).then((count) =>
     dispatch(receiveDogLikeCount(count))
+  );
+export const fetchUserLikes = (userId) => (dispatch) =>
+  Like_API_Util.fetchUserLikes(userId).then((likes) =>
+    dispatch(receiveLikes(likes))
   );

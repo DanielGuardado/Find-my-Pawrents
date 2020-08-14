@@ -121,11 +121,11 @@ class NavBar extends React.Component {
                   Dogs
                 </button>
               </a>
-              <a href="/">
+              <Link to="/my_likes">
                 <button className="currentUserNavBar-nav-favorite-button">
                   Favorites
                 </button>
-              </a>
+              </Link>
               <Link to="/user_appointments">
                 <button className="currentUserNavBar-nav-appt-button">
                   My Appointments
