@@ -37,8 +37,10 @@ const AboutPage = props => {
                                 </div>
                             </div>
                             <div id='persional-description'>
-                                <p><span>Name:  </span> Daniel Guardado</p>
-                                <p><span>Job Description: </span> The team lead can be considered the owner of the project.  They think high level about the MERN project and monitor the development of its different pieces.  Typically this is the person who came up with the initial application idea as they are in the best position to think about it as a complete product. </p>
+                                <p><span>Name:  </span> Rosemary Gonzaga</p>
+                                    <p><span>Bio: </span> I'm a perpetually curious coder with a weakness for mind-bendy puzzles. My passion for problem-solving began in the laboratory, where I learned how to ask insightful questions and find answers through methodically-executed experiments. Now I turn that curiosity and discipline towards solving problems with a different toolkit: one that includes technologies such as Ruby, Rails, JavaScript, React, Redux, PostgreSQL, CSS, and HTML.
+                                                            In a recent project, I combined my passions for data and coding by creating a data visualization with JavaScript and D3.js. In the process, I've been delighted to discover that software development affords as much room for creativity as it does scientific reasoning.
+                                                            When I'm not having fun finding and squashing bugs, I'm playing board games, hiking, or cozying up with a good book.  </p>
                                 <p><span>Email: </span> </p>
                             
                             </div>
