@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
-import { fetchAppointments } from "../../actions/appointment_actions";
+import { fetchAppointments, updateAppointment } from "../../actions/appointment_actions";
 import { fetchDogs } from "../../actions/dog_actions";
+
 
 import Appointments from "./appointment";
 
@@ -16,6 +17,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     // fetchAppointments: (shelterId) => dispatch(fetchAppointments(shelterId)),
     fetchAppointments: (shelterId) => dispatch(fetchAppointments(shelterId)),
+    updateAppointment: appointment => dispatch(updateAppointment(appointment))
   };
 };
 
