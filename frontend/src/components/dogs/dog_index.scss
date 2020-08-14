@@ -4,7 +4,7 @@
   font-family: Marker Felt, fantasy;
   // grid-template-columns: 40 30 30;
   .dog-index-page-list-container {
-    border-bottom: 1px solid black;
+    // border-bottom: 1px solid black;
     margin-bottom: 30px;
     margin: 0px auto;
     padding-bottom: 30px;
@@ -99,6 +99,8 @@
 #dog-index-page-card-container:hover::after {
   opacity: 1;
 }
+
+
 @media screen and (max-width: 1550px) {
   #dog-index-page-card-container {
     border: 3px solid #49a7e3;

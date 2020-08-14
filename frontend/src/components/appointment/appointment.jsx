@@ -16,18 +16,32 @@ class AppointmentIndex extends React.Component {
     const appointments = this.props.appointments.map((appointment, idx) => (
       // let dog = this.props.fetchDog(appointment.dog_id)
 
-      <AppointmentIndexItem key={idx} appointment={appointment} />
+      <AppointmentIndexItem key={idx} appointment={appointment} updateAppointment={this.props.updateAppointment} />
     ));
 
-    return <div className="dog-index-page-list-container">{appointments}</div>;
+    return <div className="appointments-page-list-container">{appointments}</div>;
   }
+
+  
 
   render() {
     return (
       <div>
         <NavBar />
+        <div className="appointments-page-list-container">
         <h1 id="all-appts-title">Here are all your appointments</h1>
-        <div className="">{this.appointmentShow()}</div>
+          <table className="appttable">
+            <tr className="tableheaders">
+              <th>Name</th>
+              <th>Appointment Date</th>
+              <th>Appointment Time</th>
+              <th>Phone Number</th>
+              <th>Comments</th>
+              <th>Appointment Status</th>
+            </tr>
+        {this.appointmentShow()}
+        </table>
+      </div>
       </div>
     );
   }

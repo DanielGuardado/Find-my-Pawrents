@@ -6,8 +6,14 @@ export const fetchAppointment = (appointmentId) =>
 export const createAppointment = (appointment) =>
   axios.post("/api/appointments/", appointment);
 
-export const fetchAppointments = (shelterId) =>
-  axios.get(`/api/appointments/shelter/${shelterId}`);
+// export const fetchAppointments = (shelterId) =>
+//   axios.get(`/api/appointments/shelter/${shelterId}`);
 
 export const fetchUserAppointments = (userId) =>
   axios.get(`api/appointments/user/${userId}`);
+
+export const fetchAppointments = (shelterId) =>
+  axios.get(`/api/appointments/user/${shelterId}`);
+
+export const updateAppointment = (appointment) =>
+  axios.post(`/api/appointments/${appointment._id}/update`, appointment);

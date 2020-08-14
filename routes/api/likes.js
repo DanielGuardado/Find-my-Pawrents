@@ -22,6 +22,8 @@ router.post(
     const newLike = new Like({
       user_id: req.user.id,
       dog_id: req.body.dog_id,
+      dog_image: req.body.dog_image,
+      dog_name: req.body.dog_name
     });
 
     newLike.save().then((like) => res.json(like))

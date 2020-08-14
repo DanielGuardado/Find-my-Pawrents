@@ -16,18 +16,41 @@ class AppointmentIndexItem extends React.Component {
     };
   }
 
+  update(change) {
+    const { appointment } = this.props;    
+    this.setState({appt_status: change})
+    debugger
+    let appointment1 = {
+      appt_time: appointment.appt_time,
+      appt_date: appointment.appt_date,
+      phone_number: appointment.phone_number,
+      comments: appointment.comments,
+      appt_status: this.state.appt_status,
+      shelter_id: appointment.shelter_id,
+      dog_id: appointment.dog_id,
+      image: appointment.image,
+      dog_name: appointment.dog_nam
+    }
+    debugger
+    this.props.updateAppointment(appointment1)
+  }
+
   AppointmentRender() {
     const { appointment } = this.props;
     return (
-      <div>
-        <h1>{appointment.dog_name}</h1>
-        <h1>{appointment.appt_date}</h1>
-        <h1>{appointment.appt_time}</h1>
-        <h1>{appointment.appt_status}</h1>
-        <h1>{appointment.phone_number}</h1>
-        <h1>{appointment.comments}</h1>
-        <img style={{ width: "500px" }} src={appointment.image} alt="" />
-      </div>
+          <tr className="tablevalues">
+            <td>{appointment.dog_name}</td>
+            <td>{appointment.appt_date}</td>
+            <td>{appointment.appt_time}</td>
+            <td>{appointment.phone_number}</td>
+            <td>{appointment.comments}</td>
+            <td>{appointment.appt_status}</td>
+            <div className="tablebuttons">
+            <button id="btn-approve" className="appt-button" onClick={() => this.update("Approve") }>Approve</button>
+          <button id="btn-disapprove" className="appt-button" onClick={() => this.update("Disapprove")}>Disapprove</button>
+            </div> 
+          </tr>
+
     );
   }
 

@@ -40,6 +40,7 @@ class DogShow extends React.Component {
       dog_name: this.props.dog.name,
       dog_image: this.props.dog.image,
     };
+    debugger
     this.props.createLike(like);
   };
 
