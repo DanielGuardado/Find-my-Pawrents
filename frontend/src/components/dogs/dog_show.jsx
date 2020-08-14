@@ -22,8 +22,6 @@ class DogShow extends React.Component {
     // this.newData = this.newData.bind(this)
   }
 
-<<<<<<< HEAD
-=======
   handleLike = () => {
     let like = {
       dog_id: this.props.dog._id,
@@ -35,7 +33,6 @@ class DogShow extends React.Component {
     this.props.createLike(like);
   };
 
->>>>>>> baedc2df295fb6d10e993c02bc6df624f40c264c
   componentDidMount() {
     this.props.fetchDog(this.props.id);
     if (this.props.dog) {
@@ -84,15 +81,12 @@ class DogShow extends React.Component {
     });
   }
 
-<<<<<<< HEAD
-=======
   dogLike() {
     if (this.props.dog && this.props.currentUser.id) {
       return <button onClick={this.handleLike}>Like me</button>;
     }
   }
 
->>>>>>> baedc2df295fb6d10e993c02bc6df624f40c264c
   dogDelete() {
     if (
       this.props.dog &&
