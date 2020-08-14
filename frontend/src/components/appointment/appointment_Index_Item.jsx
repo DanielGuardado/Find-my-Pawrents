@@ -17,8 +17,7 @@ class AppointmentIndexItem extends React.Component {
   }
 
   update = (change) => {
-    const { appointment } = this.props;    
-
+    const { appointment } = this.props;
 
     let appointment1 = {
       id: appointment._id,
@@ -30,28 +29,38 @@ class AppointmentIndexItem extends React.Component {
       shelter_id: appointment.shelter_id,
       dog_id: appointment.dog_id,
       image: appointment.image,
-      dog_name: appointment.dog_name
-    }
-    debugger
-    this.props.updateAppointment(appointment1)
-  }
+      dog_name: appointment.dog_name,
+    };
+    this.props.updateAppointment(appointment1);
+  };
 
   AppointmentRender() {
     const { appointment } = this.props;
     return (
       <tr className="tablevalues" id={appointment.appt_status}>
-            <td>{appointment.dog_name}</td>
-            <td>{appointment.appt_date}</td>
-            <td>{appointment.appt_time}</td>
-            <td>{appointment.phone_number}</td>
-            <td>{appointment.comments}</td>
-            <td>{appointment.appt_status}</td>
-            <div className="tablebuttons">
-            <button id="btn-approve" className="appt-button" onClick={() => this.update("Approved") }>Approve</button>
-          <button id="btn-disapprove" className="appt-button" onClick={() => this.update("Disapproved")}>Disapprove</button>
-            </div> 
-          </tr>
-
+        <td>{appointment.dog_name}</td>
+        <td>{appointment.appt_date}</td>
+        <td>{appointment.appt_time}</td>
+        <td>{appointment.phone_number}</td>
+        <td>{appointment.comments}</td>
+        <td>{appointment.appt_status}</td>
+        <div className="tablebuttons">
+          <button
+            id="btn-approve"
+            className="appt-button"
+            onClick={() => this.update("Approved")}
+          >
+            Approve
+          </button>
+          <button
+            id="btn-disapprove"
+            className="appt-button"
+            onClick={() => this.update("Disapproved")}
+          >
+            Disapprove
+          </button>
+        </div>
+      </tr>
     );
   }
 

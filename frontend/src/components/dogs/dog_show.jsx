@@ -58,6 +58,7 @@ class DogShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchDog(this.props.id);
+    this.props.fetchDogLikes(this.props.id);
     if (this.props.dog) {
       this.setState({ shelter_id: this.props.dog.shelter_id });
       this.setState({ dog_id: this.props.dog.dog_id });
@@ -175,6 +176,7 @@ class DogShow extends React.Component {
                     <div className="description">{dog.description}</div>
                   </div>
                   <div className="dog-date">Listed Date: {this.date()}</div>
+                  {this.renderCount()}
                   {this.dogDelete()}
                 </div>
               </div>
@@ -187,6 +189,15 @@ class DogShow extends React.Component {
       );
     }
   }
+
+  renderCount() {
+    if (this.props.count) {
+      return (
+        <div className="dog-date">Total Likes: {this.props.count.data}</div>
+      );
+    }
+  }
+
   appForm() {
     if (this.state.formStatus && !this.state.submitStatus) {
       return (

@@ -3,7 +3,6 @@ import { fetchUserLikes } from "../../actions/like_action";
 import LikesIndex from "./likes";
 
 const mapStateToProps = (state) => {
-  debugger;
   return {
     currentUser: state.session.user,
     likes: Object.values(state.likes),

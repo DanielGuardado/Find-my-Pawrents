@@ -76,6 +76,11 @@ class NavBar extends React.Component {
                   My Dogs
                 </button>
               </a>
+              <Link to="/my_likes">
+                <button className="shelterUserNavBar-nav-appointment-button">
+                  Favorites
+                </button>
+              </Link>
               <a href="#/appointments">
                 <button className="shelterUserNavBar-nav-appointment-button">
                   Appointments

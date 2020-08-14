@@ -9,6 +9,7 @@ import DogShow from "./dog_show";
 const mapStateToProps = (state, ownProps) => {
   const id = ownProps.match.params.dogId;
   return {
+    count: state.likes.count,
     currentUser: state.session.user,
     dog: state.dogs[ownProps.match.params.dogId],
     id,
@@ -22,6 +23,7 @@ const mapDispatchToProps = (dispatch) => ({
   deleteDog: (dogId) => dispatch(deleteDog(dogId)),
   createLike: (like) => dispatch(createLike(like)),
   openModal: (modal) => dispatch(openModal(modal)),
+  fetchDogLikes: (dogId) => dispatch(fetchDogLikes(dogId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DogShow);
