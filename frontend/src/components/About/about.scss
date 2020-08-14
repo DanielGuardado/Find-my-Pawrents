@@ -19,6 +19,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    p {
+        font-size: 20px;;
+    }
 }
 
 .about-page-main-content-container{
@@ -30,19 +34,39 @@
             // align-items: center;
             // justify-content: baseline;
             justify-content: start;
-
+        
+        #position{
+            font-weight: 800;
+            text-align: center;
+        }
 
         .personal-bio{
 
             margin: 5px 20px;
             padding: 5px 0px;
-            border-bottom: 1px solid lightgray;
+            border: 3px solid black;
+            border-radius: 10px;
+            // display: flex;
+            display: grid;
+            grid-template-columns: 30% 70%;
+            background-color: #E9F8FF;
+
+            #persional-description{
+                margin: auto 0px;
+                
+                p span{
+                    font-weight: 800;
+                }
+                
+            }
             
             .group-picture{
                 // object-fit: cover;
-                max-width: 20%;
-                max-height: 20%;
+                // padding-left: 30px;
+                max-width: 80%;
+                max-height: 80%;
                 border-radius: 20px;
+                margin-left: 30px;
                 // width: 40%;
                 // height: 40%;
                 // margin: 0 auto;
@@ -51,4 +75,23 @@
 
     }
 
+}
+
+
+#about-page-main-container{
+    background-color:#f4f4f4;
+}
+
+#icon{
+    width: 30px
+}
+
+#test{
+    display: flex;
+    justify-content: center;
+    img{
+        margin: 10px;
+        border: 1px solid black;
+        border-radius: 2px;
+    }
 }
