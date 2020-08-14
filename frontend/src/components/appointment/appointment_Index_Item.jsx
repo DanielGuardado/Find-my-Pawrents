@@ -16,16 +16,17 @@ class AppointmentIndexItem extends React.Component {
     };
   }
 
-  update(change) {
+  update = (change) => {
     const { appointment } = this.props;    
-    this.setState({appt_status: change})
-    debugger
+
+
     let appointment1 = {
+      id: appointment._id,
       appt_time: appointment.appt_time,
       appt_date: appointment.appt_date,
       phone_number: appointment.phone_number,
       comments: appointment.comments,
-      appt_status: this.state.appt_status,
+      appt_status: change,
       shelter_id: appointment.shelter_id,
       dog_id: appointment.dog_id,
       image: appointment.image,
@@ -46,8 +47,8 @@ class AppointmentIndexItem extends React.Component {
             <td>{appointment.comments}</td>
             <td>{appointment.appt_status}</td>
             <div className="tablebuttons">
-            <button id="btn-approve" className="appt-button" onClick={() => this.update("Approve") }>Approve</button>
-          <button id="btn-disapprove" className="appt-button" onClick={() => this.update("Disapprove")}>Disapprove</button>
+            <button id="btn-approve" className="appt-button" onClick={() => this.update("Approved") }>Approve</button>
+          <button id="btn-disapprove" className="appt-button" onClick={() => this.update("Disapproved")}>Disapprove</button>
             </div> 
           </tr>
 
