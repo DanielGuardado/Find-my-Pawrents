@@ -14,6 +14,7 @@ import AppointmentContainer from "./appointment/appointment_container";
 import UserAppointmentContainer from "./user_appointments/user_appointment_container";
 import MyDogsIndex from "./shelter_dogs/shelter_my_dogs_container";
 import AboutPageContainer from "./About/about_container";
+import ContactPageContainer from "./Contact/contact_container";
 import Likes from "./likes/likes_container";
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/dogs/:dogId" exact component={DogShow} />
         <Route path="/my_dogs" exact component={MyDogsIndex} />
         <Route path="/about" exact component={AboutPageContainer} />
+        <Route path="/contact" exact component={ContactPageContainer} />
         <ProtectedRoute path="/new_dog" exact component={ReactFirebase} />
         <ProtectedRoute path="/my_likes" exact component={Likes} />
         <ProtectedRoute

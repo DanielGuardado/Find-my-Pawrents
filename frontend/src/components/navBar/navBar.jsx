@@ -25,7 +25,7 @@ class NavBar extends React.Component {
               <Link to="/about" />
             </div>
             <div className="nav-contact">
-              Contact
+              <a href="#/contact">Contact</a>
               <Link to="/contact" />
             </div>
           </div>
