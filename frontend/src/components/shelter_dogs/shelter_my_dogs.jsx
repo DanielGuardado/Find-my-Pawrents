@@ -24,22 +24,22 @@ class MyDogsIndex extends React.Component {
           <NavBar />
           <div className="shelter-my-dogs-background">
             <img src={ShelterBackgroundPic} />
-          <div className="no-dogs-page-container">
-            <div className="no-dogs">
-              <p>You have no dogs!</p>
-            </div>
-            <div className="add-dog-here-button">
-              <Link to="/new_dog" />
-              <button className="add-dog-here">Add Dogs Here</button>
+            <div className="no-dogs-page-container">
+              <div className="no-dogs">
+                <p>You have no dogs!</p>
+              </div>
+              <div className="add-dog-here-button">
+                <Link to="/new_dog">
+                  <button className="add-dog-here">Click Here to Add!!</button>
+                </Link>
+              </div>
             </div>
           </div>
-          </div>
-
         </div>
       );
     } else {
       return (
-        <div>
+        <div className="shelter-my-dogs-page">
           <NavBar />
           <div className="dog-index-page-main-container">{this.dogShow()}</div>
         </div>

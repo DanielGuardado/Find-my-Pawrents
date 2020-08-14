@@ -1,8 +1,10 @@
+// @import "../dogs/dog_index.scss";
+
 .shelter-my-dogs-background{
     // background-image: url("https://www.coppersdream.org/uploads/1/5/7/7/1577488/zoom_backgrounds.png");
     background-repeat: no-repeat;
     // max-width: 40%;
-    // height:auto;
+    width: 100%;
     padding-top: 78px;
 //     -webkit-mask-image: linear-gradient(to top, white, transparent);
 //   mask-image: linear-gradient(to top, white, transparent);
@@ -36,6 +38,7 @@ div.no-dogs {
     border-radius: 10px;
     text-align: center;
     color: black;
+    box-shadow: 5px 10px rgb(240, 240, 224);
 //   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
 //   -webkit-text-stroke-width: 1px;
 //   -webkit-text-stroke-color: black;
@@ -63,15 +66,19 @@ div.no-dogs:before {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 120px;
-    height: 80px;
-    background: rgb(247, 247, 131);
+    width: 150px;
+    height: 100px;
+    // width: 200px;
+    // height: 130px;
+    background: rgb(121, 209, 140);
     position: relative;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
     margin-top: 20px;
-    right: 505%;
+    // right: 505%;
+    right: 1040px;
+    box-shadow: 5px 10px rgb(240, 240, 224);
 }
 
 .add-dog-here-button:before {
@@ -93,20 +100,128 @@ div.no-dogs:before {
     width: 0;
     height: 0;
     border-top: 13px solid transparent;
-    border-left: 26px solid rgb(247, 247, 131);
+    border-left: 26px solid rgb(121, 209, 140);
     border-bottom: 13px solid transparent;
 }
 
 .add-dog-here {
-    border: 2px solid rgb(247, 247, 131);
+    border: 2px solid rgb(121, 209, 140);
     border-radius: 7px;
-    background-color: rgb(247, 247, 131);
+    background-color: rgb(121, 209, 140);
     // margin-top: 20px;
     padding: 10px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 25px;
     font-family: Marker Felt, fantasy;
 }
 
+.shelter-dog-page-delete-container {
+    justify-content: center;
+    display: flex;
+    left: 50%;
+    right: 50%;
+}
 
+.shelter-dog-page-delete-button {
+    border: 1px solid rgb(73, 167, 227);
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+    margin-right: 10px;
+    cursor:pointer;
+    font-size: 18px;
+    font-family: Marker Felt, fantasy;
 
+}
+
+// .shelter-my-dogs-page {
+//     size: 50%;
+// }
+// .dog-index-page-main-container {
+//   padding: 100px 60px;
+//   background-color: #f4f4f4;
+//   font-family: Marker Felt, fantasy;
+//   // grid-template-columns: 40 30 30;
+//   .dog-index-page-list-container {
+//     border-bottom: 1px solid black;
+//     margin-bottom: 30px;
+//     margin: 0px auto;
+//     padding-bottom: 30px;
+//     // display: flex;
+//     // flex-direction: column;
+//     grid-template-columns: 25% 25% 25% 25%;
+//     display: grid;
+//     margin-right: 25px;
+//     margin-left: -20px;
+//     #dog-index-page-image-container {
+//       display: flex;
+//       justify-content: space-around;
+//     }
+//     .dog-index-page-list-content-container {
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       flex-direction: column;
+//       list-style-type: none;
+//       // flex-direction: column;
+//       // box-sizing: border-box;
+//       }
+//       li {
+//         margin: 0 10px;
+//         font-family: Gill Sans, sans-serif;
+//       }
+//       li span {
+//         // padding-left: 20px;
+//         margin-right: 3px;
+//         font-family: Marker Felt, fantasy;
+//       }
+//     #dog-index-page-image {
+//       // width: 100%;
+//       // height: 280px;
+//       width: 100%;
+//       height: 100%;
+//     }
+//   }
+// }
+// #dog-index-page-card-container {
+//   border: 3px solid #49a7e3;
+//   border-radius: 20px;
+//   // width: 200px;
+//   padding: 30px 30px;
+//   // margin: 0 30px;
+//   height: 430px;
+//   // min-height: 400px;
+//   background: #e9f8ff;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-evenly;
+// }
+// #dog-index-page-card-container:hover {
+//   transform: scale(1.05, 1.05);
+// }
+// #dog-index-page-card-container:hover::after {
+//   opacity: 1;
+// }
+// @media screen and (max-width: 1550px) {
+//   #dog-index-page-card-container {
+//     border: 3px solid #49a7e3;
+//     background: #e9f8ff;
+//     // width: 300px;
+//     padding: 20px 30px;
+//     // margin: 0 30px;
+//     height: 330px;
+//     // min-height: 300px;
+//   }
+// }
+// @media screen and (max-width: 900px) {
+//   #dog-index-page-card-container {
+//     border: 3px solid #49a7e3;
+//     background: #e9f8ff;
+//     // width: 300px;
+//     padding: 30px 30px;
+//     // margin: 0 30px;
+//     height: 200px;
+//     // min-height: 300px;
+//   }
+// }

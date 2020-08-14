@@ -23,8 +23,8 @@ class DogIndexItem extends React.Component {
     const { dog } = this.props;
     return (
       <ul>
-        <Link to={`/dogs/${dog._id}`}>
           <div id="dog-index-page-card-container">
+        <Link to={`/dogs/${dog._id}`}>
             <div id="dog-index-page-image-container">
               <img id="dog-index-page-image" src={dog.image} alt="1" />
             </div>
@@ -45,8 +45,8 @@ class DogIndexItem extends React.Component {
                 <img id="comment-icon" src={commenticon} />
               </div>
             </div>
-          </div>
         </Link>
+          </div>
       </ul>
     );
   }
