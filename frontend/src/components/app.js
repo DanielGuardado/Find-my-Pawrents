@@ -12,6 +12,7 @@ import DogShow from "./dogs/dog_show_container";
 import ReactFirebase from "./firebase/new_dog_form_container";
 import AppointmentContainer from "./appointment/appointment_container";
 import MyDogsIndex from "./shelter_dogs/shelter_my_dogs_container";
+import AboutPageContainer from "./About/about_container";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <Route path="/dogs/:dogId" exact component={DogShow} />
         <Route path="/my_dogs" exact component={MyDogsIndex} />
+        <Route path="/about" exact component={AboutPageContainer} />
         <ProtectedRoute path="/new_dog" exact component={ReactFirebase} />
         <ProtectedRoute
           path="/appointments"

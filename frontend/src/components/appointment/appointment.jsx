@@ -26,6 +26,7 @@ class AppointmentIndex extends React.Component {
                                 // fetchDog={this.props.fetchDog}
                                 // dog={this.props.dog}
                                 />
+            
         ));
         debugger
 

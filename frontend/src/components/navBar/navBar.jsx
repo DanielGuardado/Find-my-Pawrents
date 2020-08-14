@@ -32,7 +32,9 @@ class NavBar extends React.Component {
               <img id="logo" src={logo} alt="logo" />
             </a>
             <div className="nav-about">
-              About
+              <a href="#/about">
+                About
+              </a>
               <Link to="/about" />
             </div>
             <div className="nav-contact">
