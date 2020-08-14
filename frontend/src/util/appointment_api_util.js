@@ -13,7 +13,7 @@ export const fetchUserAppointments = (userId) =>
   axios.get(`api/appointments/user/${userId}`);
 
 export const fetchAppointments = (shelterId) =>
-  axios.get(`/api/appointments/user/${shelterId}`);
+  axios.get(`/api/appointments/shelter/${shelterId}`);
 
 export const updateAppointment = (appointment) => {
   debugger

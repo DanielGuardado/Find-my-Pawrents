@@ -30,7 +30,7 @@ class AppointmentIndexItem extends React.Component {
       shelter_id: appointment.shelter_id,
       dog_id: appointment.dog_id,
       image: appointment.image,
-      dog_name: appointment.dog_nam
+      dog_name: appointment.dog_name
     }
     debugger
     this.props.updateAppointment(appointment1)
@@ -39,7 +39,7 @@ class AppointmentIndexItem extends React.Component {
   AppointmentRender() {
     const { appointment } = this.props;
     return (
-          <tr className="tablevalues">
+      <tr className="tablevalues" id={appointment.appt_status}>
             <td>{appointment.dog_name}</td>
             <td>{appointment.appt_date}</td>
             <td>{appointment.appt_time}</td>

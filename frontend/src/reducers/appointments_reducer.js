@@ -6,7 +6,7 @@ const appointmentReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_APPT:
       return Object.assign(
-        {},
+        {}, state,
         {
           [action.appt.data._id]: action.appt.data,
         }
