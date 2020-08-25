@@ -16,7 +16,6 @@ class AppointmentIndex extends React.Component {
     if (typeof this.props.appointments === "undefined") {
       return null;
     }
-    debugger;
     let dogNames = [];
     this.props.dogs.forEach((el) => dogNames.push(el.name));
     const appointments = this.props.appointments.map((appointment, idx) => {
