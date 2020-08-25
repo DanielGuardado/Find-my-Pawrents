@@ -25,6 +25,10 @@ class LoginForm extends React.Component {
 
     this.setState({ errors: nextProps.errors });
   }
+  componentWillUnmount() {
+    this.props.clearErrors();
+    this.setState({ errors: {} });
+  }
 
   update(field) {
     return (e) =>
@@ -52,21 +56,19 @@ class LoginForm extends React.Component {
   demoLogin(e) {
     e.preventDefault();
     const demoUser = {
-      email: 'demo@gmail.com',
-      password: 'demopassword'
-      };
-        this.props.demoAction(demoUser).then(this.props.closeModal);
-    }
+      email: "demo@gmail.com",
+      password: "demopassword",
+    };
+    this.props.demoAction(demoUser).then(this.props.closeModal);
+  }
   shelterdemoLogin(e) {
     e.preventDefault();
     const demoUser = {
-      email: 'shelterdemo@gmail.com',
-      password: 'shelterdemopassword'
-      };
-        this.props.demoAction(demoUser).then(this.props.closeModal);
-    }
-
-
+      email: "shelterdemo@gmail.com",
+      password: "shelterdemopassword",
+    };
+    this.props.demoAction(demoUser).then(this.props.closeModal);
+  }
 
   renderErrors() {
     return (
