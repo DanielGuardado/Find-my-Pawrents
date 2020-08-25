@@ -56,7 +56,8 @@
 .helpful-information-banner-container{
     display: flex;
     padding: 50px 20px;
-    background: #f4f4f4;
+    // background: #f4f4f4;
+    background-color: transparent;
     justify-content: space-between;
 
     #helpful-information-banner-parts{
@@ -71,41 +72,41 @@
     }
 }
 
-.splash-page-footer-container{
-    display: flex;
-    justify-content: space-evenly;
-    color: white;
-    background-color: black;
-    // padding: 50px 100px;
+// .splash-page-footer-container{
+//     display: flex;
+//     justify-content: space-evenly;
+//     color: white;
+//     background-color: black;
+//     // padding: 50px 100px;
 
-    .splash-page-footer-parts{
-        display: flex;
-        flex-direction: column;
-        margin: 10px 100;
-        width: 400px;
+//     .splash-page-footer-parts{
+//         display: flex;
+//         flex-direction: column;
+//         margin: 10px 100;
+//         width: 400px;
 
-        h1{
-            font-size: 15px;
-        }
-        div{
-            font-size: 12px;
-        }
-    }
-    // .splash-page-footer-newsletter{
-    //     margin: 10px 100px;
+//         h1{
+//             font-size: 15px;
+//         }
+//         div{
+//             font-size: 12px;
+//         }
+//     }
+//     // .splash-page-footer-newsletter{
+//     //     margin: 10px 100px;
 
 
-    //      h1{
-    //         font-size: 12px;
-    //     }
+//     //      h1{
+//     //         font-size: 12px;
+//     //     }
        
-    //       button{
-    //         width: 300px;
-    //     }
+//     //       button{
+//     //         width: 300px;
+//     //     }
     
-    // }
+//     // }
 
-}
+// }
 
 @keyframes move_wave {
     0% {
@@ -125,15 +126,16 @@
     right: 0;
     bottom: 0;
     top: 0;
-    margin-top: 600px;
+    margin: auto;
+    z-index: -1;
 }
 .waveWrapperInner {
-    position: absolute;
+    position: fixed;
     width: 100%;
     overflow: hidden;
     height: 100%;
     bottom: -1px;
-    background-image: linear-gradient(to top, rgb(73, 167, 227) 20%, rgb(48, 166, 240) 80%);
+    background-image: linear-gradient(to top, rgb(144, 208, 248) 20%, rgb(167, 215, 245) 80%);
 }
 .bgTop {
     z-index: 15;
@@ -165,13 +167,13 @@
    animation-delay: 1s;
 }
 .waveMiddle {
-    background-size: 50% 120px;
+    background-size: 50% 150px;
 }
 .waveAnimation .waveMiddle {
     animation: move_wave 10s linear infinite;
 }
 .waveBottom {
-    background-size: 50% 100px;
+    background-size: 50% 120px;
 }
 .waveAnimation .waveBottom {
     animation: move_wave 15s linear infinite;
