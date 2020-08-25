@@ -39,8 +39,8 @@ export const fetchDog = (dogId) => (dispatch) =>
 
 export const createDog = (dog) => (dispatch) =>
   DogAPIUtil.createDog(dog).then(
-    (dog) => dispatch(receiveDog(dog)),
-    (errors) => dispatch(receiveDogErrors(errors.response.data))
+    (dog) => dispatch(receiveDog(dog))
+    // (errors) => dispatch(receiveDogErrors(errors.response.data))
   );
 
 export const updateDog = (dog) => (dispatch) =>

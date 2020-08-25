@@ -16,5 +16,5 @@ export const fetchAppointments = (shelterId) =>
   axios.get(`/api/appointments/shelter/${shelterId}`);
 
 export const updateAppointment = (appointment) => {
-  debugger
-  return axios.post(`/api/appointments/${appointment.id}/update`, appointment)};
+  return axios.post(`/api/appointments/${appointment.id}/update`, appointment);
+};

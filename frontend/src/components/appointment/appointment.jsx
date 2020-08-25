@@ -8,28 +8,39 @@ class AppointmentIndex extends React.Component {
     this.props.fetchAppointments(this.props.shelterId);
   }
 
+  componentWillMount() {
+    this.props.fetchDogs();
+  }
+
   appointmentShow() {
     if (typeof this.props.appointments === "undefined") {
       return null;
     }
-    debugger
-    const appointments = this.props.appointments.map((appointment, idx) => (
+    let dogNames = [];
+    this.props.dogs.forEach((el) => dogNames.push(el.name));
+    const appointments = this.props.appointments.map((appointment, idx) => {
       // let dog = this.props.fetchDog(appointment.dog_id)
-  
-      <AppointmentIndexItem key={idx} appointment={appointment} updateAppointment={this.props.updateAppointment} />
-    ));
+      if (dogNames.includes(appointment.dog_name)) {
+        return (
+          <AppointmentIndexItem
+            key={idx}
+            appointment={appointment}
+            updateAppointment={this.props.updateAppointment}
+            dogs={this.props.dogs}
+          />
+        );
+      }
+    });
 
     return <div>{appointments}</div>;
   }
-
-  
 
   render() {
     return (
       <div>
         <NavBar />
         <div className="appointments-page-list-container">
-        <h1 id="all-appts-title1">Here are all your appointments!</h1>
+          <h1 id="all-appts-title1">Here are all your appointments!</h1>
           <table className="appttable">
             <tr className="tableheaders">
               <th>Name</th>
@@ -40,9 +51,9 @@ class AppointmentIndex extends React.Component {
               <th>Appointment Status</th>
               <th>Approved?</th>
             </tr>
-        {this.appointmentShow()}
-        </table>
-      </div>
+            {this.appointmentShow()}
+          </table>
+        </div>
       </div>
     );
   }

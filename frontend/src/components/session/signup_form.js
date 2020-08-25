@@ -19,6 +19,14 @@ class SignupForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
   }
+  componentWillUnmount() {
+    this.props.clearErrors();
+    this.setState({ errors: {} });
+  }
+  componentWillMount() {
+    this.props.clearErrors();
+    this.setState({ errors: {} });
+  }
 
   // componentWillReceiveProps(nextProps) {
   //   if (nextProps.signedIn === true) {

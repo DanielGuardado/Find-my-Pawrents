@@ -42,14 +42,14 @@ class DogIndexItem extends React.Component {
               </li>
             </div>
           </Link>
-          <div id="icon-container">
+          {/* <div id="icon-container">
             <button className="index-like-btn">
               <img className="like-button" src={likeicon} />
             </button>
             <button className="comment-btn">
               <img className="comment-button" src={commenticon} />
             </button>
-          </div>
+          </div> */}
         </div>
       </ul>
     );

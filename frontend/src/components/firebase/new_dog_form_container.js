@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { createDog } from "../../actions/dog_actions";
 import NewDogForm from "./new_dog_form";
+import { clearErrors, receiveErrors } from "../../actions/session_actions";
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -14,6 +15,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     createDog: (dog) => dispatch(createDog(dog)),
+    receiveErrors: (errors) => dispatch(receiveErrors(errors)),
+    clearErrors: () => dispatch(clearErrors()),
     // receiveErrors: (errors) => dispatch(receiveErrors(errors)),
   };
 };
