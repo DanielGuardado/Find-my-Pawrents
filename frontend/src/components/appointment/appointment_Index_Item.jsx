@@ -44,6 +44,7 @@ class AppointmentIndexItem extends React.Component {
         <td>{appointment.phone_number}</td>
         <td className="comments">{appointment.comments}</td>
         <td>{appointment.appt_status}</td>
+        {/* {this.availibleDog()} */}
         <div className="tablebuttons">
           <button
             id="btn-approve"
