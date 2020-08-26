@@ -16,11 +16,12 @@ class EditDogForm extends React.Component {
     this.setState({ errors: {} });
   }
 
-  componentDidMount() {
-    this.props.fetchDog(this.props.id);
-  }
+  // componentDidMount() {
+  //   this.props.fetchDog(this.props.id);
+  // }
 
   componentWillReceiveProps(nextProps) {
+    debugger
     this.setState({ errors: nextProps.errors });
   }
 
@@ -52,6 +53,7 @@ class EditDogForm extends React.Component {
 
     let dog = {
       name: this.state.name,
+      adoption_status: this.state.adoption_status,
       gender: this.state.gender,
       breed: this.state.breed,
       age: this.state.age,
@@ -61,7 +63,7 @@ class EditDogForm extends React.Component {
       shelter_id: this.state.shelter_id,
     };
     this.props
-      .createDog(dog)
+      .updateDog(dog)
       .then(() => this.props.history.push(`/my_dogs`))
       .catch((err) => {
         this.props.receiveErrors(err.response.data);
@@ -211,7 +213,7 @@ class EditDogForm extends React.Component {
                     <input
                       className="input-boxes"
                       type="text"
-                      value={dog.breed}
+                      value={this.state.breed}
                       onChange={this.update("breed")}
                     />
                   </div>
@@ -221,7 +223,7 @@ class EditDogForm extends React.Component {
                   <input
                     className="input-boxes"
                     type="text"
-                    value={dog.age}
+                    value={this.state.age}
                     onChange={this.update("age")}
                   />
                   <br />
@@ -230,7 +232,7 @@ class EditDogForm extends React.Component {
                     <input
                       className="input-boxes"
                       type="text"
-                      value={dog.description}
+                      value={this.state.description}
                       onChange={this.update("description")}
                     />
                   </div>
@@ -240,7 +242,7 @@ class EditDogForm extends React.Component {
                     <input
                       className="input-boxes"
                       type="text"
-                      value={dog.strengths}
+                      value={this.state.strengths}
                       onChange={this.update("strengths")}
                     />
                   </div>
@@ -256,7 +258,7 @@ class EditDogForm extends React.Component {
                     <input
                       className="new-dog-submit"
                       type="submit"
-                      value="List for Adoption!"
+                      value="Update Dog"
                     />
                     <br />
                     {/* <div className="preview">{this.preview()}</div> */}
