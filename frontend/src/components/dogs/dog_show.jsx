@@ -146,12 +146,13 @@ class DogShow extends React.Component {
   }
 
   dogUpdate() {
+    debugger
     if (
       this.props.dog &&
       this.props.currentUser.id === this.props.dog.shelter_id
     ) {
       return (
-        <Link to="/edit_dog">
+        <Link to={`/edit_dog/${this.props.dog._id}`}>
           <button className="shelterUserNavBar-nav-appointment-button">
             Edit Dog
                 </button>

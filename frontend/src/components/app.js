@@ -10,7 +10,7 @@ import Modal from "./modal/modal";
 import DogIndex from "./dogs/dog_index_container";
 import DogShow from "./dogs/dog_show_container";
 import ReactFirebase from "./firebase/new_dog_form_container";
-import EditDog from "./firebase/edit_dog_form_container";
+import EditDogContainer from "./firebase/edit_dog_form_container";
 import AppointmentContainer from "./appointment/appointment_container";
 import UserAppointmentContainer from "./user_appointments/user_appointment_container";
 import MyDogsIndex from "./shelter_dogs/shelter_my_dogs_container";
@@ -30,7 +30,7 @@ const App = () => {
         <Route path="/about" exact component={AboutPageContainer} />
         <Route path="/contact" exact component={ContactPageContainer} />
         <ProtectedRoute path="/new_dog" exact component={ReactFirebase} />
-        <ProtectedRoute path="/edit_dog" exact component={EditDog} />
+        <ProtectedRoute path="/edit_dog/:dogId" exact component={EditDogContainer} />
         <ProtectedRoute path="/my_likes" exact component={Likes} />
         <ProtectedRoute
           path="/appointments"
