@@ -6,17 +6,8 @@ import NavBar from "../navBar/navBar_container";
 class EditDogForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: "",
-      gender: "",
-      breed: "",
-      age: "",
-      description: "",
-      strengths: "",
-      image: null,
-      shelter_id: this.props.currentUser.id,
-      errors: {},
-    };
+    this.state = this.props.dog;
+    debugger
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -25,19 +16,23 @@ class EditDogForm extends React.Component {
     this.setState({ errors: {} });
   }
 
+  componentDidMount() {
+    this.props.fetchDog(this.props.id);
+  }
+
   componentWillReceiveProps(nextProps) {
     this.setState({ errors: nextProps.errors });
   }
 
-  renderErrors() {
-    return (
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>{this.state.errors[error]}</li>
-        ))}
-      </ul>
-    );
-  }
+  // renderErrors() {
+  //   return (
+  //     <ul>
+  //       {Object.keys(this.state.errors).map((error, i) => (
+  //         <li key={`error-${i}`}>{this.state.errors[error]}</li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   preview() {
     if (this.state.image) {
@@ -120,119 +115,160 @@ class EditDogForm extends React.Component {
   // };
 
   render() {
-    return (
-      <div className="new-dog-form-master-container">
-        <NavBar className="new-dog-form-nav" />
-        <div className="new-dog-form-container">
-          {/* <button onClick={this.handleUpload}>Upload</button> */}
-          {/* <button className="signup-submit" onClick={this.handleSubmit}>
-          Submit dog
-        </button> */}
-          <div className="new-dog-form-image" />
-          <form className="new-dog-form-box" onSubmit={this.handleSubmit}>
-            <div className="new-dog-input-container">
-              <div className="new-dog-form-top-level">
-                <h2 className="new-dog-header">Adoption Form</h2>
-              </div>
-              <div className="new-dog-form">
-                <div className="new-dog-name-input-box">
-                  <div className="input-titles">Name</div>
-                  <input
-                    className="input-boxes"
-                    type="text"
-                    value={this.state.name}
-                    onChange={this.update("name")}
-                  />
+    const { dog } = this.props;
+    debugger
+    if (!dog) {
+      return null;
+    } else {
+      return (
+        <div className="new-dog-form-master-container">
+          <NavBar className="new-dog-form-nav" />
+          <div className="new-dog-form-container">
+            {/* <button onClick={this.handleUpload}>Upload</button> */}
+            {/* <button className="signup-submit" onClick={this.handleSubmit}>
+            Submit dog
+          </button> */}
+            <img
+              className="dog-image"
+              src={this.state.image}
+              alt="1"
+              style={{ width: "500px" }}
+            />
+            <form className="new-dog-form-box" onSubmit={this.handleSubmit}>
+              <div className="new-dog-input-container">
+                <div className="new-dog-form-top-level">
+                  <h2 className="new-dog-header">Edit Dog</h2>
                 </div>
-                <br />
-                <div className="new-dog-gender-input-box">
-                  <div className="gender-buttons">
-                    <label>Gender </label>
-                    <div className="radio-buttons">
-                      <input
-                        className=""
-                        name="gender"
-                        type="radio"
-                        value="Male"
-                        onChange={this.update("gender")}
-                      />
-                      Male
-                    </div>
-                    <div className="radio-buttons">
-                      <input
-                        className=""
-                        name="gender"
-                        type="radio"
-                        value="Female"
-                        onChange={this.update("gender")}
-                      />
-                      Female
+                <div className="new-dog-form">
+                  <div className="new-dog-name-input-box">
+                    <div className="input-titles">Name</div>
+                    <input
+                      className="input-boxes"
+                      type="text"
+                      value={this.state.name}
+                      onChange={this.update("name")}
+                    />
+                  </div>
+                  <br />
+                  <div className="new-dog-status-input-box">
+                    <div className="gender-buttons">
+                      <label>Adoption Status </label>
+                      <div className="radio-buttons">
+                        <input
+                          className=""
+                          name="adoption_status"
+                          type="radio"
+                          value="Available"
+                          onChange={this.update("adoption_status")}
+                          checked={this.state.adoption_status === "Available"}
+                        />
+                        Available
+                      </div>
+                      <div className="radio-buttons">
+                        <input
+                          className=""
+                          name="adoption_status"
+                          type="radio"
+                          value="Adopted"
+                          onChange={this.update("adoption_status")}
+                          checked={this.state.adoption_status === "Adopted"}
+                        />
+                        Adopted
+                      </div>
                     </div>
                   </div>
-                </div>
-                <br />
-                <div className="new-dog-breed-input-box">
-                  <div className="input-titles">Breed</div>
+                  <br />                        
+                  <div className="new-dog-gender-input-box">
+                    <div className="gender-buttons">
+                      <label>Gender </label>
+                      <div className="radio-buttons">
+                        <input
+                          className=""
+                          name="gender"
+                          type="radio"
+                          value="Male"
+                          onChange={this.update("gender")}
+                          checked={this.state.gender === "Male"}
+                        />
+                        Male
+                      </div>
+                      <div className="radio-buttons">
+                        <input
+                          className=""
+                          name="gender"
+                          type="radio"
+                          value="Female"
+                          onChange={this.update("gender")}
+                          checked={this.state.gender === "Female"}
+                        />
+                        Female
+                      </div>
+                    </div>
+                  </div>
+                  <br />
+                  <div className="new-dog-breed-input-box">
+                    <div className="input-titles">Breed</div>
+                    <input
+                      className="input-boxes"
+                      type="text"
+                      value={dog.breed}
+                      onChange={this.update("breed")}
+                    />
+                  </div>
+                  <br />
+                  <div className="new-dog-age-input-box"></div>
+                  <div className="input-titles">Age</div>
                   <input
                     className="input-boxes"
                     type="text"
-                    value={this.state.breed}
-                    onChange={this.update("breed")}
-                  />
-                </div>
-                <br />
-                <div className="new-dog-age-input-box"></div>
-                <div className="input-titles">Age</div>
-                <input
-                  className="input-boxes"
-                  type="text"
-                  value={this.state.age}
-                  onChange={this.update("age")}
-                />
-                <br />
-                <div className="new-dog-description-input-box">
-                  <div className="input-titles">Description</div>
-                  <input
-                    className="input-boxes"
-                    type="text"
-                    value={this.state.description}
-                    onChange={this.update("description")}
-                  />
-                </div>
-                <br />
-                <div className="new-dog-strengths-input-box">
-                  <div className="input-titles">Strengths</div>
-                  <input
-                    className="input-boxes"
-                    type="text"
-                    value={this.state.strengths}
-                    onChange={this.update("strengths")}
-                  />
-                </div>
-                <br />
-                <div>
-                  <input
-                    className="file-upload"
-                    type="file"
-                    onChange={this.handleChange}
-                  />
-                </div>
-                <div>
-                  <input
-                    className="new-dog-submit"
-                    type="submit"
-                    value="List for Adoption!"
+                    value={dog.age}
+                    onChange={this.update("age")}
                   />
                   <br />
-                  {/* <div className="preview">{this.preview()}</div> */}
+                  <div className="new-dog-description-input-box">
+                    <div className="input-titles">Description</div>
+                    <input
+                      className="input-boxes"
+                      type="text"
+                      value={dog.description}
+                      onChange={this.update("description")}
+                    />
+                  </div>
+                  <br />
+                  <div className="new-dog-strengths-input-box">
+                    <div className="input-titles">Strengths</div>
+                    <input
+                      className="input-boxes"
+                      type="text"
+                      value={dog.strengths}
+                      onChange={this.update("strengths")}
+                    />
+                  </div>
+                  <br />
+                  <div>
+                    <input
+                      className="file-upload"
+                      type="file"
+                      onChange={this.handleChange}
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className="new-dog-submit"
+                      type="submit"
+                      value="List for Adoption!"
+                    />
+                    <br />
+                    {/* <div className="preview">{this.preview()}</div> */}
+                  </div>
+                  {/* <div className="render-errors">{this.renderErrors()}</div> */}
                 </div>
-                <div className="render-errors">{this.renderErrors()}</div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 
