@@ -79,22 +79,15 @@ class NewDogForm extends React.Component {
       image = e.target.files[0];
       // this.setState({ image: image });
       const uploadTask = storage.ref(`images/${image.name}`).put(image);
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {},
-        (error) => {
-          console.log(error);
-        },
-        () => {
-          storage
-            .ref("images")
-            .child(image.name)
-            .getDownloadURL()
-            .then((url) => {
-              this.setState({ image: url });
-            });
-        }
-      );
+      uploadTask.on("state_changed", () => {
+        storage
+          .ref("images")
+          .child(image.name)
+          .getDownloadURL()
+          .then((url) => {
+            this.setState({ image: url });
+          });
+      });
     }
   };
 

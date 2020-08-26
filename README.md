@@ -40,11 +40,10 @@ adopters.
 
 - All dogs available for adoption will be displayed on the index page.
 - Each dog show page will have a picture/description/name/age/color.
+- Each dog will have a schdeule appointment form.
 - Each dog will have a show page that also displays the number of times
   this dog has been viewed.
-- Dogs that get approved for adoption will be displayed on another
-  'adopted dogs' page.
-- Dogs will be selectable by categories.
+- Dogs will be displayed on the users appointments page in different colors depending on the appointment status.
 
 ---
 
@@ -52,22 +51,83 @@ adopters.
 
 - Every dog will have a form that can be filled out in order to schedule
   an appointment with that dog.
-- Users will have the ability to ask questions about the dogs.
-- Users will be able to see how many appointments a certain dog has.
-- Users will also have the ability to ask questions about the dog that
-  will be displayed on the dogs show page.
+- Users will have the ability to ask questions/comments about the dogs.
 
 ---
 
 6. ### Likes(8/13/20)
 
 - Users will have the ability to 'like' dogs.
-- Dogs will display the number of likes they have.
-- Dogs will get custom messages based on how many likes they have.
+- Users will have the ability to 'unlike' dogs.
 
 ---
 
 7. ### Production README(8/14/20)
+
+# Code
+
+## Shelter / User Accounts
+
+![](https://media2.giphy.com/media/WTFyqU4s1iBYoLcDw9/giphy.gif)
+
+- In order to allow users the ability to sign up as either a shelter or adopter we implemnted a row in the user model that takes in a string of either SHELTER or USER with validations in the backend to ensure those conditions are met
+
+```javascript
+if (!Validator.isIn(data.shelter_status, ["SHELTER", "USER"])) {
+  errors.text = "Must be shelter or user";
+}
+```
+
+- In the frontend we have radio buttons asking the user if they are a shelter or a user that sets the state to whichever options the user selects. As well as adding a trigger that when set to true creates a drop down to allow a shelter to add more information needed as a shelter account.
+
+```javascript
+  <div className="are-you-a-shelter">Are you a shelter?</div>
+                  <div className="radio-buttons">
+                    Yes
+                    <input
+                      name="status"
+                      type="radio"
+                      value="SHELTER"
+                      onChange={this.update("shelter_status")}
+                      onClick={() => this.setState({ trigger: true })}
+                    />
+                  </div>
+                  <div className="radio-buttons">
+                    No
+                    <input
+                      name="status"
+                      type="radio"
+                      value="USER"
+                      onChange={this.update("shelter_status")}
+                      onClick={() => this.setState({ trigger: false })}
+                    />
+                  </div>
+```
+
+## New Dog Image / Firebase Storage
+
+![](https://media2.giphy.com/media/QW3nZJ1VkIgiy4itYy/giphy.gif)
+
+- In order to allow our users to upload images of their cute pups we implemented Firebase Storage. This allows us to send the image to the cloud and get a response with the imageURL that we then attach to the new dog as soon as we receive the URL, in order to have a seemless UX where the user doesn't have to click any extra buttons to submit their picture.
+
+```javascript
+handleChange = (e) => {
+  let image;
+  if (e.target.files[0]) {
+    image = e.target.files[0];
+    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    uploadTask.on("state_changed", () => {
+      storage
+        .ref("images")
+        .child(image.name)
+        .getDownloadURL()
+        .then((url) => {
+          this.setState({ image: url });
+        });
+    });
+  }
+};
+```
 
 # Group Members and Work Breakdown
 
@@ -151,13 +211,14 @@ Responsible for React part of the stack.
 - Test and debug - Gabe
 - Presentation -All
 
-# Technologies and Technical Challenges
+# Technologies
 
 ### Backend
 
 - MongoDB
 - Express
 - Node
+- Firebase Storage
 
 ### Frontend
 
