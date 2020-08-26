@@ -8,6 +8,7 @@ class DogShow extends React.Component {
     super(props);
     this.newData = React.createRef();
     this.state = {
+      like_status: false,
       formStatus: false,
       submitStatus: false,
       appt_time: "",
@@ -72,10 +73,14 @@ class DogShow extends React.Component {
         })
       }
     }) 
+      this.props.fetchDogLikes(this.props.id)
   } 
 }
 
   componentDidMount() {
+    this.setState({
+      like_status: false,
+    })
     // debugger
     this.props.fetchDog(this.props.id);
     this.props.fetchDogLikes(this.props.id);
@@ -91,7 +96,8 @@ class DogShow extends React.Component {
     //     })
     //   }
     // }) 
-}  
+}
+
 
   update(field) {
     return (e) =>
@@ -246,6 +252,7 @@ class DogShow extends React.Component {
 
   renderCount() {
     if (this.props.count) {
+      debugger
       return (
         <div className="dog-date">Total Likes: {this.props.count}</div>
       );
