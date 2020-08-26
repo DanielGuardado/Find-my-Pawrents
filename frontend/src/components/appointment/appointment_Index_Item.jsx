@@ -32,7 +32,6 @@ class AppointmentIndexItem extends React.Component {
       image: appointment.image,
       dog_name: appointment.dog_name,
     };
-    debugger
     this.props.updateAppointment(appointment1);
   };
 
