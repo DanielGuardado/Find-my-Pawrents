@@ -7,7 +7,9 @@ module.exports = function validateSignupInput(data) {
   data.password = validText(data.password) ? data.password : "";
   data.first_name = validText(data.first_name) ? data.first_name : "";
   data.last_name = validText(data.last_name) ? data.last_name : "";
-  data.shelter_status = validText(data.shelter_status) ? data.shelter_status : "";
+  data.shelter_status = validText(data.shelter_status)
+    ? data.shelter_status
+    : "";
   data.shelter_name = validText(data.shelter_name) ? data.shelter_name : "";
 
   if (Validator.isEmpty(data.email)) {
@@ -26,6 +28,10 @@ module.exports = function validateSignupInput(data) {
   //   errors.shelter_status = "Shelter status can't be empty";
   if (!Validator.isLength(data.password, { min: 6, max: 20 })) {
     errors.password = "Password must be 6 to 20 characters long";
+  }
+
+  if (!Validator.isIn(data.shelter_status, ["SHELTER", "USER"])) {
+    errors.text = "Must be shelter or user";
   }
 
   if (Validator.isEmpty(data.password)) {
