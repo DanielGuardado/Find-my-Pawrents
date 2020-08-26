@@ -20,10 +20,17 @@ export const receiveDogLikeCount = (count) => ({
 
 export const createLike = (like) => (dispatch) =>
   Like_API_Util.createLike(like).then((like) => dispatch(receiveLike(like)));
-export const fetchDogLikes = (count) => (dispatch) =>
-  Like_API_Util.fetchDogLikes(count).then((count) =>
+  
+export const fetchDogLikeCount = (count) => (dispatch) =>
+  Like_API_Util.fetchDogLikeCount(count).then((count) =>
     dispatch(receiveDogLikeCount(count))
   );
+
+  export const fetchDogLikes = (likes) => (dispatch) =>
+  Like_API_Util.fetchDogLikes(likes).then((likes) =>
+    dispatch(receiveLikes(likes))
+  );
+
 export const fetchUserLikes = (userId) => (dispatch) =>
   Like_API_Util.fetchUserLikes(userId).then((likes) =>
     dispatch(receiveLikes(likes))

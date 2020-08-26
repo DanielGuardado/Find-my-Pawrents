@@ -42,29 +42,56 @@ class DogShow extends React.Component {
     }
   }
   handleLike = () => {
+    debugger;
     let like = {
       dog_id: this.props.dog._id,
       user_id: this.props.currentUser.id,
       dog_name: this.props.dog.name,
       dog_image: this.props.dog.image,
     };
-    this.props.createLike(like);
+    
+
+    if (!this.state.like_status) {
+    this.props.createLike(like)
+      this.setState({
+        like_status: true,
+      });
+    }
   };
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.formStatus !== this.state.formStatus) {
       this.scrollTop();
     }
-  }
+    debugger
+    if (prevProps !== this.props) {
+    Object.values(this.props.likes).forEach(like => {
+      if (like.user_id === this.props.currentUser.id) {
+        this.setState({
+          like_status: true,
+        })
+      }
+    }) 
+  } 
+}
 
   componentDidMount() {
+    // debugger
     this.props.fetchDog(this.props.id);
     this.props.fetchDogLikes(this.props.id);
     if (this.props.dog) {
       this.setState({ shelter_id: this.props.dog.shelter_id });
       this.setState({ dog_id: this.props.dog.dog_id });
     }
-  }
+    // debugger
+    // Object.values(this.props.likes).forEach(like => {
+    //   if (like.user_id === this.props.currentUser.id) {
+    //     this.setState({
+    //       like_status: true,
+    //     })
+    //   }
+    // }) 
+}  
 
   update(field) {
     return (e) =>
@@ -116,13 +143,23 @@ class DogShow extends React.Component {
   }
 
   dogLike() {
-    if (this.props.dog && this.props.currentUser.id) {
+
+
+
+    if (this.props.dog && this.props.currentUser.id && !this.state.like_status) {
       return (
         <button className="like-btn" onClick={this.handleLike}>
           <img className="like-button" src={likeicon} alt="" />
         </button>
       );
-    }
+    } else if (this.props.dog && this.props.currentUser.id && this.state.like_status) {
+      return (
+        <button className="like-btn-alreadyliked" onClick={this.handleLike}>
+          <img className="like-button" src={likeicon} alt="" />
+        </button>
+      );
+    }  
+    debugger
   }
 
   dogDelete() {
@@ -211,7 +248,7 @@ class DogShow extends React.Component {
   renderCount() {
     if (this.props.count) {
       return (
-        <div className="dog-date">Total Likes: {this.props.count.data}</div>
+        <div className="dog-date">Total Likes: {this.props.count}</div>
       );
     }
   }
