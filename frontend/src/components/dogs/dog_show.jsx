@@ -61,11 +61,12 @@ class DogShow extends React.Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.formStatus !== this.state.formStatus) {
+    if (prevProps !== this.props && prevState.formStatus !== this.state.formStatus) {
       this.scrollTop();
     }
     debugger
-    if (prevProps !== this.props) {
+    if (Object.keys(prevProps.likes)[Object.keys(prevProps.likes).length - 1] !== Object.keys(this.props.likes)[Object.keys(this.props.likes).length - 1]) {
+
     Object.values(this.props.likes).forEach(like => {
       if (like.user_id === this.props.currentUser.id) {
         this.setState({
@@ -81,14 +82,14 @@ class DogShow extends React.Component {
     this.setState({
       like_status: false,
     })
-    // debugger
+  
     this.props.fetchDog(this.props.id);
     this.props.fetchDogLikes(this.props.id);
     if (this.props.dog) {
       this.setState({ shelter_id: this.props.dog.shelter_id });
       this.setState({ dog_id: this.props.dog.dog_id });
     }
-    // debugger
+
     // Object.values(this.props.likes).forEach(like => {
     //   if (like.user_id === this.props.currentUser.id) {
     //     this.setState({
@@ -165,7 +166,7 @@ class DogShow extends React.Component {
         </button>
       );
     }  
-    debugger
+
   }
 
   dogDelete() {
@@ -252,7 +253,6 @@ class DogShow extends React.Component {
 
   renderCount() {
     if (this.props.count) {
-      debugger
       return (
         <div className="dog-date">Total Likes: {this.props.count}</div>
       );
