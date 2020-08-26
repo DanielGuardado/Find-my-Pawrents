@@ -211,7 +211,7 @@ Responsible for React part of the stack.
 - Test and debug - Gabe
 - Presentation -All
 
-# Technologies and Technical Challenges
+# Technologies
 
 ### Backend
 
