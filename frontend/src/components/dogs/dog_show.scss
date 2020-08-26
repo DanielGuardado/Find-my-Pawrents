@@ -97,11 +97,13 @@
   padding: 20px;
   overflow: scroll;
   background-color: rgb(232, 248, 253);
+
+  textarea.comments-questions {
+  left: 50%;
+  transform: translate(30%);
+}
 }
 
-.appt-form-content {
-  margin-top: 10px;
-}
 
 h1.appt-header {
   justify-content: center;
@@ -163,3 +165,5 @@ h1.appt-header {
   cursor: pointer;
   color: #30a1e8;
 }
+
+

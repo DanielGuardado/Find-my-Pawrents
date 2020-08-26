@@ -21,13 +21,13 @@ class NavBar extends React.Component {
               <img id="logo" src={logo} alt="logo" />
             </a>
             <div className="nav-about">
-              <a href="#/about">About</a>
+              <a href="#/about">About Us</a>
               <Link to="/about" />
             </div>
-            <div className="nav-contact">
+            {/* <div className="nav-contact">
               <a href="#/contact">Contact</a>
               <Link to="/contact" />
-            </div>
+            </div> */}
           </div>
           <div className="noUserNavBar-right-side-of-navbar">
             <a href="#/dogs">
@@ -114,11 +114,11 @@ class NavBar extends React.Component {
               <h2 className="welcome">
                 Welcome {this.props.currentUser.user.first_name}!
               </h2>
-              <input
+              {/* <input
                 type="search"
                 placeholder="Do not search"
                 className="search-bar-input-field"
-              />
+              /> */}
             </div>
             <div className="currentUserNavBar-right-side">
               <a href="#/dogs">

@@ -18,6 +18,7 @@ class UserAppointmentIndexItem extends React.Component {
 
   AppointmentRender() {
     const { appointment } = this.props;
+    debugger
     return (
       <ul>
         <div id="dog-appointment-page-card-container">

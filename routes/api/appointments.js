@@ -48,7 +48,7 @@ router.post(
     Appointment.findByIdAndUpdate(
       req.params.id,
       {
-        user_id: req.user.id,
+        user_id: req.body.user_id,
         appt_time: req.body.appt_time,
         appt_date: req.body.appt_date,
         comments: req.body.comments,
