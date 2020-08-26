@@ -250,6 +250,7 @@ class DogShow extends React.Component {
                 </div> */}
                   <div className="comments">
                     <textarea
+                      className = "comments-questions"
                       onChange={this.update("comments")}
                       name="comments"
                       cols="30"
@@ -302,9 +303,9 @@ class DogShow extends React.Component {
         </div>
       );
     } else {
-      {
-        this.submit();
-      }
+      (
+        this.submit()
+      );
     }
   }
 

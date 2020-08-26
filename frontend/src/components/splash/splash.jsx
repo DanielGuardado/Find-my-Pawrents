@@ -101,32 +101,30 @@ class SplashPage extends React.Component {
               <img src={adoption} alt="" />
               <h1>Adopt a dog</h1>
               <p>
-                We have may dogs currently up for adoption. Show some love and
-                help these cuties find the home they deserve. Adopt one of them
-                today
+                We have many dogs currently up for adoption. Show some love and
+                help these cuties find the home they deserve. Adopt don't shop.
               </p>
             </div>
             <div id="helpful-information-banner-parts">
               <img src={Donation} alt="" />
               <h1>Donate</h1>
               <p>
-                Maintaining this shelter takes alot of money. If you aren't able
-                to adopt one you can always help by donating to this cost.
-                Donate today
+                Maintaining this shelter isn't easy. If you aren't able
+                to adopt one you can help by donating to this cost.
+                Donate today.
               </p>
             </div>
             <div id="helpful-information-banner-parts">
               <img src={volunteer} alt="" />
               <h1>Volunteer</h1>
               <p>
-                If you can't adopt and you can't donate but still want to help
-                you can always give your time and volunteer. Checkout what you
-                can do for these cuties here
+                If you can't adopt or donate, but still want to help,
+                come and volunteer! You are always welcomed.
               </p>
             </div>
           </div>
         </div>
-        <div className="splash-page-footer-container">
+        {/* <div className="splash-page-footer-container">
           <div className="splash-page-footer-parts">
             <h1>ABOUT FIND MY PAWRENTS</h1>
             <div>FAQS</div>
@@ -152,12 +150,19 @@ class SplashPage extends React.Component {
             <div>Helping Dogs</div>
             <div>Donate</div>
             <div>Ask a Question</div>
-          </div>
+          </div> */}
           {/* <div className='splash-page-footer-newsletter'>
                     <h1>To get the latest information on dog adoption sign up for the FIND MY PAWRENTS newsletter</h1>
                     <button>SIGN UP</button>
-                </div> */}
-        </div>
+                </div> 
+        </div> */}
+          {/* <form className="contact-page-form">
+            <div className="contact-page-input-container">
+              <div className="contact-page-top-level">
+                <h2 className="contact-header">Contact Us</h2>
+              </div>
+            </div>
+          </form> */}
         <div class="waveWrapper waveAnimation">
           <div class="waveWrapperInner bgTop">
             <div
@@ -180,13 +185,6 @@ class SplashPage extends React.Component {
               //   style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"
             ></div>
           </div>
-          <form className="contact-page-form">
-            <div className="contact-page-input-container">
-              <div className="contact-page-top-level">
-                <h2 className="contact-header">Contact Us</h2>
-              </div>
-            </div>
-          </form>
         </div>
       </div>
     );
