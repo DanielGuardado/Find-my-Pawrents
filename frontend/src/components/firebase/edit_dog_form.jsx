@@ -7,7 +7,19 @@ class EditDogForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.dog;
-    debugger
+    this.state = {
+      _id: this.props.dog._id,
+      name: this.props.dog.name,
+      adoption_status: this.props.dog.adoption_status,
+      gender: this.props.dog.gender,
+      breed: this.props.dog.breed,
+      age: this.props.dog.age,
+      description: this.props.dog.description,
+      strengths: this.props.dog.strengths,
+      image: this.props.dog.image,
+      shelter_id: this.props.dog.shelter_id,
+      errors: {},
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -21,7 +33,7 @@ class EditDogForm extends React.Component {
   // }
 
   componentWillReceiveProps(nextProps) {
-    debugger
+    debugger;
     this.setState({ errors: nextProps.errors });
   }
 
@@ -52,11 +64,12 @@ class EditDogForm extends React.Component {
     e.preventDefault();
 
     let dog = {
+      _id: this.state._id,
       name: this.state.name,
       adoption_status: this.state.adoption_status,
       gender: this.state.gender,
       breed: this.state.breed,
-      age: this.state.age,
+      age: this.state.age.toString(),
       description: this.state.description,
       strengths: this.state.strengths,
       image: this.state.image,
@@ -95,6 +108,17 @@ class EditDogForm extends React.Component {
     }
   };
 
+  renderErrors() {
+    if (this.state.errors) {
+      return (
+        <ul>
+          {Object.keys(this.state.errors).map((error, i) => (
+            <li key={`error-${i}`}>{this.state.errors[error]}</li>
+          ))}
+        </ul>
+      );
+    }
+  }
   // handleUpload = () => {
   //   const { image } = this.state;
   //   const uploadTask = storage.ref(`images/${image.name}`).put(image);
@@ -118,7 +142,6 @@ class EditDogForm extends React.Component {
 
   render() {
     const { dog } = this.props;
-    debugger
     if (!dog) {
       return null;
     } else {
@@ -179,7 +202,7 @@ class EditDogForm extends React.Component {
                       </div>
                     </div>
                   </div>
-                  <br />                        
+                  <br />
                   <div className="new-dog-gender-input-box">
                     <div className="gender-buttons">
                       <label>Gender </label>
@@ -263,7 +286,7 @@ class EditDogForm extends React.Component {
                     <br />
                     {/* <div className="preview">{this.preview()}</div> */}
                   </div>
-                  {/* <div className="render-errors">{this.renderErrors()}</div> */}
+                  <div className="render-errors">{this.renderErrors()}</div>
                 </div>
               </div>
             </form>

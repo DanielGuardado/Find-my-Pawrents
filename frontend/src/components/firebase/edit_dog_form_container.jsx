@@ -2,18 +2,23 @@ import { connect } from "react-redux";
 import { fetchDog, updateDog } from "../../actions/dog_actions";
 import EditDogForm from "./edit_dog_form";
 import { clearErrors, receiveErrors } from "../../actions/session_actions";
-import React from 'react';
-
+import React from "react";
 
 class EditDogFormContainer extends React.Component {
-
   componentDidMount() {
-    this.props.fetchDog(this.props.id)
+    this.props.fetchDog(this.props.id);
   }
 
   render() {
     // DO NOT MODIFY THIS FUNCTION
-    const { updateDog, dog, receiveErrors, clearErrors } = this.props;
+    const {
+      updateDog,
+      dog,
+      receiveErrors,
+      clearErrors,
+      history,
+      errors,
+    } = this.props;
 
     // Hint: The post will not exist on the first render - what do we need to do
     // to get it?
@@ -23,7 +28,10 @@ class EditDogFormContainer extends React.Component {
         updateDog={updateDog}
         dog={dog}
         receiveErrors={receiveErrors}
-        clearErrors={clearErrors} />
+        clearErrors={clearErrors}
+        history={history}
+        errors={errors}
+      />
     );
   }
 }
@@ -35,13 +43,13 @@ const mapStateToProps = (state, ownProps) => {
     currentUser: state.session.user,
     dog: state.dogs[ownProps.match.params.dogId],
     id,
+    errors: state.errors.session,
   };
 };
 
-
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchDog: (dogId) => dispatch(fetchDog(dogId)),    
+    fetchDog: (dogId) => dispatch(fetchDog(dogId)),
     updateDog: (dog) => dispatch(updateDog(dog)),
     receiveErrors: (errors) => dispatch(receiveErrors(errors)),
     clearErrors: () => dispatch(clearErrors()),
@@ -49,4 +57,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditDogFormContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EditDogFormContainer);
