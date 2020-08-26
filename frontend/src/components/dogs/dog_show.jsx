@@ -2,6 +2,7 @@ import React from "react";
 import "./dog_show.scss";
 import NavBar from "./../navBar/navBar_container";
 import likeicon from "./like-icon.png";
+import { Link } from "react-router-dom"
 class DogShow extends React.Component {
   constructor(props) {
     super(props);
@@ -144,6 +145,22 @@ class DogShow extends React.Component {
     }
   }
 
+  dogUpdate() {
+    debugger
+    if (
+      this.props.dog &&
+      this.props.currentUser.id === this.props.dog.shelter_id
+    ) {
+      return (
+        <Link to={`/edit_dog/${this.props.dog._id}`}>
+          <button className="shelterUserNavBar-nav-appointment-button">
+            Edit Dog
+                </button>
+        </Link>                
+      );
+    }
+  }
+
   dogRender() {
     const { dog } = this.props;
     if (!dog) {
@@ -178,6 +195,7 @@ class DogShow extends React.Component {
                   <div className="dog-date">Listed Date: {this.date()}</div>
                   {this.renderCount()}
                   {this.dogDelete()}
+                  {this.dogUpdate()}
                 </div>
               </div>
             </div>
@@ -250,6 +268,7 @@ class DogShow extends React.Component {
                 </div> */}
                   <div className="comments">
                     <textarea
+                      className = "comments-questions"
                       onChange={this.update("comments")}
                       name="comments"
                       cols="30"
@@ -302,9 +321,9 @@ class DogShow extends React.Component {
         </div>
       );
     } else {
-      {
-        this.submit();
-      }
+      (
+        this.submit()
+      );
     }
   }
 

@@ -7,17 +7,42 @@ class UserAppointmentIndex extends React.Component {
   componentDidMount() {
     this.props.fetchAppointments(this.props.userId);
   }
+  componentWillMount() {
+    this.props.fetchDogs();
+  }
 
   appointmentShow() {
     if (typeof this.props.appointments === "undefined") {
       return null;
     }
 
-    const appointments = this.props.appointments.map((appointment, idx) => (
+    let dogNames = [];
+    this.props.dogs.forEach((el) => dogNames.push(el.name));
+    const appointments = this.props.appointments.map((appointment, idx) => {
       // let dog = this.props.fetchDog(appointment.dog_id)
 
-      <UserAppointmentIndexItem key={idx} appointment={appointment} />
-    ));
+      let style;
+      switch (appointment.appt_status) {
+        case "Pending Approval":
+          style = "dog-appointment-page-card-container";
+          break;
+        case "Approved":
+          style = "dog-appointment-page-card-container3";
+          break;
+        case "Disapproved":
+          style = "dog-appointment-page-card-container2";
+          break;
+      }
+      if (dogNames.includes(appointment.dog_name)) {
+        return (
+          <UserAppointmentIndexItem
+            key={idx}
+            appointment={appointment}
+            style={style}
+          />
+        );
+      }
+    });
 
     return <div className="dog-index-page-list-container">{appointments}</div>;
   }
