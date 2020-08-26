@@ -18,6 +18,7 @@ class UserAppointmentIndex extends React.Component {
 
       <UserAppointmentIndexItem key={idx} appointment={appointment} />
     ));
+    debugger
 
     return <div className="dog-index-page-list-container">{appointments}</div>;
   }

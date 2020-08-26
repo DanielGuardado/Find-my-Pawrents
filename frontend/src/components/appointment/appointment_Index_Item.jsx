@@ -27,10 +27,12 @@ class AppointmentIndexItem extends React.Component {
       comments: appointment.comments,
       appt_status: change,
       shelter_id: appointment.shelter_id,
+      user_id: appointment.user_id,
       dog_id: appointment.dog_id,
       image: appointment.image,
       dog_name: appointment.dog_name,
     };
+    debugger
     this.props.updateAppointment(appointment1);
   };
 
