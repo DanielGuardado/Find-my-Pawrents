@@ -2,10 +2,12 @@ import {
   RECEIVE_DOG_COUNT,
   RECEIVE_LIKE,
   RECEIVE_LIKES,
+  REMOVE_LIKE,
 } from "../actions/like_action";
 
 const likeReducer = (state = {}, action) => {
   Object.freeze(state);
+  let copy = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_LIKES:
       let obj = {};
@@ -18,6 +20,9 @@ const likeReducer = (state = {}, action) => {
       return Object.assign({}, state, { ["count"]: action.count });
     case RECEIVE_LIKE:
       return Object.assign({}, state, action.like.data);
+    case REMOVE_LIKE:
+      delete copy[action.likeId];
+      return copy;
     default:
       return state;
   }

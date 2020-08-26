@@ -43,17 +43,15 @@ class DogShow extends React.Component {
     }
   }
   handleLike = () => {
-    
     let like = {
       dog_id: this.props.dog._id,
       user_id: this.props.currentUser.id,
       dog_name: this.props.dog.name,
       dog_image: this.props.dog.image,
     };
-    
 
     if (!this.state.like_status) {
-    this.props.createLike(like)
+      this.props.createLike(like);
       this.setState({
         like_status: true,
       });
@@ -61,28 +59,32 @@ class DogShow extends React.Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps !== this.props && prevState.formStatus !== this.state.formStatus) {
+    if (
+      prevProps !== this.props &&
+      prevState.formStatus !== this.state.formStatus
+    ) {
       this.scrollTop();
     }
-    debugger
-    if (Object.keys(prevProps.likes)[Object.keys(prevProps.likes).length - 1] !== Object.keys(this.props.likes)[Object.keys(this.props.likes).length - 1]) {
-
-    Object.values(this.props.likes).forEach(like => {
-      if (like.user_id === this.props.currentUser.id) {
-        this.setState({
-          like_status: true,
-        })
-      }
-    }) 
-      this.props.fetchDogLikes(this.props.id)
-  } 
-}
+    if (
+      Object.keys(prevProps.likes)[Object.keys(prevProps.likes).length - 1] !==
+      Object.keys(this.props.likes)[Object.keys(this.props.likes).length - 1]
+    ) {
+      Object.values(this.props.likes).forEach((like) => {
+        if (like.user_id === this.props.currentUser.id) {
+          this.setState({
+            like_status: true,
+          });
+        }
+      });
+      this.props.fetchDogLikes(this.props.id);
+    }
+  }
 
   componentDidMount() {
     this.setState({
       like_status: false,
-    })
-  
+    });
+
     this.props.fetchDog(this.props.id);
     this.props.fetchDogLikes(this.props.id);
     if (this.props.dog) {
@@ -96,9 +98,8 @@ class DogShow extends React.Component {
     //       like_status: true,
     //     })
     //   }
-    // }) 
-}
-
+    // })
+  }
 
   update(field) {
     return (e) =>
@@ -149,24 +150,44 @@ class DogShow extends React.Component {
       });
   }
 
+  handleDislike = () => {
+    if (this.state.like_status) {
+      this.props
+        .deleteLike(
+          Object.keys(this.props.likes)[
+            Object.keys(this.props.likes).length - 1
+          ]
+        )
+        .then(() =>
+          this.setState({
+            like_status: false,
+          })
+        );
+    }
+  };
+
   dogLike() {
-
-
-
-    if (this.props.dog && this.props.currentUser.id && !this.state.like_status) {
+    if (
+      this.props.dog &&
+      this.props.currentUser.id &&
+      !this.state.like_status
+    ) {
       return (
         <button className="like-btn" onClick={this.handleLike}>
           <img className="like-button" src={likeicon} alt="" />
         </button>
       );
-    } else if (this.props.dog && this.props.currentUser.id && this.state.like_status) {
+    } else if (
+      this.props.dog &&
+      this.props.currentUser.id &&
+      this.state.like_status
+    ) {
       return (
-        <button className="like-btn-alreadyliked" onClick={this.handleLike}>
+        <button className="like-btn-alreadyliked" onClick={this.handleDislike}>
           <img className="like-button" src={likeicon} alt="" />
         </button>
       );
-    }  
-
+    }
   }
 
   dogDelete() {
@@ -253,9 +274,7 @@ class DogShow extends React.Component {
 
   renderCount() {
     if (this.props.count) {
-      return (
-        <div className="dog-date">Total Likes: {this.props.count}</div>
-      );
+      return <div className="dog-date">Total Likes: {this.props.count}</div>;
     }
   }
 

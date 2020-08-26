@@ -33,7 +33,6 @@ class EditDogForm extends React.Component {
   // }
 
   componentWillReceiveProps(nextProps) {
-    debugger;
     this.setState({ errors: nextProps.errors });
   }
 

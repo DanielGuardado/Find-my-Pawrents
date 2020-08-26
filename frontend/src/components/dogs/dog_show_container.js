@@ -2,7 +2,12 @@ import { connect } from "react-redux";
 import { fetchDog, deleteDog } from "../../actions/dog_actions";
 import { createAppointment } from "../../actions/appointment_actions";
 import { receiveErrors } from "../../actions/session_actions";
-import { createLike, fetchDogLikeCount, fetchDogLikes } from "../../actions/like_action";
+import {
+  createLike,
+  fetchDogLikeCount,
+  fetchDogLikes,
+  deleteLike,
+} from "../../actions/like_action";
 import { openModal } from "../../actions/modal_actions";
 import DogShow from "./dog_show";
 
@@ -25,7 +30,8 @@ const mapDispatchToProps = (dispatch) => ({
   createLike: (like) => dispatch(createLike(like)),
   openModal: (modal) => dispatch(openModal(modal)),
   fetchDogLikeCount: (dogId) => dispatch(fetchDogLikeCount(dogId)),
-  fetchDogLikes: (dogId) => dispatch(fetchDogLikes(dogId))
+  fetchDogLikes: (dogId) => dispatch(fetchDogLikes(dogId)),
+  deleteLike: (likeId) => dispatch(deleteLike(likeId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DogShow);
