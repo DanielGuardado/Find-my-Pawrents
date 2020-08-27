@@ -7,6 +7,7 @@ import {
   fetchDogLikeCount,
   fetchDogLikes,
   deleteLike,
+  clearLikes
 } from "../../actions/like_action";
 import { openModal } from "../../actions/modal_actions";
 import DogShow from "./dog_show";
@@ -32,6 +33,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchDogLikeCount: (dogId) => dispatch(fetchDogLikeCount(dogId)),
   fetchDogLikes: (dogId) => dispatch(fetchDogLikes(dogId)),
   deleteLike: (likeId) => dispatch(deleteLike(likeId)),
+  clearLikes: () => dispatch(clearLikes())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DogShow);

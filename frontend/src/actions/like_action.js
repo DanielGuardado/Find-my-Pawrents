@@ -3,6 +3,7 @@ export const RECEIVE_DOG_COUNT = "RECEIVE_DOG_COUNT";
 export const RECEIVE_LIKE = "RECEIVE_LIKE";
 export const RECEIVE_LIKES = "RECEIVE_LIKES";
 export const REMOVE_LIKE = "REMOVE_LIKE";
+export const CLEAR_LIKES = "CLEAR_LIKES"
 
 export const receiveLike = (like) => ({
   type: RECEIVE_LIKE,
@@ -23,6 +24,11 @@ export const receiveDogLikeCount = (count) => ({
   type: RECEIVE_DOG_COUNT,
   count,
 });
+
+export const clearLikes = likes => ({
+  type: CLEAR_LIKES,
+  likes: [],
+})
 
 export const createLike = (like) => (dispatch) =>
   Like_API_Util.createLike(like).then((like) => dispatch(receiveLike(like)));

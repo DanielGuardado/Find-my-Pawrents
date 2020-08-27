@@ -92,13 +92,18 @@ class DogShow extends React.Component {
       this.setState({ dog_id: this.props.dog.dog_id });
     }
 
-    // Object.values(this.props.likes).forEach(like => {
-    //   if (like.user_id === this.props.currentUser.id) {
-    //     this.setState({
-    //       like_status: true,
-    //     })
-    //   }
-    // })
+    Object.values(this.props.likes).forEach(like => {
+      if (like.user_id === this.props.currentUser.id) {
+        this.setState({
+          like_status: true,
+        })
+      }
+    })
+  }
+
+  componentWillUnmount() {
+    this.props.clearLikes()
+    debugger
   }
 
   update(field) {
@@ -167,6 +172,7 @@ class DogShow extends React.Component {
   };
 
   dogLike() {
+    debugger
     if (
       this.props.dog &&
       this.props.currentUser.id &&

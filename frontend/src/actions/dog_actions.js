@@ -21,6 +21,7 @@ export const removeDog = (dogId) => ({
   dogId,
 });
 
+
 export const receiveDogErrors = (errors) => ({
   type: RECEIVE_SESSION_ERRORS,
   errors,
