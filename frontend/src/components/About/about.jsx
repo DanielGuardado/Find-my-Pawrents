@@ -42,7 +42,8 @@ const AboutPage = props => {
                             </div>
                             <div id='persional-description'>
                                 <p><span>Name:  </span> Daniel Guardado</p>
-                                <p><span>Job Description: </span> The team lead can be considered the owner of the project.  They think high level about the MERN project and monitor the development of its different pieces.  Typically this is the person who came up with the initial application idea as they are in the best position to think about it as a complete product. </p>
+                                {/* <p><span>Job Description: </span> The team lead can be considered the owner of the project.  They think high level about the MERN project and monitor the development of its different pieces.  Typically this is the person who came up with the initial application idea as they are in the best position to think about it as a complete product. </p> */}
+                                    <p><span>Job Description: </span> Dan is our highly motivated and resourceful Team Lead. He always encouraged our team, communicated effectively, and delegated tasks to each member to achieve daily goals. He developed a high level work plan and monitored the development of different pieces our MERN stack projects coming together. </p>
                                 <p><span>Email: </span> danguardado217@gmail.com</p>
                             
                             </div>
@@ -62,7 +63,8 @@ const AboutPage = props => {
                             </div>
                             <div id='persional-description'>
                                 <p><span>Name:  </span> Jin Lin</p>
-                                <p><span>Job Description: </span> The Frontend Lead is responsible for the R of the MERN stack.  While that might only be one letter, we all know by now how integral the frontend architecture of a web app is.  Everything React and Redux related, including any additional libraries, will be the domain of the Frontend Lead.  </p>
+                                {/* <p><span>Job Description: </span> The Frontend Lead is responsible for the R of the MERN stack.  While that might only be one letter, we all know by now how integral the frontend architecture of a web app is.  Everything React and Redux related, including any additional libraries, will be the domain of the Frontend Lead.  </p> */}
+                                <p><span>Job Description: </span> Jin is our super innovative and adaptable Frontend Lead. He was responsible for the R of the MERN stack. While it might only be one letter, we all know by now how integral the frontend architecture of a web app is. Everything React and Redux related, including any additional libraries, is the domain of the Frontend Lead.</p>
                                 <p><span>Email: </span> jlin2235@gmail.com </p>
                             </div>
                         </div>
@@ -81,7 +83,8 @@ const AboutPage = props => {
                             </div>
                             <div id='persional-description'>
                                 <p><span>Name:  </span> Lauren Lee</p>
-                                <p><span>Job Description: </span> This person would be a flexible member of the team bouncing from the different leads based on need. Where a Lead Assistant focuses either on Management(Team Lead), Frontend (Frontend Lead), or Backend (Backend Lead), the Flex team member would be assigned tasks by the Team Lead from any piece of the project.  This person would then assist the Lead responsible for that one specific piece, and report back to the Team Lead when it is complete. </p>
+                                {/* <p><span>Job Description: </span> This person would be a flexible member of the team bouncing from the different leads based on need. Where a Lead Assistant focuses either on Management(Team Lead), Frontend (Frontend Lead), or Backend (Backend Lead), the Flex team member would be assigned tasks by the Team Lead from any piece of the project.  This person would then assist the Lead responsible for that one specific piece, and report back to the Team Lead when it is complete. </p> */}
+                                    <p><span>Job Description: </span> Lauren is our enthusiastic and persistentt Flex Developer. She was the flexible member of the team who supported her team members to keep the workflow smooth. Lauren jumped on any piece of the project in the backend and frontend whenever necessary.</p>
                                 <p><span>Email: </span> laurenlee0625@gmail.com</p>
                             </div>
                         </div>
@@ -99,8 +102,8 @@ const AboutPage = props => {
                                 </div>
                             </div>
                             <div id='persional-description'>
-                                <p><span>Name:  </span> Gabe Byrne</p>
-                                <p><span>Job Description: </span> The backend lead is responsible for the N, the E, and the M of the MERN stack.  They will spend the majority of their time organizing the database, building request-response behavior, and working with the Frontend Lead to design the api end-points.  </p>
+                                <p><span>Name:  </span> Gabriel Byrne</p>
+                                <p><span>Job Description: </span> Gabe is our problem solving master and detail oriented Backend Lead. He was in charge of the N, E, and M of the MERN stack. Gabe spent the majority of his time organizing the database, building request-response behavior, and working with the Frontend Lead to design the api end-points.</p>
                                 <p><span>Email: </span> byrnegr@gmail.com</p>
                             </div>
                         </div>

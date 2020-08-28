@@ -21,7 +21,7 @@ class NavBar extends React.Component {
               <img id="logo" src={logo} alt="logo" />
             </a>
             <div className="nav-about">
-              <a href="#/about">About Us</a>
+              <a href="#/about">Our Team</a>
               <Link to="/about" />
             </div>
             {/* <div className="nav-contact">
