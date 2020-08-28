@@ -8,9 +8,9 @@ import "./navBar.scss";
 // ({ currentUser, logout, openModal })
 
 class NavBar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   noUserNavBar() {
     return (

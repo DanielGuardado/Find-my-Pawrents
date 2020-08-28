@@ -43,7 +43,7 @@ const AboutPage = props => {
                             <div id='persional-description'>
                                 <p><span>Name:  </span> Daniel Guardado</p>
                                 {/* <p><span>Job Description: </span> The team lead can be considered the owner of the project.  They think high level about the MERN project and monitor the development of its different pieces.  Typically this is the person who came up with the initial application idea as they are in the best position to think about it as a complete product. </p> */}
-                                    <p><span>Job Description: </span> Dan is our highly motivated and resourceful Team Lead. He always encouraged our team, communicated effectively, and delegated tasks to each member to achieve daily goals. He developed a high level work plan and monitored the development of different pieces our MERN stack projects coming together. </p>
+                                <p><span>Job Description: </span> Dan is our highly motivated and resourceful Team Lead. He always encouraged our team, communicated effectively, and delegated tasks to each member to achieve daily goals. He developed a high level work plan and monitored the development of different pieces our MERN stack projects coming together. </p>
                                 <p><span>Email: </span> danguardado217@gmail.com</p>
                             
                             </div>
